@@ -1,0 +1,20 @@
+{
+  "name": "material-you-app-list-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "docs:fetch": "node scripts/fetch-upstream-readme.mjs",
+    "docs:split": "node scripts/split-readme.mjs",
+    "docs:changelog": "node scripts/generate-changelog.mjs",
+    "docs:prepare": "node scripts/split-readme.mjs && node scripts/generate-changelog.mjs",
+    "docs:sync": "node scripts/fetch-upstream-readme.mjs && node scripts/split-readme.mjs && node scripts/generate-changelog.mjs"
+  },
+  "devDependencies": {
+    "twemoji": "^14.0.2",
+    "typescript": "^5.9.3",
+    "vitepress": "^1.6.4"
+  }
+}
