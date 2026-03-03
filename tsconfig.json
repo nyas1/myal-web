@@ -2,11 +2,16 @@
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "strict": true,
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
-    "types": ["vitepress"]
+    "types": [
+      "vitepress"
+    ]
   },
   "include": [
     "docs/.vitepress/**/*.ts",
