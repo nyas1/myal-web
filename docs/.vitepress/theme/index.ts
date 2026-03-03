@@ -1,5 +1,6 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import { inject } from '@vercel/analytics'
 import twemoji from 'twemoji'
 import Layout from './Layout.vue'
 import './style.css'
@@ -9,6 +10,12 @@ export default {
   Layout,
   enhanceApp({ router }) {
     if (typeof window === 'undefined') return
+
+    const analyticsWindow = window as Window & { __myalVercelAnalyticsInitialized?: boolean }
+    if (!analyticsWindow.__myalVercelAnalyticsInitialized) {
+      inject()
+      analyticsWindow.__myalVercelAnalyticsInitialized = true
+    }
 
     let cleanupHomeGrid: (() => void) | null = null
     let cleanupTocSync: (() => void) | null = null

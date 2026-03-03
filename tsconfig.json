@@ -10,6 +10,7 @@
   },
   "include": [
     "docs/.vitepress/**/*.ts",
-    "docs/.vitepress/**/*.mts"
+    "docs/.vitepress/**/*.mts",
+    "docs/.vitepress/**/*.d.ts"
   ]
 }
