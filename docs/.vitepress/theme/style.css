@@ -41,12 +41,21 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  overflow-x: clip;
 }
 
-@media (hover: none), (pointer: coarse) {
+@media (hover: none),
+(pointer: coarse) {
   .VPHome {
-    overflow: visible;
+    overflow: hidden;
+    overflow-x: clip;
   }
+}
+
+html,
+body,
+#app {
+  overflow-x: clip;
 }
 
 .myal-home-grid-canvas {

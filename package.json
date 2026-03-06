@@ -13,7 +13,9 @@
     "docs:sync": "node scripts/fetch-upstream-readme.mjs && node scripts/split-readme.mjs && node scripts/generate-changelog.mjs"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.5.0"
+    "@vercel/analytics": "^1.5.0",
+    "beercss": "^4.0.16",
+    "material-dynamic-colors": "^1.1.4"
   },
   "devDependencies": {
     "twemoji": "^14.0.2",

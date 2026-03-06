@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { findFirstHeading, README_HEADINGS } from './readme-structure.mjs'
 
 const root = resolve(process.cwd())
 const readmePath =
@@ -12,15 +13,17 @@ const docsDir = resolve(root, 'docs')
 const sourceReadmePath = existsSync(readmePath) ? readmePath : fallbackReadmePath
 const readme = readFileSync(sourceReadmePath, 'utf8').replace(/\r\n/g, '\n')
 
-const tocStart = readme.indexOf('## 📜 Table Of Contents')
-const disclaimerStart = readme.indexOf('### 📋 Disclaimer')
-const newlyStart = readme.indexOf('## 🆕 Newly Added Apps!')
-const appsStart = readme.indexOf('## 🌐 Social & Communication')
-const sourcesStart = readme.indexOf('## 🪢 Sources')
-const toolsUsedStart = readme.indexOf('## 🔧 Tools Used')
+const newlyStart = findFirstHeading(readme, README_HEADINGS.newlyAdded)
+const appsStart = findFirstHeading(readme, README_HEADINGS.appsStart)
+const sourcesStart = findFirstHeading(readme, README_HEADINGS.sources)
+const toolsUsedStart = findFirstHeading(readme, README_HEADINGS.toolsUsed)
 
-if ([tocStart, disclaimerStart, newlyStart, appsStart, sourcesStart].some((i) => i === -1)) {
-  throw new Error('README structure changed. Could not locate expected section headings.')
+if ([newlyStart, appsStart, sourcesStart].some((i) => i === -1)) {
+  throw new Error('README structure changed. Missing expected section headings.')
+}
+
+if (!(newlyStart < appsStart && appsStart < sourcesStart)) {
+  throw new Error('README structure changed. Section heading order is unexpected.')
 }
 
 function stripTocBacklinks(markdown) {

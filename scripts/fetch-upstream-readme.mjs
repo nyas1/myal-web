@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { includesAnyHeading, README_HEADINGS } from './readme-structure.mjs'
 
 const upstreamReadmeUrl =
   process.env.UPSTREAM_README_URL ??
@@ -20,7 +21,11 @@ if (!response.ok) {
 }
 
 const readme = await response.text()
-if (!readme.includes('## 🆕 Newly Added Apps!')) {
+if (
+  !includesAnyHeading(readme, README_HEADINGS.newlyAdded) ||
+  !includesAnyHeading(readme, README_HEADINGS.sources) ||
+  !includesAnyHeading(readme, README_HEADINGS.appsStart)
+) {
   throw new Error('Fetched README does not match expected upstream structure')
 }
 

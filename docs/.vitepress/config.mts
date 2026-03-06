@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
-import { meta, nav, sidebar, socialLinks } from './constants'
+import { meta, nav, sidebar, socialLinks } from './shared'
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1]
 const pagesBase = process.env.GITHUB_ACTIONS === 'true' && repositoryName

@@ -20,6 +20,8 @@ watchEffect(() => {
 
 const isHidden = ref(false)
 const lastY = ref(0)
+const SCROLL_DELTA_THRESHOLD = 2
+const isCoarsePointer = () => window.matchMedia('(hover: none), (pointer: coarse)').matches
 
 const updateMobileNavClass = (hidden: boolean) => {
   if (!inBrowser) return
@@ -35,6 +37,15 @@ const syncByScroll = () => {
 
   const y = window.scrollY || window.pageYOffset || 0
   const width = window.innerWidth
+  const deltaY = y - lastY.value
+
+  // On touch devices, keep nav fixed and stable.
+  if (isCoarsePointer()) {
+    isHidden.value = false
+    updateMobileNavClass(false)
+    lastY.value = y
+    return
+  }
 
   if (y <= 0) {
     isHidden.value = false
@@ -44,7 +55,12 @@ const syncByScroll = () => {
   }
 
   if (width < 960) {
-    if (y > lastY.value) {
+    // Ignore tiny/no-op scroll deltas caused by mobile viewport resize jitter.
+    if (Math.abs(deltaY) < SCROLL_DELTA_THRESHOLD) {
+      return
+    }
+
+    if (deltaY > 0) {
       isHidden.value = true
       updateMobileNavClass(true)
     } else {
@@ -64,7 +80,14 @@ const onScroll = () => {
 }
 
 const onResize = () => {
-  syncByScroll()
+  if (!inBrowser) return
+
+  // Mobile browsers can emit resize events while touching/zooming or when
+  // the URL bar collapses/expands. Do not toggle nav visibility from resize.
+  if (window.innerWidth >= 960) {
+    isHidden.value = false
+    updateMobileNavClass(false)
+  }
 }
 
 watch(isScreenOpen, (open) => {
@@ -78,6 +101,7 @@ onMounted(() => {
   if (!inBrowser) return
   lastY.value = window.scrollY || window.pageYOffset || 0
   updateMobileNavClass(false)
+  if (isCoarsePointer()) return
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('resize', onResize)
 })
@@ -159,5 +183,10 @@ onUnmounted(() => {
   .VPLocalNav {
     transition: top 0.25s ease-in-out !important;
   }
+}
+
+/* Keep nav fixed when the mobile menu overlay is open. */
+.VPNav:has(.VPNavScreen[style*="display: block"]) {
+  transform: none !important;
 }
 </style>
