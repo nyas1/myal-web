@@ -8,6 +8,8 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-03-03 | [5a10dfb](https://github.com/nyas1/Material-You-app-list/commit/5a10dfb8985a58ad93cae518446ebbb6c1bbc471) | Update README to remove introductory paragraph |
+| 2026-03-03 | [f853a39](https://github.com/nyas1/Material-You-app-list/commit/f853a391ba6370f6bcb9907665c217549a97d021) | Remove duplicate Fedilab entry from README |
 | 2026-03-02 | [f4e5e41](https://github.com/nyas1/Material-You-app-list/commit/f4e5e418ccb0a12a16500819d23fe3ef2805b299) | Add general issue template |
 | 2026-03-02 | [4ee4783](https://github.com/nyas1/Material-You-app-list/commit/4ee47836067cf327617862ed6031357f5d9f846d) | Make update template evidence optional |
 | 2026-03-02 | [cff1139](https://github.com/nyas1/Material-You-app-list/commit/cff1139cb15990528ff747f3023b482dfa31f2fb) | Add issue template for app entry updates |
@@ -106,5 +108,3 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-01-01 | [95b23e9](https://github.com/nyas1/Material-You-app-list/commit/95b23e93863d852d65292bb51741922bead3d666) | Add link to InstallerX Revived in README |
 | 2026-01-01 | [8f1cf04](https://github.com/nyas1/Material-You-app-list/commit/8f1cf04981754c464a57b1cf610554f59d03832f) | Merge branch 'nyas1:main' into main |
 | 2026-01-01 | [48c2006](https://github.com/nyas1/Material-You-app-list/commit/48c2006884f386acfaed3058a2047ddc30ea7cbd) | Add memorial marker to UpdateMe and Github Store |
-| 2026-01-01 | [c1a8ddf](https://github.com/nyas1/Material-You-app-list/commit/c1a8ddf48e9cdd84a8ff63018924b8d839a80ac1) | Merge pull request #363 from Androser420/patch-1 |
-| 2026-01-01 | [906bbad](https://github.com/nyas1/Material-You-app-list/commit/906bbad967c2fd9443675eac9ff3f74343decb4a) | added archivetune to new apps section |
