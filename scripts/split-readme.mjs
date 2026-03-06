@@ -39,25 +39,63 @@ function normalizeAppsStructure(markdown) {
     .trim()
 }
 
+const APP_LINE_PATTERN =
+  /^\s*[-*+]\s+(?:\*\*)?`[^`]+`(?:\*\*)?\s+\[([^\]]+?)\]\(\s*([^) \t]+)\s*(?:\s+(['"])(.*?)\3)?\s*\)\s*(?:<sup>.*)?\s*$/gmu
+
 const newlyAdded = stripTocBacklinks(readme.slice(newlyStart, appsStart).trim())
 const apps = normalizeAppsStructure(stripTocBacklinks(readme.slice(appsStart, sourcesStart).trim()))
 const sourcesEnd = toolsUsedStart !== -1 && toolsUsedStart > sourcesStart ? toolsUsedStart : readme.length
 const sources = stripTocBacklinks(readme.slice(sourcesStart, sourcesEnd).trim())
 
 function getUniqueAppCount(markdown) {
-  const appLinePattern = /^\s*-\s+`[^`]+`\s+\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/gm
   const uniqueApps = new Set()
-  let match = appLinePattern.exec(markdown)
 
-  while (match) {
-    const name = match[1].trim().toLowerCase()
-    const url = match[2].trim().toLowerCase().replace(/\/+$/, '')
-    const key = url || name
-    uniqueApps.add(key)
-    match = appLinePattern.exec(markdown)
+  for (const match of markdown.matchAll(APP_LINE_PATTERN)) {
+    const name = normalizeAppName(match[1])
+    const urlKey = normalizeUrlKey(match[2])
+    const key = urlKey ? `url:${urlKey}` : name ? `name:${name}` : ''
+
+    if (key) {
+      uniqueApps.add(key)
+    }
   }
 
   return uniqueApps.size
+}
+
+function normalizeAppName(rawName) {
+  return rawName
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, '')
+}
+
+function normalizeUrlKey(rawUrl) {
+  const input = rawUrl.trim()
+  if (!input) {
+    return ''
+  }
+
+  const cleaned = input.replace(/[)>.,;:!?]+$/, '')
+
+  try {
+    const url = new URL(cleaned)
+    if (url.protocol === 'http:' || url.protocol === 'https:') {
+      const host = url.hostname.toLowerCase().replace(/^www\./, '')
+      const path = url.pathname.replace(/\/+$/, '')
+      const search = url.search
+      return `${host}${path}${search}`
+    }
+
+    return cleaned.toLowerCase().replace(/\/+$/, '')
+  } catch {
+    return cleaned
+      .toLowerCase()
+      .replace(/^https?:\/\//, '')
+      .replace(/^www\./, '')
+      .replace(/\/+$/, '')
+  }
 }
 
 const appCount = getUniqueAppCount(apps)
