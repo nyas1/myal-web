@@ -119,7 +119,7 @@ watch(
         </span>
       </label>
       <label class="myal-toggle-row" for="hide-archived-toggle">
-        <span>Toggle Archived</span>
+        <span>Hide archived</span>
         <span class="myal-switch">
           <input id="hide-archived-toggle" v-model="hideArchived" type="checkbox">
           <span class="myal-switch-thumb" aria-hidden="true"></span>
