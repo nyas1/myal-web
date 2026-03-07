@@ -8,6 +8,11 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-03-07 | [ba44f24](https://github.com/nyas1/Material-You-app-list/commit/ba44f24e4652e6d64b00dff3a414014da7d05d36) | add quax, revenge manager to newly added section |
+| 2026-03-07 | [a97ee70](https://github.com/nyas1/Material-You-app-list/commit/a97ee70d85692bdf9d7ea5493df583d735dc38eb) | Merge pull request #412 from UcraNerd/main |
+| 2026-03-07 | [7f15117](https://github.com/nyas1/Material-You-app-list/commit/7f151173fc682371de051ee619e383ee669d231b) | Add Revenge Manager |
+| 2026-03-06 | [f4b5bf9](https://github.com/nyas1/Material-You-app-list/commit/f4b5bf91b327198ed2405bd7d1f3856d315ef6cf) | Revert Squawker update |
+| 2026-03-06 | [1a8de3c](https://github.com/nyas1/Material-You-app-list/commit/1a8de3cbcdde4f131118595fb7a6a18fe4800652) | Update Quacker, Squawker and add QuaX |
 | 2026-03-06 | [6db17f6](https://github.com/nyas1/Material-You-app-list/commit/6db17f607e8e472605cb106f7e43b23aab843a89) | Remove duplicate entries from app list in README |
 | 2026-03-06 | [522857c](https://github.com/nyas1/Material-You-app-list/commit/522857c5d403eced89ede78669f487bf45ed13df) | Add new website link to README |
 | 2026-03-03 | [5a10dfb](https://github.com/nyas1/Material-You-app-list/commit/5a10dfb8985a58ad93cae518446ebbb6c1bbc471) | Update README to remove introductory paragraph |
@@ -103,8 +108,3 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-01-06 | [78940bd](https://github.com/nyas1/Material-You-app-list/commit/78940bdf2eec38a44e1e27976f6c31983eb21cb8) | fix: missing # |
 | 2026-01-06 | [096ee6a](https://github.com/nyas1/Material-You-app-list/commit/096ee6a81b41d87d72b13594a56b19c00143d190) | fix: mark Signal You as dead |
 | 2026-01-06 | [c212e75](https://github.com/nyas1/Material-You-app-list/commit/c212e7504b4955cd5e1fa92ccd5576a7a15fabb1) | Add Heron |
-| 2026-01-03 | [989e0dd](https://github.com/nyas1/Material-You-app-list/commit/989e0dd98c862c22cc1f19fc59485f5b1d034c8a) | Merge pull request #364 from praveenxsharma/main |
-| 2026-01-03 | [2de6b24](https://github.com/nyas1/Material-You-app-list/commit/2de6b244524af2b55f20b48a4e0c509c09c9c430) | Fix indentation for InstallerX entries in README |
-| 2026-01-01 | [883fe64](https://github.com/nyas1/Material-You-app-list/commit/883fe64e098c1123179d2c25224f4da784f23ae3) | Update Newly Added Apps section in README |
-| 2026-01-01 | [73f3bd6](https://github.com/nyas1/Material-You-app-list/commit/73f3bd62bfa4a2022a0ea0ebe4a78d657f0191f3) | Update InstallerX links in README.md |
-| 2026-01-01 | [95b23e9](https://github.com/nyas1/Material-You-app-list/commit/95b23e93863d852d65292bb51741922bead3d666) | Add link to InstallerX Revived in README |

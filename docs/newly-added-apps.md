@@ -6,6 +6,8 @@ title: Newly Added Apps
 
 ## 🆕 Newly Added Apps!
 *Last **30 apps** that were recently added to list!*
+- `MDY` [Revenge Manager](https://github.com/revenge-mod/revenge-manager) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+- `MDY` [QuaX](https://github.com/Teskann/QuaX) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Pixelix](https://github.com/ghostbyte-dev/pixelix) <sup>`FOSS`</sup>
 - `MDY` [KashCal](https://github.com/KashCal/KashCal/) <sup>`FOSS`</sup>
 - `MDY` [Material Download Manager](https://play.google.com/store/apps/details?id=com.akira.mdm)
@@ -35,4 +37,3 @@ title: Newly Added Apps
 - `MDY` [Boundo](https://github.com/cliuff/boundo) <sup>`FOSS`</sup>
 - `MD3E` [Traffic Light](https://github.com/leekleak/traffic-light) <sup>`FOSS`</sup>
 - `MD3E` [Google Journal](https://play.google.com/store/apps/details?id=com.google.android.apps.pixel.aurelius)
-- `MD3E` [Solid Explorer](https://play.google.com/store/apps/details?id=pl.solidexplorer2) <sup>`💰`</sup>
