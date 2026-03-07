@@ -2,13 +2,15 @@
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useData, useRoute } from 'vitepress'
 
-const FOSS_STORAGE_KEY = 'myal-foss-only'
-const ARCHIVED_STORAGE_KEY = 'myal-hide-archived'
 
 const route = useRoute()
 const { page } = useData()
 const fossOnly = ref(false)
 const hideArchived = ref(false)
+const showMD3E = ref(true)
+const showMDY = ref(true)
+const showMD = ref(true)
+const showMY = ref(true)
 
 const isAppPage = computed(() => page.value.relativePath === 'app.md')
 
@@ -31,7 +33,12 @@ function clearFilters() {
 }
 
 function isTaggedAppEntry(line: string) {
-  return /^(MD3E|MDY|MD|MY|MOD)\b/i.test(line)
+  return /^(MD3E|MDY|MD|MY)\b/i.test(line)
+}
+
+function getPrimaryTag(line: string) {
+  const match = line.match(/^(MD3E|MDY|MD|MY)\b/i)
+  return match ? match[1].toUpperCase() : null
 }
 
 function isArchivedEntry(element: HTMLLIElement, lineText: string) {
@@ -46,7 +53,9 @@ function isArchivedEntry(element: HTMLLIElement, lineText: string) {
 function applyFilters() {
   if (typeof document === 'undefined') return
 
-  if (!isAppPage.value || (!fossOnly.value && !hideArchived.value)) {
+  const allTagsEnabled = showMD3E.value && showMDY.value && showMD.value && showMY.value
+
+  if (!isAppPage.value || (!fossOnly.value && !hideArchived.value && allTagsEnabled)) {
     clearFilters()
     return
   }
@@ -62,26 +71,36 @@ function applyFilters() {
       return
     }
 
+    const primaryTag = getPrimaryTag(text)
     const hasFoss = /\bFOSS\b/i.test(text)
     const isArchived = isArchivedEntry(element, text)
+    const hiddenByTag =
+      (primaryTag === 'MD3E' && !showMD3E.value) ||
+      (primaryTag === 'MDY' && !showMDY.value) ||
+      (primaryTag === 'MD' && !showMD.value) ||
+      (primaryTag === 'MY' && !showMY.value)
 
     const hiddenByFoss = fossOnly.value && !hasFoss
     const hiddenByArchived = hideArchived.value && isArchived
 
-    element.classList.toggle('myal-filter-hidden', hiddenByFoss || hiddenByArchived)
+    element.classList.toggle('myal-filter-hidden', hiddenByTag || hiddenByFoss || hiddenByArchived)
   })
 }
 
 onMounted(async () => {
-  fossOnly.value = localStorage.getItem(FOSS_STORAGE_KEY) === '1'
-  hideArchived.value = localStorage.getItem(ARCHIVED_STORAGE_KEY) === '1'
+  // Option toggles intentionally reset on reload.
+  fossOnly.value = false
+  hideArchived.value = false
+  // Tag filters intentionally reset on reload.
+  showMD3E.value = true
+  showMDY.value = true
+  showMD.value = true
+  showMY.value = true
   await nextTick()
   applyFilters()
 })
 
-watch([fossOnly, hideArchived], async ([fossEnabled, archivedEnabled]) => {
-  localStorage.setItem(FOSS_STORAGE_KEY, fossEnabled ? '1' : '0')
-  localStorage.setItem(ARCHIVED_STORAGE_KEY, archivedEnabled ? '1' : '0')
+watch([fossOnly, hideArchived, showMD3E, showMDY, showMD, showMY], async () => {
   await nextTick()
   applyFilters()
 })
@@ -125,6 +144,25 @@ watch(
           <span class="myal-switch-thumb" aria-hidden="true"></span>
         </span>
       </label>
+      <div class="myal-options-title">Tag filters</div>
+      <div class="myal-tag-filter-grid">
+        <label class="myal-checkbox-row" for="tag-md3e-toggle">
+          <span>MD3E</span>
+          <input id="tag-md3e-toggle" v-model="showMD3E" type="checkbox">
+        </label>
+        <label class="myal-checkbox-row" for="tag-mdy-toggle">
+          <span>MDY</span>
+          <input id="tag-mdy-toggle" v-model="showMDY" type="checkbox">
+        </label>
+        <label class="myal-checkbox-row" for="tag-md-toggle">
+          <span>MD</span>
+          <input id="tag-md-toggle" v-model="showMD" type="checkbox">
+        </label>
+        <label class="myal-checkbox-row" for="tag-my-toggle">
+          <span>MY</span>
+          <input id="tag-my-toggle" v-model="showMY" type="checkbox">
+        </label>
+      </div>
     </div>
   </section>
 </template>

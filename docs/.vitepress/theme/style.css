@@ -5,8 +5,8 @@
   --vp-c-brand-soft: rgba(127, 103, 190, 0.16);
   --myal-switch-track-off: #e9e4f2;
   --myal-switch-border-off: #c9bedc;
-  --myal-switch-track-on: #cfbcff;
-  --myal-switch-border-on: #b79ee9;
+  --myal-switch-track-on: #d0bcff;
+  --myal-switch-border-on: #d0bcff;
   --myal-switch-thumb-off: #ffffff;
   --myal-switch-thumb-on: #4f378a;
 }
@@ -18,8 +18,8 @@
   --vp-c-brand-soft: rgba(208, 188, 255, 0.16);
   --myal-switch-track-off: #2b2437;
   --myal-switch-border-off: #433656;
-  --myal-switch-track-on: #7f67be;
-  --myal-switch-border-on: #9a84d2;
+  --myal-switch-track-on: #d0bcff;
+  --myal-switch-border-on: #d0bcff;
   --myal-switch-thumb-off: #efe8ff;
   --myal-switch-thumb-on: #4f378a;
 }
@@ -327,6 +327,30 @@ img.emoji {
   margin-top: 2px;
 }
 
+.myal-checkbox-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 24px;
+  color: var(--vp-c-text-1);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.myal-tag-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 12px;
+  row-gap: 4px;
+}
+
+.myal-checkbox-row input[type='checkbox'] {
+  width: 13px;
+  height: 13px;
+  accent-color: var(--vp-c-brand-1);
+}
+
 .myal-switch {
   position: relative;
   width: 42px;
@@ -349,7 +373,7 @@ img.emoji {
   border-radius: 999px;
   background: var(--myal-switch-track-off);
   border: 1px solid var(--myal-switch-border-off);
-  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .myal-switch-thumb::after {
@@ -361,14 +385,12 @@ img.emoji {
   height: 18px;
   border-radius: 50%;
   background: var(--myal-switch-thumb-off);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .myal-switch input:checked+.myal-switch-thumb {
   background: var(--myal-switch-track-on);
   border-color: var(--myal-switch-border-on);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--vp-c-brand-soft) 55%, transparent);
 }
 
 .myal-switch input:checked+.myal-switch-thumb::after {
