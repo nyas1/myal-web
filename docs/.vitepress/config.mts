@@ -17,7 +17,10 @@ export default defineConfig({
   lastUpdated: true,
   head: [
     ['link', { rel: 'icon', href: '/icon.svg', type: 'image/svg+xml' }],
-    ['link', { rel: 'apple-touch-icon', href: '/icon.svg' }]
+    ['link', { rel: 'apple-touch-icon', href: '/icon.svg' }],
+    ['meta', { name: 'application-name', content: meta.name }],
+    ['meta', { property: 'og:site_name', content: meta.name }],
+    ['meta', { name: 'apple-mobile-web-app-title', content: meta.name }]
   ],
   themeConfig: {
     logo: {
