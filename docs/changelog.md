@@ -8,6 +8,18 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-03-10 | [36ffc6e](https://github.com/nyas1/Material-You-app-list/commit/36ffc6efe49d1590341a54bf5d1f13a3d35217a7) | Merge pull request #420 from UcraNerd/main |
+| 2026-03-10 | [575bf2d](https://github.com/nyas1/Material-You-app-list/commit/575bf2d952e542ae9720cc7b84b38541a21adcdc) | Merge branch 'main' into main |
+| 2026-03-10 | [8cb2e96](https://github.com/nyas1/Material-You-app-list/commit/8cb2e96cc726f0f32d64afeb9148f2447bffdc1f) | Merge pull request #418 from guguss-31/main |
+| 2026-03-08 | [01ce68d](https://github.com/nyas1/Material-You-app-list/commit/01ce68d4d0b20aa8eef634907d087b7a18e7d2f3) | Update Telegram and Instagram app listings in README |
+| 2026-03-08 | [7d6c6a7](https://github.com/nyas1/Material-You-app-list/commit/7d6c6a79a51c430423c422de425c63317467c15e) | update mastodoon and discord categories |
+| 2026-03-08 | [e91fed6](https://github.com/nyas1/Material-You-app-list/commit/e91fed6bf19159764a77a27d545d8bd5c5fd46c8) | Reorder reddit and twitter categories |
+| 2026-03-08 | [cc9c20e](https://github.com/nyas1/Material-You-app-list/commit/cc9c20edc6456b17ad8fb84252ae339c7cf8a334) | Added Gumroad Stats |
+| 2026-03-08 | [72b8f10](https://github.com/nyas1/Material-You-app-list/commit/72b8f1095a9057c9a319fc5025b9279007967530) | Added Canvas |
+| 2026-03-08 | [885a659](https://github.com/nyas1/Material-You-app-list/commit/885a65967653c022446123f5db697e14bf820fa4) | Added Essentials |
+| 2026-03-08 | [3dfb772](https://github.com/nyas1/Material-You-app-list/commit/3dfb772f703f216376726ff6b3d155d61e9c5d9b) | Added AirSync  |
+| 2026-03-07 | [31df65a](https://github.com/nyas1/Material-You-app-list/commit/31df65ad42bf9a418dc5726fe57a39e24aa968ea) | Update mastodon and reddit sections |
+| 2026-03-07 | [d35f129](https://github.com/nyas1/Material-You-app-list/commit/d35f129ffc32ed828fe1d44146409e965a755c84) | Updated new apps from 31 to 30 |
 | 2026-03-07 | [ba44f24](https://github.com/nyas1/Material-You-app-list/commit/ba44f24e4652e6d64b00dff3a414014da7d05d36) | add quax, revenge manager to newly added section |
 | 2026-03-07 | [a97ee70](https://github.com/nyas1/Material-You-app-list/commit/a97ee70d85692bdf9d7ea5493df583d735dc38eb) | Merge pull request #412 from UcraNerd/main |
 | 2026-03-07 | [7f15117](https://github.com/nyas1/Material-You-app-list/commit/7f151173fc682371de051ee619e383ee669d231b) | Add Revenge Manager |
@@ -96,15 +108,3 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-01-22 | [f296bb4](https://github.com/nyas1/Material-You-app-list/commit/f296bb4da8ef7c0a0494f204333eebaa4149d80d) | Merge pull request #376 from paigely/main |
 | 2026-01-22 | [17b283d](https://github.com/nyas1/Material-You-app-list/commit/17b283d7225f5db5a48b4be1ba65b8327284b5aa) | Merge pull request #371 from ThatOneCalculator/patch-3 |
 | 2026-01-22 | [90a6067](https://github.com/nyas1/Material-You-app-list/commit/90a6067ff71ed27ec812aef5726f2bd2483ba723) | Merge pull request #370 from ThatOneCalculator/patch-2 |
-| 2026-01-22 | [c8b835e](https://github.com/nyas1/Material-You-app-list/commit/c8b835e507637d4f9298a7f689559d19d8c63122) | Merge pull request #374 from HotarunIchijou/patch-8 |
-| 2026-01-16 | [65605e0](https://github.com/nyas1/Material-You-app-list/commit/65605e0aa24b80c9f9ce5a6d72e13e273c4dbffd) | Add Navic to subsonic clients |
-| 2026-01-11 | [b65b304](https://github.com/nyas1/Material-You-app-list/commit/b65b304f32b3cddd2a43871f0d3cbd6bbdd6d4e7) | Update README.md |
-| 2026-01-06 | [d820ef3](https://github.com/nyas1/Material-You-app-list/commit/d820ef309398d06b5b2cb9de2683f07a4c5ecf86) | Add Matrix section |
-| 2026-01-06 | [b4148ed](https://github.com/nyas1/Material-You-app-list/commit/b4148ed37b23a61fa13ac049ae51d4092e74893f) | add Nostr to ToC |
-| 2026-01-06 | [1e2b8c8](https://github.com/nyas1/Material-You-app-list/commit/1e2b8c849d2b09903be7670c101e8c8f0d8c4820) | add bluesky in ToC |
-| 2026-01-06 | [9ffe7a3](https://github.com/nyas1/Material-You-app-list/commit/9ffe7a3f3e6e5f2cd63274388ea653b6aa63ef73) | fix: mark Metrolist as MD3E |
-| 2026-01-06 | [2c2db88](https://github.com/nyas1/Material-You-app-list/commit/2c2db882c62db63c9266bb77015bac7c21710c1e) | Add Heron |
-| 2026-01-06 | [c53f58f](https://github.com/nyas1/Material-You-app-list/commit/c53f58f05deefd48e8ef34d2afcdae71ca7552ef) | make this PR only for changed social media apps |
-| 2026-01-06 | [78940bd](https://github.com/nyas1/Material-You-app-list/commit/78940bdf2eec38a44e1e27976f6c31983eb21cb8) | fix: missing # |
-| 2026-01-06 | [096ee6a](https://github.com/nyas1/Material-You-app-list/commit/096ee6a81b41d87d72b13594a56b19c00143d190) | fix: mark Signal You as dead |
-| 2026-01-06 | [c212e75](https://github.com/nyas1/Material-You-app-list/commit/c212e7504b4955cd5e1fa92ccd5576a7a15fabb1) | Add Heron |

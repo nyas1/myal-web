@@ -12,7 +12,7 @@ hero:
       text: Browse Apps
       link: /app
     - theme: alt
-      text: 1107 Apps
+      text: 1111 Apps
       link: /app
 features:
   - icon: '<span class="myal-home-icon myal-home-icon-folder-search" aria-hidden="true"></span>'
