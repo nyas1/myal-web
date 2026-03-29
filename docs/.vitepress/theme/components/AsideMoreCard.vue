@@ -23,7 +23,9 @@ const tagLegend = [
   { tag: 'FORK', description: 'Community fork of another app' },
   { tag: 'PORT', description: 'Port from another source/device' },
   { tag: 'MOD', description: 'Modified app build' },
+  { tag: '💰', description: 'Paid or has a time-limited free trial' },
   { tag: '🪦', description: 'Discontinued or no longer maintained' },
+  { tag: '🐾', description: 'Apps personally used' },
   { tag: '⚠️', description: 'Needs additional setup or caution' }
 ]
 
