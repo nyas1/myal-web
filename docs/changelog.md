@@ -8,9 +8,27 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-03-28 | [28d0406](https://github.com/nyas1/Material-You-app-list/commit/28d0406d758ca49423c856983eeae9bc0f528def) | docs: shorten DosesPro app name in README list |
+| 2026-03-28 | [e1999f7](https://github.com/nyas1/Material-You-app-list/commit/e1999f79a0c523ebde86af1cdae9ddc8c03107d2) | docs: add and update apps from recent issues |
+| 2026-03-28 | [fb03951](https://github.com/nyas1/Material-You-app-list/commit/fb03951d5c7ab95fef73b3ccf99a828366e971f1) | Merge pull request #431 from akshaynexus/add-dosespro |
+| 2026-03-28 | [239b515](https://github.com/nyas1/Material-You-app-list/commit/239b51527969955da88ee39f47d548a219aab270) | Merge branch 'main' into add-dosespro |
+| 2026-03-28 | [935620b](https://github.com/nyas1/Material-You-app-list/commit/935620b76f1964041cc7d36786e4c2ebbc8090e2) | Merge pull request #428 from deadendpl/outify |
+| 2026-03-28 | [d3a7ed3](https://github.com/nyas1/Material-You-app-list/commit/d3a7ed311a01f9d9114f372321f5033735cb1f86) | Merge pull request #422 from UcraNerd/updated |
+| 2026-03-26 | [4353da4](https://github.com/nyas1/Material-You-app-list/commit/4353da4f40d516d166bd9f74c7195b59061d134b) | Add DosesPro app entry |
+| 2026-03-22 | [88d7d12](https://github.com/nyas1/Material-You-app-list/commit/88d7d12dbfdedbdf302ad961da05a4af50dc408c) | added outify |
+| 2026-03-19 | [ae5b731](https://github.com/nyas1/Material-You-app-list/commit/ae5b7311e833126f3b766f478e9a0398d2f6b2c4) | Merge branch 'nyas1:main' into updated |
 | 2026-03-17 | [b1a6424](https://github.com/nyas1/Material-You-app-list/commit/b1a6424ecdfe4c95885fb5307b66c12949830aa7) | Merge branch 'main' of https://github.com/nyas1/Material-You-app-list |
 | 2026-03-17 | [33e3972](https://github.com/nyas1/Material-You-app-list/commit/33e3972b8c0b69fd09a4276ae52ca9495b0689b9) | remove Jekyll GitHub Pages workflow file |
+| 2026-03-13 | [b84fe9d](https://github.com/nyas1/Material-You-app-list/commit/b84fe9d50358d5120fe301df1faf38e62692e18e) | Merge branch 'nyas1:main' into updated |
 | 2026-03-12 | [48c6d0c](https://github.com/nyas1/Material-You-app-list/commit/48c6d0caaf88494fb3ca222ae8d8a76985225a06) | Change header level for Music Players section |
+| 2026-03-12 | [bfa86d8](https://github.com/nyas1/Material-You-app-list/commit/bfa86d8e4ef50b6bd6cc4a58137e4681bc196aa3) | Update accessibility |
+| 2026-03-12 | [f5b9363](https://github.com/nyas1/Material-You-app-list/commit/f5b9363aa3befc7d57770326f23c9b715a61539e) | Archive old translators |
+| 2026-03-12 | [6200b05](https://github.com/nyas1/Material-You-app-list/commit/6200b0581de9bf891d25be0356baa80068038c1c) | Reorder mail clients |
+| 2026-03-12 | [a4de7da](https://github.com/nyas1/Material-You-app-list/commit/a4de7daf91cec7f42c675a8e3332f07a18476442) | Update communication category |
+| 2026-03-11 | [ea5c3e3](https://github.com/nyas1/Material-You-app-list/commit/ea5c3e3db9a44fa933d4e2f77ae13014807d0899) | Fix contact link order in README.md |
+| 2026-03-11 | [924a42a](https://github.com/nyas1/Material-You-app-list/commit/924a42af83a5c2beba15f9ace75eba40b9ceb9a9) | Update miscellaneous entries in Social |
+| 2026-03-10 | [9af472b](https://github.com/nyas1/Material-You-app-list/commit/9af472b827ac91d984f0d686916eb204a242a5e6) | Update vk and nostr |
+| 2026-03-10 | [3c5bf9a](https://github.com/nyas1/Material-You-app-list/commit/3c5bf9a6c648c37b21728974edd408c0a693e866) | Update Lemmy category |
 | 2026-03-10 | [36ffc6e](https://github.com/nyas1/Material-You-app-list/commit/36ffc6efe49d1590341a54bf5d1f13a3d35217a7) | Merge pull request #420 from UcraNerd/main |
 | 2026-03-10 | [575bf2d](https://github.com/nyas1/Material-You-app-list/commit/575bf2d952e542ae9720cc7b84b38541a21adcdc) | Merge branch 'main' into main |
 | 2026-03-10 | [8cb2e96](https://github.com/nyas1/Material-You-app-list/commit/8cb2e96cc726f0f32d64afeb9148f2447bffdc1f) | Merge pull request #418 from guguss-31/main |
@@ -90,21 +108,3 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-02-22 | [04bc916](https://github.com/nyas1/Material-You-app-list/commit/04bc916b1852a186e31392ff83c25f5eb5ce328b) | Update InstallerX-Revived entry in README |
 | 2026-02-17 | [afc67ca](https://github.com/nyas1/Material-You-app-list/commit/afc67ca7afa6ce921cca29466f463d1083f13af3) | Merge pull request #406 from manveen11/main |
 | 2026-02-17 | [bbf57eb](https://github.com/nyas1/Material-You-app-list/commit/bbf57eb7ee324923edf9ab8a92f345099e4ee51d) | very important work |
-| 2026-02-15 | [1a006a4](https://github.com/nyas1/Material-You-app-list/commit/1a006a492f0855eed755a80fd5c4a38469860f75) | Add VerveDo |
-| 2026-02-09 | [9774168](https://github.com/nyas1/Material-You-app-list/commit/97741684771bc43fcb724bc049e0af71d35ec8b2) | fix: PixelPlay --> PixelPlayer |
-| 2026-02-09 | [09b9d80](https://github.com/nyas1/Material-You-app-list/commit/09b9d80dd052eab40ffc0fa14185ee77eaf7a868) | Add FUTO Keyboard |
-| 2026-02-09 | [24501bd](https://github.com/nyas1/Material-You-app-list/commit/24501bdcb42dee1174ff9cc1f4d24f4ada82d56f) | Merge pull request #395 from ThatOneCalculator/patch-1 |
-| 2026-02-09 | [e6abb9b](https://github.com/nyas1/Material-You-app-list/commit/e6abb9b4000a6ab2e01627ec7ace66d32ce0f612) | Merge pull request #396 from ThatOneCalculator/patch-2 |
-| 2026-02-09 | [ba97bb6](https://github.com/nyas1/Material-You-app-list/commit/ba97bb675a48828cb115aaf3e5d55e3ce3d2c876) | Merge pull request #401 from ThatOneCalculator/aliucord |
-| 2026-02-09 | [53d5a7b](https://github.com/nyas1/Material-You-app-list/commit/53d5a7b37f89e65ee5358fd388c862e469687fe3) | update Aliucord themes |
-| 2026-02-06 | [17e67c2](https://github.com/nyas1/Material-You-app-list/commit/17e67c203066f9e77d10dca53997891615b2a744) | Update README.md |
-| 2026-02-05 | [92278b7](https://github.com/nyas1/Material-You-app-list/commit/92278b73476f48f8428bc09af88fbb6351892d70) | fix: proper tag ends for imgs |
-| 2026-02-05 | [16d4095](https://github.com/nyas1/Material-You-app-list/commit/16d40956d69e94158900d2e18e035542b2e29bab) | Make stars badge link to Github |
-| 2026-02-05 | [95f23e0](https://github.com/nyas1/Material-You-app-list/commit/95f23e03056d8fbe053c68ca0388f6a335995876) | add searxist |
-| 2026-01-29 | [7ad0870](https://github.com/nyas1/Material-You-app-list/commit/7ad087076f28083bafa2c3d06d2b73577b4927bf) | Merge pull request #382 from KonerDev/xed-editor |
-| 2026-01-29 | [5b54bc8](https://github.com/nyas1/Material-You-app-list/commit/5b54bc88a737c617ed7c625c3527beb8f94b33c6) | Merge pull request #380 from hikeri/main |
-| 2026-01-29 | [58c4d96](https://github.com/nyas1/Material-You-app-list/commit/58c4d96e3c1a738e42daab63c05b7cdb458a77b1) | Merge pull request #373 from ThatOneCalculator/matrix |
-| 2026-01-29 | [33c813d](https://github.com/nyas1/Material-You-app-list/commit/33c813d6b88ef668986ee41a4d70300724ec86a7) | Merge pull request #369 from ThatOneCalculator/patch-1 |
-| 2026-01-23 | [f8f7715](https://github.com/nyas1/Material-You-app-list/commit/f8f7715e082b0c12d5f411459f56a4e3b422870c) | fix: replace Karbon with Xed-Editor |
-| 2026-01-22 | [0738a66](https://github.com/nyas1/Material-You-app-list/commit/0738a66703d711829e5786efd04b3463aeb5870b) | Update README.md |
-| 2026-01-22 | [d9aee79](https://github.com/nyas1/Material-You-app-list/commit/d9aee79711349ef75fba35f29f1d35a38b249928) | Merge branch 'main' into patch-1 |
