@@ -8,6 +8,7 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-03-29 | [9f7f1fa](https://github.com/nyas1/Material-You-app-list/commit/9f7f1fa95e15067a2c28809f54425b6b3948747d) | docs: tag apps based on personal usage |
 | 2026-03-28 | [28d0406](https://github.com/nyas1/Material-You-app-list/commit/28d0406d758ca49423c856983eeae9bc0f528def) | docs: shorten DosesPro app name in README list |
 | 2026-03-28 | [e1999f7](https://github.com/nyas1/Material-You-app-list/commit/e1999f79a0c523ebde86af1cdae9ddc8c03107d2) | docs: add and update apps from recent issues |
 | 2026-03-28 | [fb03951](https://github.com/nyas1/Material-You-app-list/commit/fb03951d5c7ab95fef73b3ccf99a828366e971f1) | Merge pull request #431 from akshaynexus/add-dosespro |
@@ -107,4 +108,3 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-02-22 | [f624e6d](https://github.com/nyas1/Material-You-app-list/commit/f624e6dce2ccf47e4abedf19e926d3f37802d685) | Remove grave marker from LibChecker |
 | 2026-02-22 | [04bc916](https://github.com/nyas1/Material-You-app-list/commit/04bc916b1852a186e31392ff83c25f5eb5ce328b) | Update InstallerX-Revived entry in README |
 | 2026-02-17 | [afc67ca](https://github.com/nyas1/Material-You-app-list/commit/afc67ca7afa6ce921cca29466f463d1083f13af3) | Merge pull request #406 from manveen11/main |
-| 2026-02-17 | [bbf57eb](https://github.com/nyas1/Material-You-app-list/commit/bbf57eb7ee324923edf9ab8a92f345099e4ee51d) | very important work |
