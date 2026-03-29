@@ -288,14 +288,20 @@ export default {
       }
     }
 
-    requestAnimationFrame(() => {
+    const runAfterHydrationPaint = (fn: () => void) => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(fn)
+      })
+    }
+
+    runAfterHydrationPaint(() => {
       applyTwemoji()
       applyTocToggle()
       syncHomePageClass()
       setupHomeGrid()
     })
     router.onAfterRouteChanged = () => {
-      requestAnimationFrame(() => {
+      runAfterHydrationPaint(() => {
         applyTwemoji()
         applyTocToggle()
         syncHomePageClass()

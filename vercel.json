@@ -3,5 +3,30 @@
   "framework": null,
   "buildCommand": "npm run docs:build",
   "outputDirectory": "docs/.vitepress/dist",
-  "installCommand": "npm ci"
+  "installCommand": "npm ci",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/app", "destination": "/app.html" },
+    { "source": "/app/", "destination": "/app.html" },
+    { "source": "/changelog", "destination": "/changelog.html" },
+    { "source": "/changelog/", "destination": "/changelog.html" },
+    { "source": "/credits", "destination": "/credits.html" },
+    { "source": "/credits/", "destination": "/credits.html" },
+    { "source": "/contributing", "destination": "/contributing.html" },
+    { "source": "/contributing/", "destination": "/contributing.html" },
+    { "source": "/newly-added-apps", "destination": "/newly-added-apps.html" },
+    { "source": "/newly-added-apps/", "destination": "/newly-added-apps.html" }
+  ]
 }
