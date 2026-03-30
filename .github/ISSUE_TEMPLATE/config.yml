@@ -1,1 +1,8 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
+contact_links:
+  - name: App addition / update (redirect to app-list repo)
+    url: https://github.com/nyas1/Material-You-app-list/issues/new/choose
+    about: This repo is for the website only. Add/update apps in the main app list repo.
+  - name: Website issue (this repo)
+    url: https://github.com/nyas1/myal-web/issues/new/choose
+    about: Use this for website bugs, UI issues, or website-related questions.
