@@ -14,6 +14,9 @@ hero:
     - theme: alt
       text: 1123 Apps
       link: /app
+    - theme: alt
+      text: Synced 19min ago
+      link: /changelog
 features:
   - icon: '<span class="myal-home-icon myal-home-icon-folder-search" aria-hidden="true"></span>'
     title: App Directory
