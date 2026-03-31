@@ -9,6 +9,7 @@
   --myal-switch-border-on: #d0bcff;
   --myal-switch-thumb-off: #ffffff;
   --myal-switch-thumb-on: #4f378a;
+  --vp-font-family-base: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
 .dark {
@@ -105,7 +106,7 @@ body,
   gap: 8px;
 }
 
-.VPHome .VPHero .actions .VPButton.alt::before {
+.VPHome .VPHero .actions .VPButton.alt[href$="/app"]::before {
   content: '';
   width: 8px;
   height: 8px;
@@ -113,6 +114,16 @@ body,
   background: #22c55e;
   box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.65);
   animation: myal-pulse-green 1.8s ease-out infinite;
+  margin-right: 8px;
+}
+
+.VPHome .VPHero .actions .VPButton.alt[href$="/changelog"]::before {
+  display: inline-block;
+  content: 'history';
+  font-family: 'Material Icons Outlined';
+  font-size: 1.25em;
+  margin-right: 0.25em;
+  vertical-align: middle;
 }
 
 @media (min-width: 768px) {
@@ -121,32 +132,9 @@ body,
   }
 }
 
-.VPHome .VPFeature .icon .myal-home-icon {
-  display: block;
-  width: 24px;
-  height: 24px;
-  background-color: #ad8df8;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-}
-
-.VPHome .VPFeature .icon .myal-home-icon-folder-search {
-  -webkit-mask-image: url('/icons/bx-folder-search.webp');
-  mask-image: url('/icons/bx-folder-search.webp');
-}
-
-.VPHome .VPFeature .icon .myal-home-icon-sparkles-alt {
-  -webkit-mask-image: url('/icons/bx-sparkles-alt.webp');
-  mask-image: url('/icons/bx-sparkles-alt.webp');
-}
-
-.VPHome .VPFeature .icon .myal-home-icon-note-book {
-  -webkit-mask-image: url('/icons/bx-note-book.webp');
-  mask-image: url('/icons/bx-note-book.webp');
+.VPHome .VPFeature .icon .myal-feature-icon {
+  font-size: 24px;
+  color: #ad8df8;
 }
 
 .VPHome .VPHero .image-container {
@@ -407,6 +395,11 @@ img.emoji {
   display: none !important;
 }
 
+.VPFooter,
+.VPHomeFooter {
+  display: none !important;
+}
+
 @keyframes myal-album-spin {
   from {
     transform: rotate(0deg);
@@ -449,4 +442,85 @@ img.emoji {
   .myal-home-grid-page .VPHome .VPHero .image-container::before {
     animation: none;
   }
+}
+
+/* ── Floating Browse Apps Button ─────────────────────────────────────── */
+.myal-browse-fab {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 20px;
+  border-radius: 999px;
+
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-black);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.18),
+    0 1px 3px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.myal-browse-fab:hover {
+  background: var(--vp-c-brand-2);
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.22),
+    0 2px 6px rgba(0, 0, 0, 0.14);
+}
+
+.myal-browse-fab:active {
+  transform: translateX(-50%) translateY(0px);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.18),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.myal-browse-fab-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 27px;
+  line-height: 1;
+}
+
+/* Dark mode: use the lighter brand color for better contrast */
+.dark .myal-browse-fab {
+  color: #1a1125;
+}
+
+/* Fade + slide-up entry transition */
+.myal-fab-enter-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.myal-fab-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.myal-fab-enter-from {
+  opacity: 0;
+  transform: translateX(-50%) translateY(12px);
+}
+.myal-fab-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) translateY(12px);
+}
+
+/* Add bottom breathing room so content isn't obscured by FAB */
+.VPHome .VPHomeFeatures {
+  padding-bottom: 96px;
 }
