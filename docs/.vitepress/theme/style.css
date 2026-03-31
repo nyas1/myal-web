@@ -162,7 +162,10 @@ body,
   max-width: 175px !important;
   max-height: 175px !important;
   z-index: 2;
-  transform: rotate(0deg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
   transform-origin: 50% 50%;
   animation: myal-album-spin 18s linear infinite;
 }
@@ -402,11 +405,11 @@ img.emoji {
 
 @keyframes myal-album-spin {
   from {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
