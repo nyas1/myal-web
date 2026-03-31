@@ -8,7 +8,11 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-03-30 | [1f6a431](https://github.com/nyas1/Material-You-app-list/commit/1f6a431d2ac815f5017b7b2e9dc7827c02ab507a) | Merge pull request #432 from sosauce/main |
+| 2026-03-30 | [0d4b9c9](https://github.com/nyas1/Material-You-app-list/commit/0d4b9c9eb4fa2a42e7a4cd4a495b0581375b2f1f) | docs: add LeanType & DisCorkie; cleanup Play Store links |
 | 2026-03-29 | [9f7f1fa](https://github.com/nyas1/Material-You-app-list/commit/9f7f1fa95e15067a2c28809f54425b6b3948747d) | docs: tag apps based on personal usage |
+| 2026-03-29 | [5de92f7](https://github.com/nyas1/Material-You-app-list/commit/5de92f7d3a29d4f9ce480dc5a7c0e42258c961df) | Replace CuteCalc with Vanilla in README |
+| 2026-03-29 | [90d2ee4](https://github.com/nyas1/Material-You-app-list/commit/90d2ee4bccf070ebd227397a1b0e0fa3aac2182b) | Remove CuteMusic and add Chocola to music players list |
 | 2026-03-28 | [28d0406](https://github.com/nyas1/Material-You-app-list/commit/28d0406d758ca49423c856983eeae9bc0f528def) | docs: shorten DosesPro app name in README list |
 | 2026-03-28 | [e1999f7](https://github.com/nyas1/Material-You-app-list/commit/e1999f79a0c523ebde86af1cdae9ddc8c03107d2) | docs: add and update apps from recent issues |
 | 2026-03-28 | [fb03951](https://github.com/nyas1/Material-You-app-list/commit/fb03951d5c7ab95fef73b3ccf99a828366e971f1) | Merge pull request #431 from akshaynexus/add-dosespro |
@@ -104,7 +108,3 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-02-24 | [39cc8d7](https://github.com/nyas1/Material-You-app-list/commit/39cc8d78168b37934597b77503a8f110cea87e3f) | Add Rhythm music player to README |
 | 2026-02-24 | [ddb1597](https://github.com/nyas1/Material-You-app-list/commit/ddb1597719f251f12669dd9a49e978f094281484) | Music players sorted for `MD3E` listed top |
 | 2026-02-24 | [0e7103e](https://github.com/nyas1/Material-You-app-list/commit/0e7103e7b0b57bbb2a2764f319421d1fc44321fa) | Updated App Ops |
-| 2026-02-24 | [00df629](https://github.com/nyas1/Material-You-app-list/commit/00df62906269a1eb13e2b8b14b558f514a3b78df) | Add Stealth to social reddit clients |
-| 2026-02-22 | [f624e6d](https://github.com/nyas1/Material-You-app-list/commit/f624e6dce2ccf47e4abedf19e926d3f37802d685) | Remove grave marker from LibChecker |
-| 2026-02-22 | [04bc916](https://github.com/nyas1/Material-You-app-list/commit/04bc916b1852a186e31392ff83c25f5eb5ce328b) | Update InstallerX-Revived entry in README |
-| 2026-02-17 | [afc67ca](https://github.com/nyas1/Material-You-app-list/commit/afc67ca7afa6ce921cca29466f463d1083f13af3) | Merge pull request #406 from manveen11/main |
