@@ -294,11 +294,43 @@ export default {
       })
     }
 
+    const updateSyncBadge = () => {
+      if (!isHomeRoute()) return
+
+      const epoch = Number((router.route.data.frontmatter as any)?.syncLastEpoch ?? 0)
+      if (!Number.isFinite(epoch) || epoch <= 0) return
+
+      const now = Date.now()
+      const diffMs = Math.max(0, now - epoch * 1000)
+      const minute = 60 * 1000
+      const hour = 60 * minute
+      const day = 24 * hour
+
+      let label = 'Synced just now'
+
+      if (diffMs >= day) {
+        const days = Math.floor(diffMs / day)
+        label = `Synced ${days} day${days === 1 ? '' : 's'} ago`
+      } else if (diffMs >= hour) {
+        const hours = Math.floor(diffMs / hour)
+        label = `Synced ${hours} hour${hours === 1 ? '' : 's'} ago`
+      } else if (diffMs >= minute) {
+        const minutes = Math.floor(diffMs / minute)
+        label = `Synced ${minutes} min${minutes === 1 ? '' : 's'} ago`
+      }
+
+      const link = document.querySelector<HTMLAnchorElement>('.VPHomeHero .actions a[href="/changelog"]')
+      if (link) {
+        link.textContent = label
+      }
+    }
+
     runAfterHydrationPaint(() => {
       applyTwemoji()
       applyTocToggle()
       syncHomePageClass()
       setupHomeGrid()
+      updateSyncBadge()
     })
     router.onAfterRouteChanged = () => {
       runAfterHydrationPaint(() => {
@@ -306,6 +338,7 @@ export default {
         applyTocToggle()
         syncHomePageClass()
         setupHomeGrid()
+        updateSyncBadge()
       })
     }
   }

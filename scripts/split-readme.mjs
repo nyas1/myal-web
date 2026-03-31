@@ -1,7 +1,9 @@
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { execSync } from 'node:child_process'
+import { execFileSync } from 'node:child_process'
 import { findFirstHeading, README_HEADINGS } from './readme-structure.mjs'
+
+const SYNC_COMMIT_SUBJECT = 'chore(sync): update from nyas1/Material-You-app-list'
 
 const root = resolve(process.cwd())
 const readmePath =
@@ -14,6 +16,7 @@ const docsDir = resolve(root, 'docs')
 const sourceReadmePath = existsSync(readmePath) ? readmePath : fallbackReadmePath
 const readme = readFileSync(sourceReadmePath, 'utf8').replace(/\r\n/g, '\n')
 const lastSyncDate = getLastSyncDate(sourceReadmePath)
+const lastSyncEpoch = Math.floor(lastSyncDate.getTime() / 1000)
 
 const newlyStart = findFirstHeading(readme, README_HEADINGS.newlyAdded)
 const appsStart = findFirstHeading(readme, README_HEADINGS.appsStart)
@@ -43,7 +46,6 @@ function normalizeAppsStructure(markdown) {
 
 const APP_LINE_PATTERN =
   /^\s*[-*+]\s+(?:\*\*)?`[^`]+`(?:\*\*)?\s+\[([^\]]+?)\]\(\s*([^) \t]+)\s*(?:\s+(['"])(.*?)\3)?\s*\)\s*(?:<sup>.*)?\s*$/gmu
-const SYNC_COMMIT_SUBJECT = 'chore(sync): update from nyas1/Material-You-app-list'
 
 const newlyAdded = stripTocBacklinks(readme.slice(newlyStart, appsStart).trim())
 const apps = normalizeAppsStructure(stripTocBacklinks(readme.slice(appsStart, sourcesStart).trim()))
@@ -102,31 +104,10 @@ function normalizeUrlKey(rawUrl) {
 }
 
 const appCount = getUniqueAppCount(apps)
-const syncLabel = `Synced ${formatSyncRelative(lastSyncDate)}`
-
-function formatSyncRelative(date) {
-  const diffMs = Math.max(0, Date.now() - date.getTime())
-  const minute = 60 * 1000
-  const hour = 60 * minute
-  const day = 24 * hour
-
-  if (diffMs < minute) return 'just now'
-  if (diffMs < hour) {
-    const minutes = Math.floor(diffMs / minute)
-    return `${minutes}min ago`
-  }
-  if (diffMs < day) {
-    const hours = Math.floor(diffMs / hour)
-    return `${hours}hr ago`
-  }
-
-  const days = Math.floor(diffMs / day)
-  return `${days} day${days === 1 ? '' : 's'} ago`
-}
 
 function getLastSyncDate(filePath) {
   try {
-    const output = execSync('git log -n 200 --format=%ct%x09%s', {
+    const output = execFileSync('git', ['log', '-n', '200', '--format=%ct%x09%s'], {
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', 'ignore']
     })
@@ -147,7 +128,7 @@ function getLastSyncDate(filePath) {
   return statSync(filePath).mtime
 }
 
-const indexDoc = `---\ntitle: Material You App List\nlayout: home\nhero:\n  name: Material You Apps List\n  tagline: Curated apps that follow Material Design 3 ✨\n  image:\n    src: /home-hero.svg\n    alt: Material You\n  actions:\n    - theme: brand\n      text: Browse Apps\n      link: /app\n    - theme: alt\n      text: ${appCount} Apps\n      link: /app\n    - theme: alt\n      text: ${syncLabel}\n      link: /changelog\nfeatures:\n  - icon: '<span class="myal-home-icon myal-home-icon-folder-search" aria-hidden="true"></span>'\n    title: App Directory\n    details: Browse all categories from social and productivity to tools and privacy.\n  - icon: '<span class="myal-home-icon myal-home-icon-sparkles-alt" aria-hidden="true"></span>'\n    title: Newly Added Apps\n    details: Quickly see the latest apps added to the list.\n  - icon: '<span class="myal-home-icon myal-home-icon-note-book" aria-hidden="true"></span>'\n    title: Commit Changelog\n    details: Track repository updates with commit dates and messages.\n---\n`
+const indexDoc = `---\ntitle: Material You App List\nlayout: home\nsyncLastEpoch: ${lastSyncEpoch}\nhero:\n  name: Material You Apps List\n  tagline: Curated apps that follow Material Design 3 ✨\n  image:\n    src: /home-hero.svg\n    alt: Material You\n  actions:\n    - theme: brand\n      text: Browse Apps\n      link: /app\n    - theme: alt\n      text: ${appCount} Apps\n      link: /app\n    - theme: alt\n      text: Synced\n      link: /changelog\nfeatures:\n  - icon: '<span class="myal-home-icon myal-home-icon-folder-search" aria-hidden="true"></span>'\n    title: App Directory\n    details: Browse all categories from social and productivity to tools and privacy.\n  - icon: '<span class="myal-home-icon myal-home-icon-sparkles-alt" aria-hidden="true"></span>'\n    title: Newly Added Apps\n    details: Quickly see the latest apps added to the list.\n  - icon: '<span class="myal-home-icon myal-home-icon-note-book" aria-hidden="true"></span>'\n    title: Commit Changelog\n    details: Track repository updates with commit dates and messages.\n---\n`
 
 const appDoc = `---\ntitle: Apps\n---\n\n<!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->\n\n${apps}\n`
 

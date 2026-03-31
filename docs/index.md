@@ -1,6 +1,7 @@
 ---
 title: Material You App List
 layout: home
+syncLastEpoch: 1774932192
 hero:
   name: Material You Apps List
   tagline: Curated apps that follow Material Design 3 ✨
@@ -15,7 +16,7 @@ hero:
       text: 1123 Apps
       link: /app
     - theme: alt
-      text: Synced 19min ago
+      text: Synced
       link: /changelog
 features:
   - icon: '<span class="myal-home-icon myal-home-icon-folder-search" aria-hidden="true"></span>'
