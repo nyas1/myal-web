@@ -84,7 +84,6 @@ body,
   opacity: 1;
   pointer-events: none;
   z-index: 4;
-  animation: myal-album-spin-reverse 18s linear infinite;
 }
 
 .VPHome> :not(.myal-home-grid-canvas) {
@@ -140,9 +139,6 @@ body,
 .VPHome .VPHero .image-container {
   width: 360px;
   height: 360px;
-  transform: rotate(0deg);
-  transform-origin: 50% 50%;
-  animation: myal-album-spin 18s linear infinite;
   overflow: visible;
 }
 
@@ -166,6 +162,9 @@ body,
   max-width: 175px !important;
   max-height: 175px !important;
   z-index: 2;
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
+  animation: myal-album-spin 18s linear infinite;
 }
 
 @media (min-width: 640px) {
@@ -436,11 +435,7 @@ img.emoji {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .VPHome .VPHero .image-container {
-    animation: none;
-  }
-
-  .myal-home-grid-page .VPHome .VPHero .image-container::before {
+  .VPHome .VPHero .image-src {
     animation: none;
   }
 }
