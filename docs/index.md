@@ -9,9 +9,6 @@ hero:
     src: /home-hero.svg
     alt: Material You
   actions:
-    - theme: brand
-      text: Browse Apps
-      link: /app
     - theme: alt
       text: 1123 Apps
       link: /app
@@ -19,13 +16,13 @@ hero:
       text: Synced
       link: /changelog
 features:
-  - icon: '<span class="myal-home-icon myal-home-icon-folder-search" aria-hidden="true"></span>'
+  - icon: '<span class="material-icons-outlined myal-feature-icon">grid_view</span>'
     title: App Directory
     details: Browse all categories from social and productivity to tools and privacy.
-  - icon: '<span class="myal-home-icon myal-home-icon-sparkles-alt" aria-hidden="true"></span>'
+  - icon: '<span class="material-icons-outlined myal-feature-icon">new_releases</span>'
     title: Newly Added Apps
     details: Quickly see the latest apps added to the list.
-  - icon: '<span class="myal-home-icon myal-home-icon-note-book" aria-hidden="true"></span>'
+  - icon: '<span class="material-icons-outlined myal-feature-icon">history</span>'
     title: Commit Changelog
     details: Track repository updates with commit dates and messages.
 ---
