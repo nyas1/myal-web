@@ -104,7 +104,7 @@ export function mergeChangelogDoc(filePath, tableBlock, { defaultFrontmatter, up
 
   const autoIdx = body.indexOf(AUTO)
   if (autoIdx !== -1) {
-    const head = body.slice(0, autoIdx).replace(/\s+$/, '')
+    const head = body.slice(0, autoIdx).trimStart().replace(/\s+$/, '')
     const afterAuto = body.slice(autoIdx + AUTO.length)
     const nl = afterAuto.indexOf('\n')
     const rest = nl === -1 ? '' : afterAuto.slice(nl + 1)
@@ -122,7 +122,7 @@ export function mergeChangelogDoc(filePath, tableBlock, { defaultFrontmatter, up
   const tableHeaderMatch = body.match(/^\| Date \| Commit \| Message \|$/m)
   let preamble = defaultPreamble.trimEnd()
   if (tableHeaderMatch && tableHeaderMatch.index !== undefined) {
-    preamble = body.slice(0, tableHeaderMatch.index).trimEnd()
+    preamble = body.slice(0, tableHeaderMatch.index).trimStart().trimEnd()
   }
 
   const headBlock = preamble ? `${preamble}\n\n` : ''

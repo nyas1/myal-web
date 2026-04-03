@@ -2,10 +2,6 @@
 title: Changelog
 ---
 
-
-
-
-
 # 🪵 Changelog
 
 Latest commits with date from [nyas1/Material-You-app-list](https://github.com/nyas1/Material-You-app-list).

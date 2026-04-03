@@ -23,8 +23,12 @@ function getPrimaryTag(line: string) {
 }
 
 function isArchivedEntry(element: HTMLLIElement, lineText: string) {
-  const html = element.innerHTML
-  return /🪦/.test(lineText) || html.includes('alt="🪦"') || /1fae6\.svg/i.test(html)
+  if (/🪦/.test(lineText)) return true
+  if (element.querySelector('img[alt="🪦"]')) return true
+  return Array.from(element.querySelectorAll('img')).some((img) => {
+    const src = img.getAttribute('src') ?? ''
+    return /1faa6\.svg/i.test(src) || /1fae6\.svg/i.test(src)
+  })
 }
 
 function applyAppListFilters(isAppPage: boolean) {
@@ -64,7 +68,10 @@ function applyAppListFilters(isAppPage: boolean) {
   })
 }
 
-/** Call once from a component that is always mounted (e.g. MobileFabCluster). */
+/**
+ * Wire route/tags/FOSS/archived watches once. Call from a long-lived layout piece
+ * (currently `AppBeerSidebarNav.vue`); filter FABs only toggle the shared refs.
+ */
 export function useAppListFilterEffects() {
   const route = useRoute()
   const { page } = useData()
