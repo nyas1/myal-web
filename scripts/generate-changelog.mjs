@@ -1,10 +1,14 @@
-import { writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { mergeChangelogDoc } from './doc-merge.mjs'
 
 const upstreamRepo = process.env.UPSTREAM_REPO ?? 'nyas1/Material-You-app-list'
-const perPage = Number(process.env.CHANGELOG_MAX ?? '100')
+/** GitHub caps `per_page` at 100 for this endpoint; never request or show more. */
+const MAX_COMMITS = 100
+const fromEnv = Number(process.env.CHANGELOG_MAX)
+const commitLimit =
+  Number.isFinite(fromEnv) && fromEnv > 0 ? Math.min(Math.floor(fromEnv), MAX_COMMITS) : MAX_COMMITS
 const repoUrl = `https://github.com/${upstreamRepo}`
-const apiUrl = `https://api.github.com/repos/${upstreamRepo}/commits?per_page=${perPage}`
+const apiUrl = `https://api.github.com/repos/${upstreamRepo}/commits?per_page=${commitLimit}`
 
 const headers = {
   Accept: 'application/vnd.github+json',
@@ -26,7 +30,7 @@ if (!Array.isArray(commits)) {
   throw new Error('Unexpected commits API response')
 }
 
-const rows = commits.map((item) => {
+const rows = commits.slice(0, commitLimit).map((item) => {
   const hash = item.sha
   const short = String(hash).slice(0, 7)
   const dateIso = item?.commit?.author?.date ?? ''
@@ -38,7 +42,11 @@ const rows = commits.map((item) => {
   return `| ${date} | ${commitLink} | ${subject} |`
 })
 
-const md = `---\ntitle: Changelog\n---\n\n# Changelog\n\nLatest commits with date from [${upstreamRepo}](${repoUrl}).\n\n| Date | Commit | Message |\n| --- | --- | --- |\n${rows.join('\n')}\n`
+const table = `| Date | Commit | Message |\n| --- | --- | --- |\n${rows.join('\n')}\n`
 
-writeFileSync(resolve(process.cwd(), 'docs/changelog.md'), md)
+mergeChangelogDoc(resolve(process.cwd(), 'docs/changelog.md'), table, {
+  defaultFrontmatter: 'title: Changelog',
+  upstreamRepo,
+  repoUrl
+})
 console.log('Generated docs/changelog.md')

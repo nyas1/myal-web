@@ -1,7 +1,8 @@
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { execFileSync } from 'node:child_process'
 import { findFirstHeading, README_HEADINGS } from './readme-structure.mjs'
+import { patchOrCreateHomeIndex, writeMergedReadmeDerivedDoc } from './doc-merge.mjs'
 
 const SYNC_COMMIT_SUBJECT = 'chore(sync): update from nyas1/Material-You-app-list'
 
@@ -128,18 +129,24 @@ function getLastSyncDate(filePath) {
   return statSync(filePath).mtime
 }
 
-const indexDoc = `---\ntitle: Material You App List\nlayout: home\nsyncLastEpoch: ${lastSyncEpoch}\nhero:\n  name: Material You Apps List\n  tagline: Curated apps that follow Material Design 3 ✨\n  image:\n    src: /home-hero.svg\n    alt: Material You\n  actions:\n    - theme: alt\n      text: ${appCount} Apps\n      link: /app\n    - theme: alt\n      text: Synced\n      link: /changelog\nfeatures:\n  - icon: '<span class="material-icons-outlined myal-feature-icon">grid_view</span>'\n    title: App Directory\n    details: Browse all categories from social and productivity to tools and privacy.\n  - icon: '<span class="material-icons-outlined myal-feature-icon">new_releases</span>'\n    title: Newly Added Apps\n    details: Quickly see the latest apps added to the list.\n  - icon: '<span class="material-icons-outlined myal-feature-icon">history</span>'\n    title: Commit Changelog\n    details: Track repository updates with commit dates and messages.\n---\n`
-
-const appDoc = `---\ntitle: Apps\n---\n\n<!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->\n\n${apps}\n`
-
-const newlyDoc = `---\ntitle: Newly Added Apps\n---\n\n<!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->\n\n${newlyAdded}\n`
-
-const creditsDoc = `---\ntitle: Credits\n---\n\n<!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->\n\n${sources}\n`
+const indexDoc = `---\ntitle: MYAL\nlayout: home\nsyncLastEpoch: ${lastSyncEpoch}\nhero:\n  name: Material You Apps List\n  tagline: Curated apps that follow Material Design 3 ✨\n  image:\n    src: /hero-cookie.svg\n    alt: Material You\n  actions:\n    - theme: alt\n      text: ${appCount} Apps\n      link: /app\n    - theme: alt\n      text: Synced\n      link: /changelog\nfeatures:\n  - icon: '<span class="material-icons-outlined myal-feature-icon">grid_view</span>'\n    title: App Directory\n    details: Browse all categories from social and productivity to tools and privacy.\n  - icon: '<span class="material-icons-outlined myal-feature-icon">new_releases</span>'\n    title: Newly Added Apps\n    details: Quickly see the latest apps added to the list.\n  - icon: '<span class="material-icons-outlined myal-feature-icon">history</span>'\n    title: Commit Changelog\n    details: Track repository updates with commit dates and messages.\n---\n`
 
 mkdirSync(docsDir, { recursive: true })
-writeFileSync(resolve(docsDir, 'index.md'), indexDoc)
-writeFileSync(resolve(docsDir, 'app.md'), appDoc)
-writeFileSync(resolve(docsDir, 'newly-added-apps.md'), newlyDoc)
-writeFileSync(resolve(docsDir, 'credits.md'), creditsDoc)
+patchOrCreateHomeIndex(resolve(docsDir, 'index.md'), {
+  syncLastEpoch: lastSyncEpoch,
+  appCount,
+  indexDocFullDefault: indexDoc
+})
+writeMergedReadmeDerivedDoc(resolve(docsDir, 'app.md'), 'title: Apps', apps)
+writeMergedReadmeDerivedDoc(
+  resolve(docsDir, 'newly-added-apps.md'),
+  'title: Newly Added Apps\noutline: false',
+  newlyAdded
+)
+writeMergedReadmeDerivedDoc(
+  resolve(docsDir, 'credits.md'),
+  'title: Credits\noutline: false',
+  sources
+)
 
 console.log('Generated docs/index.md, docs/app.md, docs/newly-added-apps.md, docs/credits.md')

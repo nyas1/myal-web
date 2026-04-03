@@ -1,19 +1,23 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
+import { useData, withBase } from 'vitepress'
 
 const { frontmatter } = useData()
 </script>
 
 <template>
   <Transition name="myal-fab">
-    <a
+    <div
       v-if="frontmatter.layout === 'home'"
-      href="/app"
-      class="myal-browse-fab"
-      aria-label="Browse Apps"
+      class="beer myal-browse-apps-beer"
     >
-      <span class="myal-browse-fab-icon material-icons-outlined" aria-hidden="true">apps</span>
-      Browse Apps
-    </a>
+      <a
+        class="button elevate myal-browse-apps-link"
+        :href="withBase('/app')"
+        aria-label="Browse Apps"
+      >
+        <i class="material-icons-outlined" aria-hidden="true">apps</i>
+        <span>Browse Apps</span>
+      </a>
+    </div>
   </Transition>
 </template>
