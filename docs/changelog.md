@@ -8,6 +8,10 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-04-04 | [c8b09b7](https://github.com/nyas1/Material-You-app-list/commit/c8b09b7ff159de7a018b8c9d78f625ecbb5abb78) | README: formatting fixes, list cleanup, and tags |
+| 2026-04-04 | [1ca19f3](https://github.com/nyas1/Material-You-app-list/commit/1ca19f35aa1c9511c3200a3c7cbc971ef9baf544) | docs: add Fcitx5 for Android and Torrent Search |
+| 2026-04-04 | [ca54d36](https://github.com/nyas1/Material-You-app-list/commit/ca54d36a47292f9285ef07cd438fc1359fe5dab1) | docs: add RebootNya, GPTMobile, FoodYou, AniSync |
+| 2026-04-04 | [57e234c](https://github.com/nyas1/Material-You-app-list/commit/57e234c77591a1a426da4b7fa0164aad66cc1196) | Update Better xCloud and Smart Cleaner entries |
 | 2026-03-30 | [1f6a431](https://github.com/nyas1/Material-You-app-list/commit/1f6a431d2ac815f5017b7b2e9dc7827c02ab507a) | Merge pull request #432 from sosauce/main |
 | 2026-03-30 | [0d4b9c9](https://github.com/nyas1/Material-You-app-list/commit/0d4b9c9eb4fa2a42e7a4cd4a495b0581375b2f1f) | docs: add LeanType & DisCorkie; cleanup Play Store links |
 | 2026-03-29 | [9f7f1fa](https://github.com/nyas1/Material-You-app-list/commit/9f7f1fa95e15067a2c28809f54425b6b3948747d) | docs: tag apps based on personal usage |
@@ -104,7 +108,3 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-02-26 | [0992429](https://github.com/nyas1/Material-You-app-list/commit/0992429d614852dd6ff745682c43571f074ab658) | Add tombstone emoji to Clipious and Harmony Music |
 | 2026-02-26 | [a674ca1](https://github.com/nyas1/Material-You-app-list/commit/a674ca1f6ef088e570b602a2172c7731eafbf50f) | Rename Vibe Music to Gyawun Music |
 | 2026-02-25 | [fc0dbe9](https://github.com/nyas1/Material-You-app-list/commit/fc0dbe9da0db840222fee7c750ed1b59ac13c3da) | Add Seal Plus to YouTube downloaders |
-| 2026-02-25 | [a8cc417](https://github.com/nyas1/Material-You-app-list/commit/a8cc4178530a0ceabffbe3356c089c0c7c7b14f6) | Reverts false changes |
-| 2026-02-24 | [39cc8d7](https://github.com/nyas1/Material-You-app-list/commit/39cc8d78168b37934597b77503a8f110cea87e3f) | Add Rhythm music player to README |
-| 2026-02-24 | [ddb1597](https://github.com/nyas1/Material-You-app-list/commit/ddb1597719f251f12669dd9a49e978f094281484) | Music players sorted for `MD3E` listed top |
-| 2026-02-24 | [0e7103e](https://github.com/nyas1/Material-You-app-list/commit/0e7103e7b0b57bbb2a2764f319421d1fc44321fa) | Updated App Ops |
