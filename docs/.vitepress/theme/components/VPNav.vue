@@ -168,10 +168,6 @@ onUnmounted(() => {
     display: none;
   }
 }
-
-:deep(.VPNav.screen-open) {
-  z-index: var(--vp-z-index-nav) !important;
-}
 </style>
 
 <style>

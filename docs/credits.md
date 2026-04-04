@@ -1,5 +1,6 @@
 ---
 title: Credits
+outline: false
 ---
 
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
@@ -10,3 +11,5 @@ title: Credits
 - **Telegram:** [popMODS](https://t.me/popMODS), [WSTprojects](https://t.me/WSTprojects), [WPX Projects](https://t.me/WSTprojects), [DroidDen](https://t.me/DroidDen), [FossDroid](https://t.me/FossDroidAndroid), [Free Softwares [Android]](https://t.me/foss_Android)
 - **Similar Lists:** [sysworx's](https://github.com/sysworx/Material-You-app-list)<sup><sup>🪦</sup></sup>, [Naverim's](https://github.com/Naverim/Material-You-app-list)<sup><sup>🪦</sup></sup>, [TeaEndsAcronyms's](https://github.com/AAGaming00/Material-You-Apps)<sup><sup>🪦</sup></sup>, [misaka-13766's](https://github.com/CHNJohnHK/Material-You-App-Repository)<sup><sup>🪦</sup></sup>
 	- **Fluent Design Apps:** [HotarunIchijou's](https://github.com/HotarunIchijou/fluent-design-app-list), [DesignLipsx's](https://github.com/DesignLipsx/WinUI-3-Apps-List)
+
+<!-- END AUTO-GENERATED -->

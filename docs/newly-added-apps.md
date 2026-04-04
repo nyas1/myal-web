@@ -1,5 +1,6 @@
 ---
 title: Newly Added Apps
+outline: false
 ---
 
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
@@ -36,3 +37,5 @@ title: Newly Added Apps
 - `MDY` [Harmonoid](https://github.com/harmonoid/harmonoid) <sup>`FOSS`</sup>
 - `MDY` [SaTunes](https://codeberg.org/antoinepirlot/Satunes) <sup>`FOSS`</sup>
 - `MD3E` [VIVI](https://github.com/vivizzz007/vivi-music) <sup>`FOSS`</sup>
+
+<!-- END AUTO-GENERATED -->

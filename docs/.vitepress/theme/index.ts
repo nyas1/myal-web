@@ -5,11 +5,21 @@ import twemoji from 'twemoji'
 import Layout from './Layout.vue'
 import './style.css'
 
+let beercssClientLoaded = false
+
 export default {
   extends: DefaultTheme,
   Layout,
   enhanceApp({ router }) {
     if (typeof window === 'undefined') return
+
+    // Beercss "scoped" scopes component styles under `.beer`; the bundle may still
+    // ship a few global :root/html/body rules—keep Beer UI markup inside `.beer`.
+    if (!beercssClientLoaded) {
+      beercssClientLoaded = true
+      void import('beercss/scoped')
+      void import('material-dynamic-colors')
+    }
 
     const analyticsWindow = window as Window & { __myalVercelAnalyticsInitialized?: boolean }
     if (!analyticsWindow.__myalVercelAnalyticsInitialized) {

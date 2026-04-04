@@ -1,7 +1,7 @@
 import type { DefaultTheme } from 'vitepress'
 
 export const meta = {
-  name: 'Material You App List',
+  name: 'MYAL',
   description: 'A curated list of Android apps with Material You / Material Design support.',
   hostname: 'https://nyas1.github.io/Material-You-app-list'
 }
@@ -33,7 +33,7 @@ export const nav: DefaultTheme.NavItem[] = [
     items: [
       { text: '📑 Changelog', link: '/changelog' },
       { text: '📝 Credits', link: '/credits' },
-      { text: '💡 How to contribute', link: '/contributing' }
+      { text: '💡 Contribute', link: '/contributing' }
     ]
   }
 ]
@@ -48,7 +48,7 @@ export const sidebar: DefaultTheme.Sidebar = [
       { text: '🆕 Newly Added Apps', link: '/newly-added-apps' },
       { text: '📑 Changelog', link: '/changelog' },
       { text: '📝 Credits', link: '/credits' },
-      { text: '💡 How to contribute', link: '/contributing' }
+      { text: '💡 Contribute', link: '/contributing' }
     ]
   }
 ]
