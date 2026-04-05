@@ -64,17 +64,16 @@ defineProps<{
 <style scoped>
 .VPFeature {
   display: block;
-  border: 1px solid var(--vp-c-bg-soft);
-  border-radius: 12px;
+  border: none;
+  /* MD3 large shape — radius token shared with local search modal (style.css) */
+  border-radius: var(--myal-home-card-radius);
   height: 100%;
   background-color: var(--vp-c-bg-soft);
-  transition:
-    border-color 0.25s,
-    background-color 0.25s;
+  transition: background-color 0.25s;
 }
 
 .VPFeature.link:hover {
-  border-color: var(--vp-c-brand-1);
+  background-color: color-mix(in srgb, var(--vp-c-brand-1) 12%, var(--vp-c-bg-soft));
 }
 
 .box {
@@ -93,7 +92,7 @@ defineProps<{
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  border-radius: 6px;
+  border-radius: 12px;
   background-color: var(--vp-c-default-soft);
   width: 48px;
   height: 48px;
@@ -158,5 +157,6 @@ defineProps<{
 
 .link-text-icon {
   margin-left: 6px;
+  color: #ce96ff;
 }
 </style>

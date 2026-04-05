@@ -335,21 +335,17 @@ export default {
       }
     }
 
-    runAfterHydrationPaint(() => {
+    const runPostHydrationEffects = () => {
       applyTwemoji()
       applyTocToggle()
       syncHomePageClass()
       setupHomeGrid()
       updateSyncBadge()
-    })
+    }
+
+    runAfterHydrationPaint(runPostHydrationEffects)
     router.onAfterRouteChanged = () => {
-      runAfterHydrationPaint(() => {
-        applyTwemoji()
-        applyTocToggle()
-        syncHomePageClass()
-        setupHomeGrid()
-        updateSyncBadge()
-      })
+      runAfterHydrationPaint(runPostHydrationEffects)
     }
   }
 } satisfies Theme

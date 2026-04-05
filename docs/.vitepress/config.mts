@@ -45,7 +45,10 @@ export default defineConfig({
     },
     socialLinks,
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        detailedView: true
+      }
     },
     editLink: {
       pattern: 'https://github.com/nyas1/Material-You-app-list/edit/main/docs/:path',

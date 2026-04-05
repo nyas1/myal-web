@@ -2,8 +2,7 @@ import type { DefaultTheme } from 'vitepress'
 
 export const meta = {
   name: 'MYAL',
-  description: 'A curated list of Android apps with Material You / Material Design support.',
-  hostname: 'https://nyas1.github.io/Material-You-app-list'
+  description: 'A curated list of Android apps with Material You / Material Design support.'
 }
 
 export const socialLinks: DefaultTheme.SocialLink[] = [
