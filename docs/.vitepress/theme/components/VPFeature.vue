@@ -157,6 +157,6 @@ defineProps<{
 
 .link-text-icon {
   margin-left: 6px;
-  color: #ce96ff;
+  color: var(--vp-c-brand-1);
 }
 </style>

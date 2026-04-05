@@ -27,7 +27,7 @@ function isArchivedEntry(element: HTMLLIElement, lineText: string) {
   if (element.querySelector('img[alt="🪦"]')) return true
   return Array.from(element.querySelectorAll('img')).some((img) => {
     const src = img.getAttribute('src') ?? ''
-    return /1faa6\.svg/i.test(src) || /1fae6\.svg/i.test(src)
+    return /1faa6\.svg/i.test(src)
   })
 }
 

@@ -18,7 +18,6 @@ export default {
     if (!beercssClientLoaded) {
       beercssClientLoaded = true
       void import('beercss/scoped')
-      void import('material-dynamic-colors')
     }
 
     const analyticsWindow = window as Window & { __myalVercelAnalyticsInitialized?: boolean }

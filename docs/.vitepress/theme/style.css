@@ -24,8 +24,6 @@
   --myal-on-primary: var(--vp-c-black);
   /* Home feature cards (VPFeature), local search modal shell — keep in sync */
   --myal-home-card-radius: 36px;
-  /* Home feature cards + marketing icons */
-  --myal-feature-icon-color: #ce96ff;
   --myal-status-live: #22c55e;
   --myal-status-live-ring: rgba(34, 197, 94, 0.65);
   --myal-hero-image-glow: radial-gradient(circle at 50% 50%,

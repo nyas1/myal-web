@@ -20,7 +20,10 @@ export const CHANGELOG_TABLE_AUTO_COMMENT =
   '<!-- AUTO-GENERATED: upstream commit table (scripts/generate-changelog.mjs) -->'
 
 /**
- * Keep frontmatter, optional markdown before/after the fenced block, replace only inner.
+ * Keep frontmatter and optional markdown before the AUTO marker.
+ * Replace only the generated inner content between AUTO and END markers.
+ * Markdown after the block is preserved only when `END_AUTO_GENERATED` is present;
+ * if AUTO exists but END is missing, content after AUTO may be replaced on the next write.
  */
 export function writeMergedReadmeDerivedDoc(filePath, defaultFrontmatter, generatedInner) {
   const inner = generatedInner.trimEnd()
@@ -124,6 +127,7 @@ export function mergeChangelogDoc(filePath, tableBlock, { defaultFrontmatter, up
   if (tableHeaderMatch && tableHeaderMatch.index !== undefined) {
     preamble = body.slice(0, tableHeaderMatch.index).trimStart().trimEnd()
   }
+  preamble = preamble.trimStart().trimEnd()
 
   const headBlock = preamble ? `${preamble}\n\n` : ''
   writeFileSync(filePath, `---\n${fm}\n---\n\n${headBlock}${AUTO}\n\n${table}\n\n${END}\n`)
