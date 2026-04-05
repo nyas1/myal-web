@@ -1,7 +1,7 @@
 ---
 title: Material You App List
 layout: home
-syncLastEpoch: 1775276715
+syncLastEpoch: 1775302762
 hero:
   name: Material You Apps List
   tagline: Curated apps that follow Material Design 3 ✨
