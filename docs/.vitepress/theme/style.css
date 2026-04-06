@@ -36,10 +36,9 @@
   --vp-font-family-base: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
   /* Shared sidebar geometry (avoid fixed pixels across breakpoints) */
   --myal-sidebar-row-size: 3.5rem;
-  /* Default VP is 272px — derive a narrower width from nav rhythm */
-  --vp-sidebar-width: calc(var(--vp-nav-height) * 2.5);
-  /* Collapsed rail width fits one icon row + sidebar paddings */
-  --myal-sidebar-collapsed-width: calc(var(--myal-sidebar-row-size) + (var(--myal-sidebar-inline-pad) * 2));
+  /* Expanded rail: fixed width (no viewport scaling — same idea as collapsed). Drives VP layout. */
+  --myal-sidebar-expanded-width: 210px;
+  --vp-sidebar-width: var(--myal-sidebar-expanded-width);
   /* Corner blend pseudo-element seam offsets (desktop) */
   /* Horizontal nudge for corner patch (px okay here; keeps math stable across rem changes) */
   --myal-corner-seam-x: 0px;
@@ -49,6 +48,19 @@
   --myal-sidebar-seam-x: var(--vp-sidebar-width);
   /* Sidebar rail: symmetric inset + link row padding */
   --myal-sidebar-inline-pad: 0.25rem;
+  /*
+   * Collapsed rail: intrinsic min (brand row + aside padding) × 1.25 — 25% wider than the
+   * minimum that prevented overflow into `#VPContent`.
+   */
+  --myal-sidebar-collapsed-width: calc(
+    (
+      var(--myal-sidebar-inline-pad) * 2 +
+      var(--myal-beer-rail-inline) +
+      var(--myal-beer-link-inline) * 2 +
+      var(--myal-sidebar-row-size) +
+      var(--myal-rail-logo-nudge)
+    ) * 1.25
+  );
   /* Nudge sidebar content (MYAL rail, nav) slightly below the top edge */
   --myal-sidebar-offset-top: 10px;
   --myal-beer-rail-inline: 0.0625rem;
@@ -73,23 +85,10 @@
   --myal-on-primary: #1a1125;
 }
 
-/* When the Beer rail is collapsed, also collapse the VPSidebar width so layout shifts. */
+/* Narrow the sidebar column when the Beer rail is collapsed (same token as main offset — no overlap) */
 @media (min-width: 960px) {
   html:has(.myal-rail-collapsed) {
     --vp-sidebar-width: var(--myal-sidebar-collapsed-width);
-  }
-
-  /* Smooth the width change a bit */
-  aside.VPSidebar {
-    transition: width 220ms ease;
-  }
-}
-
-/* Wide screens: account for centered layout letterbox in sidebar seam math */
-@media (min-width: 1440px) {
-  :root {
-    /* Match `.VPNav:has(.VPNavBar.has-sidebar)` fixed `left` (start of main column) */
-    --myal-sidebar-seam-x: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
   }
 }
 
@@ -208,11 +207,6 @@
     content: '';
     position: fixed;
     top: calc(var(--vp-layout-top-height, 0px) + var(--vp-nav-height) + var(--myal-corner-seam-y));
-    /*
-     * Keep the tile in the main column (x ≥ seam). If it sits left of the seam it lives entirely
-     * under `aside.VPSidebar` and the rail’s opaque fill paints over it — fine when it was red
-     * in a visible gap, invisible with the real nav/content background.
-     */
     left: calc(var(--myal-sidebar-seam-x) + var(--myal-corner-seam-x));
     right: auto;
     width: var(--myal-corner-size);
@@ -234,24 +228,16 @@
   }
 }
 
-/* Desktop: extend top navbar background to the full screen width.
-   VP default paints background only behind `.content-body` (ends near social icons). */
+/* Desktop: full-width nav chrome; rail offset + clear VPNavBar `.content` padding-left */
 @media (min-width: 960px) {
   .VPNavBar.has-sidebar:not(.home) {
     background-color: var(--vp-nav-bg-color) !important;
   }
 
-  /* Prevent a second smaller background behind the content body. */
   .VPNavBar.has-sidebar:not(.home) .content-body {
     background-color: transparent !important;
   }
-}
 
-/*
- * Desktop + sidebar: top chrome (search, socials) only occupies the main column — not the rail.
- * Matches VPNavBar `.content` inset so we clear `padding-left` on `.content` (was simulating the rail gap).
- */
-@media (min-width: 960px) and (max-width: 1439px) {
   .VPNav:has(.VPNavBar.has-sidebar) {
     left: var(--vp-sidebar-width) !important;
     right: 0 !important;
@@ -263,15 +249,11 @@
   }
 }
 
+/* ≥1440: main flush after rail; right gutter only (no left letterbox gap beside fixed aside) */
 @media (min-width: 1440px) {
-  .VPNav:has(.VPNavBar.has-sidebar) {
-    left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)) !important;
-    right: 0 !important;
-    width: auto !important;
-  }
-
-  .VPNavBar.has-sidebar .content {
-    padding-left: 0 !important;
+  #VPContent.has-sidebar {
+    padding-left: var(--vp-sidebar-width) !important;
+    padding-right: calc(max(0px, (100vw - var(--vp-layout-max-width)) / 2)) !important;
   }
 }
 
@@ -621,9 +603,8 @@ img.emoji {
     padding-top: 0 !important;
   }
 
-  .VPLocalNav.has-sidebar {
-    padding-left: var(--vp-sidebar-width);
-  }
+  /* No sidebar gutter here: below 960px the sidebar is overlay/drawer, not a persistent column
+     (VitePress only applies `padding-left: var(--vp-sidebar-width)` from 960px in the default theme). */
 
   .VPLocalNav .container {
     box-sizing: border-box;
@@ -800,6 +781,7 @@ aside.VPSidebar .curtain {
     padding-bottom: 96px !important;
     padding-inline: var(--myal-sidebar-inline-pad) !important;
     z-index: var(--vp-z-index-sidebar) !important;
+    transition: width 220ms ease;
   }
 
   aside.VPSidebar .curtain {
@@ -813,6 +795,8 @@ aside.VPSidebar .curtain {
     padding-bottom: 96px !important;
     padding-inline-start: max(var(--myal-sidebar-inline-pad), env(safe-area-inset-left, 0px)) !important;
     padding-inline-end: max(var(--myal-sidebar-inline-pad), env(safe-area-inset-right, 0px)) !important;
+    width: var(--vp-sidebar-width) !important;
+    max-width: var(--vp-sidebar-width) !important;
   }
 }
 
@@ -1014,6 +998,11 @@ aside.VPSidebar .curtain {
   .myal-rail-collapsed .myal-app-beer-nav nav.max:is(.left, .right)>a {
     gap: 0 !important;
   }
+
+  /* Keep glyphs inside the narrowed `aside` width (VP uses `width: var(--vp-sidebar-width)`) */
+  aside.VPSidebar:has(.myal-rail-collapsed) {
+    overflow-x: clip;
+  }
 }
 
 @media (max-width: 959px) {
@@ -1051,33 +1040,58 @@ aside.VPSidebar .curtain {
     color: var(--vp-c-text-2);
   }
 
-  .myal-mobile-bottom-nav .material-icons-outlined {
-    font-size: 1.375rem;
-    line-height: 1;
+  /*
+   * BeerCSS `nav.bottom > a` sets `inline-size: 3.5rem` — that fixed tab width forces the icon
+   * strip into a square, so the active chip reads as a circle. Override width so tabs share
+   * space (`flex: 1`) and icons keep the stock pill: `padding` + `border-radius: 2rem` on `i`.
+   */
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav > a:not(.button, .chip) {
+    flex: 1 1 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.25rem;
+    min-inline-size: 0 !important;
+    max-inline-size: none !important;
+    inline-size: auto !important;
+    padding-inline: 0.125rem;
+    box-sizing: border-box;
+    text-align: center;
   }
 
-  .myal-mobile-bottom-nav>a:not(.button, .chip) {
-    flex: 1 1 0;
-    min-inline-size: 0;
-    max-inline-size: none;
-    inline-size: auto;
-    padding-inline: 0.125rem;
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav > a:not(.button, .chip) > i.material-icons-outlined {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto;
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0.25rem 1rem !important;
+    border-radius: 2rem !important;
+    font-size: 1.375rem !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
   }
 
   .myal-mobile-bottom-label {
     display: block;
+    align-self: stretch;
+    width: 100%;
+    max-width: 100%;
     font-size: 0.625rem;
     font-weight: 600;
     line-height: 1.1;
-    text-align: center;
+    text-align: center !important;
     letter-spacing: 0.01em;
-    max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  .myal-mobile-bottom-nav>a.active:not(.button, .chip)>i {
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav > a.active:not(.button, .chip) > i.material-icons-outlined {
     background-color: var(--vp-c-brand-soft) !important;
     color: var(--vp-c-brand-1) !important;
   }
