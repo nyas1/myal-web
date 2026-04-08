@@ -710,6 +710,49 @@ img.emoji {
   box-sizing: border-box;
 }
 
+/* TOC dropdown panel: remove light outline/separator borders */
+.VPLocalNav .VPLocalNavOutlineDropdown .items,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items {
+  border: none !important;
+  gap: 0 !important;
+  background-color: var(--vp-c-bg-soft) !important;
+  border-radius: var(--myal-home-card-radius) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.VPLocalNav .VPLocalNavOutlineDropdown .items .header,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .header {
+  border-top-left-radius: var(--myal-home-card-radius) !important;
+  border-top-right-radius: var(--myal-home-card-radius) !important;
+}
+
+.VPLocalNav .VPLocalNavOutlineDropdown .items .outline,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .outline {
+  border-bottom-left-radius: var(--myal-home-card-radius) !important;
+  border-bottom-right-radius: var(--myal-home-card-radius) !important;
+}
+
+/* TOC overlay inner side padding: 16px -> 24px (+50%) */
+.VPLocalNav .VPLocalNavOutlineDropdown .items .top-link,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .top-link {
+  padding-inline: 24px !important;
+}
+
+.VPLocalNav .VPLocalNavOutlineDropdown .items .outline,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .outline {
+  padding-inline: 24px !important;
+}
+
+/* Keep "Return to top" visible while scrolling + persistent divider below it */
+.VPLocalNav .VPLocalNavOutlineDropdown .items .header,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
 /* Fix TOC overlay: anchor panel to trigger (navbar + local nav variants). */
 @media (min-width: 960px) {
 

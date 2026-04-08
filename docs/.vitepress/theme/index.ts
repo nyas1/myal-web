@@ -28,6 +28,7 @@ export default {
 
     let cleanupHomeGrid: (() => void) | null = null
     let cleanupTocSync: (() => void) | null = null
+    let cleanupTwemojiObserver: (() => void) | null = null
 
     const isHomeRoute = () => {
       const path = window.location.pathname.replace(/\/+$/, '')
@@ -180,6 +181,56 @@ export default {
         folder: 'svg',
         ext: '.svg'
       })
+    }
+
+    const setupTwemojiObserver = () => {
+      cleanupTwemojiObserver?.()
+      cleanupTwemojiObserver = null
+
+      let rafId = 0
+      const queueParse = () => {
+        if (rafId) return
+        rafId = window.requestAnimationFrame(() => {
+          rafId = 0
+          applyTwemoji()
+        })
+      }
+
+      const observer = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+          if (mutation.type === 'childList') {
+            if (mutation.addedNodes.length > 0) {
+              queueParse()
+              return
+            }
+            continue
+          }
+
+          if (mutation.type === 'characterData') {
+            queueParse()
+            return
+          }
+        }
+      })
+
+      observer.observe(document.body, {
+        childList: true,
+        characterData: true,
+        subtree: true
+      })
+
+      // Some desktop dropdowns/menus toggle existing nodes instead of inserting new ones.
+      // Re-parse once after user interaction so Twemoji stays applied everywhere.
+      const onInteraction = () => queueParse()
+      window.addEventListener('click', onInteraction, true)
+      window.addEventListener('keyup', onInteraction, true)
+
+      cleanupTwemojiObserver = () => {
+        observer.disconnect()
+        window.removeEventListener('click', onInteraction, true)
+        window.removeEventListener('keyup', onInteraction, true)
+        if (rafId) window.cancelAnimationFrame(rafId)
+      }
     }
 
     const applyTocToggle = () => {
@@ -336,6 +387,7 @@ export default {
 
     const runPostHydrationEffects = () => {
       applyTwemoji()
+      setupTwemojiObserver()
       applyTocToggle()
       syncHomePageClass()
       setupHomeGrid()
