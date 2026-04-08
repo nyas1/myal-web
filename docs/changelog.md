@@ -2,9 +2,11 @@
 title: Changelog
 ---
 
-# Changelog
+# 🪵 Changelog
 
 Latest commits with date from [nyas1/Material-You-app-list](https://github.com/nyas1/Material-You-app-list).
+
+<!-- AUTO-GENERATED: upstream commit table (scripts/generate-changelog.mjs) -->
 
 | Date | Commit | Message |
 | --- | --- | --- |
@@ -108,3 +110,9 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-02-26 | [0992429](https://github.com/nyas1/Material-You-app-list/commit/0992429d614852dd6ff745682c43571f074ab658) | Add tombstone emoji to Clipious and Harmony Music |
 | 2026-02-26 | [a674ca1](https://github.com/nyas1/Material-You-app-list/commit/a674ca1f6ef088e570b602a2172c7731eafbf50f) | Rename Vibe Music to Gyawun Music |
 | 2026-02-25 | [fc0dbe9](https://github.com/nyas1/Material-You-app-list/commit/fc0dbe9da0db840222fee7c750ed1b59ac13c3da) | Add Seal Plus to YouTube downloaders |
+| 2026-02-25 | [a8cc417](https://github.com/nyas1/Material-You-app-list/commit/a8cc4178530a0ceabffbe3356c089c0c7c7b14f6) | Reverts false changes |
+| 2026-02-24 | [39cc8d7](https://github.com/nyas1/Material-You-app-list/commit/39cc8d78168b37934597b77503a8f110cea87e3f) | Add Rhythm music player to README |
+| 2026-02-24 | [ddb1597](https://github.com/nyas1/Material-You-app-list/commit/ddb1597719f251f12669dd9a49e978f094281484) | Music players sorted for `MD3E` listed top |
+| 2026-02-24 | [0e7103e](https://github.com/nyas1/Material-You-app-list/commit/0e7103e7b0b57bbb2a2764f319421d1fc44321fa) | Updated App Ops |
+
+<!-- END AUTO-GENERATED -->

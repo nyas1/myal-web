@@ -5,11 +5,20 @@ import twemoji from 'twemoji'
 import Layout from './Layout.vue'
 import './style.css'
 
+let beercssClientLoaded = false
+
 export default {
   extends: DefaultTheme,
   Layout,
   enhanceApp({ router }) {
     if (typeof window === 'undefined') return
+
+    // Beercss "scoped" scopes component styles under `.beer`; the bundle may still
+    // ship a few global :root/html/body rules—keep Beer UI markup inside `.beer`.
+    if (!beercssClientLoaded) {
+      beercssClientLoaded = true
+      void import('beercss/scoped')
+    }
 
     const analyticsWindow = window as Window & { __myalVercelAnalyticsInitialized?: boolean }
     if (!analyticsWindow.__myalVercelAnalyticsInitialized) {
@@ -19,6 +28,7 @@ export default {
 
     let cleanupHomeGrid: (() => void) | null = null
     let cleanupTocSync: (() => void) | null = null
+    let cleanupTwemojiObserver: (() => void) | null = null
 
     const isHomeRoute = () => {
       const path = window.location.pathname.replace(/\/+$/, '')
@@ -173,6 +183,56 @@ export default {
       })
     }
 
+    const setupTwemojiObserver = () => {
+      cleanupTwemojiObserver?.()
+      cleanupTwemojiObserver = null
+
+      let rafId = 0
+      const queueParse = () => {
+        if (rafId) return
+        rafId = window.requestAnimationFrame(() => {
+          rafId = 0
+          applyTwemoji()
+        })
+      }
+
+      const observer = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+          if (mutation.type === 'childList') {
+            if (mutation.addedNodes.length > 0) {
+              queueParse()
+              return
+            }
+            continue
+          }
+
+          if (mutation.type === 'characterData') {
+            queueParse()
+            return
+          }
+        }
+      })
+
+      observer.observe(document.body, {
+        childList: true,
+        characterData: true,
+        subtree: true
+      })
+
+      // Some desktop dropdowns/menus toggle existing nodes instead of inserting new ones.
+      // Re-parse once after user interaction so Twemoji stays applied everywhere.
+      const onInteraction = () => queueParse()
+      window.addEventListener('click', onInteraction, true)
+      window.addEventListener('keyup', onInteraction, true)
+
+      cleanupTwemojiObserver = () => {
+        observer.disconnect()
+        window.removeEventListener('click', onInteraction, true)
+        window.removeEventListener('keyup', onInteraction, true)
+        if (rafId) window.cancelAnimationFrame(rafId)
+      }
+    }
+
     const applyTocToggle = () => {
       cleanupTocSync?.()
       cleanupTocSync = null
@@ -325,21 +385,18 @@ export default {
       }
     }
 
-    runAfterHydrationPaint(() => {
+    const runPostHydrationEffects = () => {
       applyTwemoji()
+      setupTwemojiObserver()
       applyTocToggle()
       syncHomePageClass()
       setupHomeGrid()
       updateSyncBadge()
-    })
+    }
+
+    runAfterHydrationPaint(runPostHydrationEffects)
     router.onAfterRouteChanged = () => {
-      runAfterHydrationPaint(() => {
-        applyTwemoji()
-        applyTocToggle()
-        syncHomePageClass()
-        setupHomeGrid()
-        updateSyncBadge()
-      })
+      runAfterHydrationPaint(runPostHydrationEffects)
     }
   }
 } satisfies Theme

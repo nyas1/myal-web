@@ -1,4 +1,12 @@
 :root {
+  /* Matches VPDoc `.aside { max-width: 256px }` — FAB sits just left of the TOC column */
+  --myal-doc-toc-aside-width: 256px;
+  --myal-fab-gap-from-toc: 12px;
+  /* Extra space under fixed nav so hero glow / blurred halo is not clipped */
+  --myal-hero-below-nav: 40px;
+  /* Increase top navbar height slightly (default is 64px) */
+  --vp-nav-height: 72px;
+  --vp-local-nav-height: 48px;
   --vp-c-brand-1: #7f67be;
   --vp-c-brand-2: #6f59ad;
   --vp-c-brand-3: #5f4b9d;
@@ -9,7 +17,58 @@
   --myal-switch-border-on: #d0bcff;
   --myal-switch-thumb-off: #ffffff;
   --myal-switch-thumb-on: #4f378a;
+  /*
+   * Sitewide semantic colors: prefer these + --vp-c-brand-* over raw hex in new rules.
+   * Tweak the brand ramp above to shift the whole site; .dark overrides follow automatically.
+   */
+  --myal-on-primary: var(--vp-c-black);
+  /* Home feature cards (VPFeature), local search modal shell — keep in sync */
+  --myal-home-card-radius: 36px;
+  --myal-status-live: #22c55e;
+  --myal-status-live-ring: rgba(34, 197, 94, 0.65);
+  --myal-hero-image-glow: radial-gradient(circle at 50% 50%,
+      color-mix(in srgb, var(--vp-c-brand-1) 78%, transparent) 0%,
+      color-mix(in srgb, var(--vp-c-brand-2) 52%, transparent) 34%,
+      color-mix(in srgb, var(--vp-c-brand-3) 34%, transparent) 54%,
+      transparent 72%);
+  --myal-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --myal-shadow-md: 0 1px 3px rgba(0, 0, 0, 0.14);
   --vp-font-family-base: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* Shared sidebar geometry (avoid fixed pixels across breakpoints) */
+  --myal-sidebar-row-size: 3.5rem;
+  /* Expanded rail: fixed width (no viewport scaling — same idea as collapsed). Drives VP layout. */
+  --myal-sidebar-expanded-width: 210px;
+  --vp-sidebar-width: var(--myal-sidebar-expanded-width);
+  /* Corner blend pseudo-element seam offsets (desktop) */
+  /* Horizontal nudge for corner patch (px okay here; keeps math stable across rem changes) */
+  --myal-corner-seam-x: 0px;
+  --myal-corner-seam-y: 0px;
+  --myal-corner-size: calc(var(--myal-sidebar-row-size) * 0.7142857);
+  /* Viewport X of sidebar / main boundary (aside’s right edge; padding is inside the aside) */
+  --myal-sidebar-seam-x: var(--vp-sidebar-width);
+  /* Sidebar rail: symmetric inset + link row padding */
+  --myal-sidebar-inline-pad: 0.25rem;
+  /*
+   * Collapsed rail: intrinsic min (brand row + aside padding) × 1.25 — 25% wider than the
+   * minimum that prevented overflow into `#VPContent`.
+   */
+  --myal-sidebar-collapsed-width: calc(
+    (
+      var(--myal-sidebar-inline-pad) * 2 +
+      var(--myal-beer-rail-inline) +
+      var(--myal-beer-link-inline) * 2 +
+      var(--myal-sidebar-row-size) +
+      var(--myal-rail-logo-nudge)
+    ) * 1.25
+  );
+  /* Nudge sidebar content (MYAL rail, nav) slightly below the top edge */
+  --myal-sidebar-offset-top: 10px;
+  --myal-beer-rail-inline: 0.0625rem;
+  --myal-beer-link-inline: 0.35rem;
+  /* Nudge MYAL lockup up (top bar <960px, or sidebar rail ≥960px on doc pages) */
+  --myal-nav-lockup-nudge-y: -4px;
+  /* Fine-tune horizontal alignment (right positive) */
+  --myal-rail-logo-nudge: 0.65rem;
 }
 
 .dark {
@@ -23,15 +82,179 @@
   --myal-switch-border-on: #d0bcff;
   --myal-switch-thumb-off: #efe8ff;
   --myal-switch-thumb-on: #4f378a;
+  --myal-on-primary: #1a1125;
 }
 
-.VPNavBarTitle .title {
-  font-weight: 700;
+/* Narrow the sidebar column when the Beer rail is collapsed (same token as main offset — no overlap) */
+@media (min-width: 960px) {
+  html:has(.myal-rail-collapsed) {
+    --vp-sidebar-width: var(--myal-sidebar-collapsed-width);
+  }
 }
 
-.VPNavBarTitle .logo {
-  width: 41.4px;
-  height: 41.4px;
+/* Desktop: MYAL + logo live in the Beer sidebar (`.myal-sidebar-brand`); hide duplicate top-bar title */
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar .container>.title {
+    display: none !important;
+  }
+
+  /* No line under empty title column; desktop chrome stays flush */
+  .VPNavBar.has-sidebar .divider {
+    display: none !important;
+  }
+}
+
+/*
+ * Desktop home: larger lockup in the TOP NAV only.
+ * VitePress `useSidebar()` sets `hasSidebar === false` when `layout === 'home'`, so there is no
+ * `VPSidebar` / `AppBeerSidebarNav` on `/` — the only MYAL logo is `.VPNavBarTitle` (default
+ * `--vp-nav-logo-height` is 24px from VP vars).
+ */
+@media (min-width: 960px) {
+  html:has(#VPContent.is-home) .VPNavBarTitle {
+    --vp-nav-logo-height: 45px;
+  }
+
+  html:has(#VPContent.is-home) .VPNavBarTitle .title {
+    font-size: 1.328125rem !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+  }
+
+  html:has(#VPContent.is-home) .VPNavBarTitle .logo {
+    width: 45px !important;
+    height: 45px !important;
+    max-width: 45px !important;
+    max-height: 45px !important;
+    object-fit: contain;
+  }
+}
+
+/*
+ * Mobile / tablet nav (<960px): align MYAL lockup with chrome hit targets — VP hamburger is 48px
+ * wide × `--vp-nav-height`; VPNavBarMenuLink uses 14px / 500. (Desktop uses sidebar or home rules above.)
+ */
+@media (max-width: 959px) {
+  .VPNavBarTitle {
+    --vp-nav-logo-height: 48px;
+  }
+
+  .VPNavBarTitle .title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .VPNavBarTitle .logo {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/*
+ * Non-home (apps, docs, …): vertically center the top-bar MYAL lockup with search, TOC, and icons.
+ * VP’s `.container > .title` uses `height: calc(var(--vp-nav-height) - 1px)` while `.VPNavBarTitle .title`
+ * is `height: var(--vp-nav-height)`, so the link overflows the column and looks shifted vs `.content-body`.
+ */
+.VPNavBar:not(.home) .container {
+  align-items: center;
+}
+
+.VPNavBar:not(.home) .container>.title {
+  display: flex;
+  align-items: center;
+  height: var(--vp-nav-height);
+  box-sizing: border-box;
+}
+
+.VPNavBar:not(.home) .container>.title .VPNavBarTitle {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+}
+
+.VPNavBar:not(.home) .VPNavBarTitle .title {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/*
+ * MYAL vertical nudge: ≥960px doc/app pages hide `.container > .title` (see above) and show MYAL in
+ * `.myal-sidebar-brand` only — a transform on `.VPNavBarTitle` there has no visible effect.
+ */
+@media (max-width: 959px) {
+  .VPNavBar:not(.home) .container > .title .VPNavBarTitle {
+    transform: translateY(var(--myal-nav-lockup-nudge-y));
+  }
+}
+
+@media (min-width: 960px) {
+  html:not(:has(#VPContent.is-home)) .myal-sidebar-brand {
+    transform: translateY(var(--myal-nav-lockup-nudge-y));
+  }
+}
+
+.VPNav {
+  z-index: 51 !important;
+}
+
+/* Desktop: visually blend sidebar + top navbar with a curved “corner” so they feel seamless. */
+@media (min-width: 960px) {
+  .VPNav:has(.VPNavBar.has-sidebar)::before {
+    content: '';
+    position: fixed;
+    top: calc(var(--vp-layout-top-height, 0px) + var(--vp-nav-height) + var(--myal-corner-seam-y));
+    left: calc(var(--myal-sidebar-seam-x) + var(--myal-corner-seam-x));
+    right: auto;
+    width: var(--myal-corner-size);
+    height: var(--myal-corner-size);
+    /* Above bar chrome siblings; still below modals/backdrop */
+    z-index: 1;
+
+    background: var(--vp-nav-bg-color);
+
+    /* Concave curve: white = painted; transparent = punched out (see mask color rules) */
+    -webkit-mask: radial-gradient(circle at bottom right,
+        transparent calc(var(--myal-corner-size) - 1px),
+        white var(--myal-corner-size));
+    mask: radial-gradient(circle at bottom right,
+        transparent calc(var(--myal-corner-size) - 1px),
+        white var(--myal-corner-size));
+
+    pointer-events: none;
+  }
+}
+
+/* Desktop: full-width nav chrome; rail offset + clear VPNavBar `.content` padding-left */
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar:not(.home) {
+    background-color: var(--vp-nav-bg-color) !important;
+  }
+
+  .VPNavBar.has-sidebar:not(.home) .content-body {
+    background-color: transparent !important;
+  }
+
+  .VPNav:has(.VPNavBar.has-sidebar) {
+    left: var(--vp-sidebar-width) !important;
+    right: 0 !important;
+    width: auto !important;
+  }
+
+  .VPNavBar.has-sidebar .content {
+    padding-left: 0 !important;
+  }
+}
+
+/* ≥1440: main flush after rail; right gutter only (no left letterbox gap beside fixed aside) */
+@media (min-width: 1440px) {
+  #VPContent.has-sidebar {
+    padding-left: var(--vp-sidebar-width) !important;
+    padding-right: calc(max(0px, (100vw - var(--vp-layout-max-width)) / 2)) !important;
+  }
 }
 
 .VPHome .text {
@@ -80,7 +303,7 @@ body,
   transform: translate(-50%, -50%) rotate(0deg);
   width: clamp(107px, 11.34vw, 158px);
   height: clamp(107px, 11.34vw, 158px);
-  background: url('/home-hero-top.svg?v=20260303a') center / contain no-repeat;
+  background: var(--myal-hero-android-bg, url('/hero-android.svg?v=20260303a')) center / contain no-repeat;
   opacity: 1;
   pointer-events: none;
   z-index: 4;
@@ -91,49 +314,207 @@ body,
   z-index: 1;
 }
 
-.VPFeature {
-  border: 1px solid var(--vp-c-divider);
+/* Home: no top search (use sidebar / mobile nav elsewhere). */
+.Layout:has(.VPHome) .VPNavBarSearch {
+  display: none !important;
+}
+
+/*
+ * Hide VP inline “Main Navigation” from tablet up — the Beer rail (960+) or bottom bar +
+ * flyout (<960) handles primary nav.
+ *
+ * VitePress swaps hamburger→menu at 768px; since we hide the menu, restore the hamburger
+ * for 768–959 only (fixes a dead zone where neither was visible).
+ */
+@media (min-width: 768px) {
+  .VPNavBar .VPNavBarMenu {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+  .VPNavBar .VPNavBarHamburger {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPNavBar .VPNavBarHamburger {
+    display: none !important;
+  }
+}
+
+/* Shift entire home hero down so radial glow + blur clear the navbar */
+.VPHome .VPHero {
+  padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 48px + var(--myal-hero-below-nav)) !important;
+  padding-right: 24px !important;
+  padding-bottom: 48px !important;
+  padding-left: 24px !important;
+}
+
+@media (min-width: 640px) {
+  .VPHome .VPHero {
+    padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 80px + var(--myal-hero-below-nav)) !important;
+    padding-right: 48px !important;
+    padding-bottom: 64px !important;
+    padding-left: 48px !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPHome .VPHero {
+    padding-right: 64px !important;
+    padding-left: 64px !important;
+  }
+
+  /* Default VPHero nudges the image up 32px; that tucks glow under the nav */
+  .VPHome .VPHero .image-container {
+    transform: translate(-32px, 0) !important;
+  }
+
+  .VPHome .VPHero .image {
+    margin: 0;
+  }
+}
+
+/* Stack layout (<960px): less negative top margin so the image column sits lower */
+@media (max-width: 959px) {
+  .VPHome .VPHero .image {
+    margin: -48px -24px -48px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .VPHome .VPHero .image {
+    margin: -80px -24px -48px;
+  }
 }
 
 .VPHome .VPHero .actions .VPButton.brand {
   color: var(--vp-c-black);
 }
 
+/* Hero CTAs (Apps + Sync) — scale 0.805 (= 0.7 × 1.15), dark fill; Sync uses lavender history icon */
+.VPHome .VPHero .actions {
+  gap: calc(14px * 0.805);
+  margin: 0 !important;
+}
+
+.VPHome .VPHero .actions .action {
+  padding: 0 !important;
+}
+
 .VPHome .VPHero .actions .VPButton.alt {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: calc(10px * 0.805);
+  min-height: calc(4rem * 0.805);
+  padding-block: calc(0.95rem * 0.805) !important;
+  padding-inline: calc(2.125rem * 0.805) !important;
+  line-height: 1.25 !important;
+  font-size: calc(1.125rem * 0.805) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.014em;
+  border-radius: 9999px !important;
+  border: none !important;
+  box-shadow: none;
+  background-color: #202127 !important;
+  color: #e0dbe0 !important;
+}
+
+.VPHome .VPHero .actions .VPButton.alt:hover {
+  background-color: color-mix(in srgb, #fff 8%, #202127) !important;
+  color: #e0dbe0 !important;
 }
 
 .VPHome .VPHero .actions .VPButton.alt[href$="/app"]::before {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: calc(10px * 0.805);
+  height: calc(10px * 0.805);
   border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.65);
+  background: var(--myal-status-live);
+  box-shadow: 0 0 0 0 var(--myal-status-live-ring);
   animation: myal-pulse-green 1.8s ease-out infinite;
-  margin-right: 8px;
+  margin-right: calc(10px * 0.805);
 }
 
 .VPHome .VPHero .actions .VPButton.alt[href$="/changelog"]::before {
   display: inline-block;
   content: 'history';
   font-family: 'Material Icons Outlined';
-  font-size: 1.25em;
-  margin-right: 0.25em;
+  font-size: calc(1.4em * 0.805);
+  margin-right: calc(0.35em * 0.805);
   vertical-align: middle;
+  color: #d0bcff;
 }
 
 @media (min-width: 768px) {
   .VPNavBarSearch .DocSearch-Button {
     border-radius: 999px;
+    /* Wider search button in desktop/tablet nav */
+    min-inline-size: 14rem;
+    width: min(22rem, 34vw);
+    max-inline-size: 100%;
   }
+
+  /* Keep "Ctrl K" keys pinned to the right edge inside the wider button */
+  .VPNavBarSearch .DocSearch-Button .DocSearch-Button-Container {
+    flex: 1;
+  }
+
+  .VPNavBarSearch .DocSearch-Button .DocSearch-Button-Keys {
+    margin-left: auto;
+  }
+}
+
+/* Remove the divider line on the left of the social icons */
+.VPNavBar .social-links::before {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .VPHome .VPFeature .icon .myal-feature-icon {
   font-size: 24px;
-  color: #ad8df8;
+  color: #1a1125;
+}
+
+.VPHome .VPFeature .icon {
+  background-color: #d0bcff;
+}
+
+.VPHome .VPFeature .myal-feature-icon-wrap .shape.sided-cookie12 {
+  background-color: #d0bcff !important;
+}
+
+/* Beer `.small-width` / `.small-height` are 12rem — pin to the old 48px icon box */
+.VPHome .VPFeature .myal-feature-icon-wrap .shape.sided-cookie12.small-width.small-height {
+  inline-size: 48px !important;
+  block-size: 48px !important;
+  max-inline-size: 48px;
+}
+
+.VPHome .VPFeature .link-text-icon {
+  color: #d0bcff;
+}
+
+/* Beercss nests `to-shape-rotate` inside `.beer`; nested keyframes can fail to apply globally.
+   Drive rotation from theme CSS so the cookie shape always animates (respects reduced motion via VitePress base). */
+@keyframes myal-feature-icon-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.VPHome .VPFeature .myal-feature-icon-wrap .shape.rotate {
+  animation: myal-feature-icon-rotate 12s linear infinite;
+  transform-origin: 50% 50%;
 }
 
 .VPHome .VPHero .image-container {
@@ -147,15 +528,14 @@ body,
   position: absolute;
   left: 50%;
   top: 50%;
-  width: clamp(260px, 28vw, 420px);
-  height: clamp(260px, 28vw, 420px);
+  width: clamp(236px, 25vw, 380px);
+  height: clamp(236px, 25vw, 380px);
   transform: translate(-50%, -50%);
   border-radius: 999px;
   pointer-events: none;
   z-index: 1;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(150, 92, 255, 0.5) 0%, rgba(120, 60, 220, 0.34) 42%, rgba(88, 34, 160, 0.18) 62%, rgba(0, 0, 0, 0) 78%);
-  filter: blur(20px);
+  background: var(--myal-hero-image-glow);
+  filter: blur(26px);
 }
 
 .VPHome .VPHero .image-src {
@@ -211,6 +591,892 @@ img.emoji {
   display: block;
 }
 
+/* Mobile / small tablet: second bar below main navbar (unchanged). */
+@media (max-width: 959px) {
+  .VPLocalNav {
+    position: fixed !important;
+    top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px));
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 49 !important;
+    padding-top: 0 !important;
+  }
+
+  /* No sidebar gutter here: below 960px the sidebar is overlay/drawer, not a persistent column
+     (VitePress only applies `padding-left: var(--vp-sidebar-width)` from 960px in the default theme). */
+
+  .VPLocalNav .container {
+    box-sizing: border-box;
+    min-width: 0;
+    padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
+    justify-content: flex-end;
+    column-gap: 0.75rem;
+  }
+
+  .VPLocalNav .VPLocalNavOutlineDropdown {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    padding: 12px 0 11px;
+  }
+
+  .VPLocalNav .VPLocalNavOutlineDropdown .items {
+    max-height: min(58vh,
+        calc(100dvh - var(--vp-nav-height) - var(--vp-layout-top-height, 0px) - var(--vp-local-nav-height, 48px) - 1.5rem)) !important;
+  }
+}
+
+/* 960–1279: TOC lives in `#nav-bar-content-before` (`NavBarTocDropdown.vue`); hide duplicate strip. */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .VPLocalNav {
+    display: none !important;
+  }
+}
+
+/* Navbar TOC wrapper: visible only at 960–1279 (see `NavBarTocDropdown.vue`). */
+.myal-nav-bar-outline--desktop-mid {
+  display: none;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .VPNavBar.has-sidebar .content-body {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .VPNavBar.has-sidebar .content-body>.VPNavBarSearch.search {
+    order: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .myal-nav-bar-outline--desktop-mid {
+    order: 1;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
+  /* Keep “…” (.extra) directly after TOC with a small gap only (not a flex-grow spacer) */
+  .VPNavBar.has-sidebar .content-body>.extra {
+    order: 2;
+    margin-inline-start: 0.5rem;
+    flex: 0 0 auto;
+  }
+
+  .VPNavBar.has-sidebar .content-body>.menu {
+    order: 10;
+  }
+
+  .VPNavBar.has-sidebar .content-body>.translations {
+    order: 11;
+  }
+
+  .VPNavBar.has-sidebar .content-body>.appearance {
+    order: 12;
+  }
+
+  .VPNavBar.has-sidebar .content-body>.social-links {
+    order: 13;
+  }
+
+  .VPNavBar.has-sidebar .content-body>.hamburger {
+    order: 20;
+  }
+
+  .myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown {
+    padding: 0 !important;
+  }
+
+  .myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown button {
+    padding-inline: 0.75rem 0.625rem !important;
+    column-gap: 0.5rem !important;
+  }
+}
+
+@media (max-width: 959px) {
+  .VPContent:not(.is-home) {
+    padding-top: var(--vp-local-nav-height, 48px) !important;
+  }
+}
+
+.VPLocalNav .VPLocalNavOutlineDropdown button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* TOC dropdown panel: remove light outline/separator borders */
+.VPLocalNav .VPLocalNavOutlineDropdown .items,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items {
+  border: none !important;
+  gap: 0 !important;
+  background-color: var(--vp-c-bg-soft) !important;
+  border-radius: var(--myal-home-card-radius) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.VPLocalNav .VPLocalNavOutlineDropdown .items .header,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .header {
+  border-top-left-radius: var(--myal-home-card-radius) !important;
+  border-top-right-radius: var(--myal-home-card-radius) !important;
+}
+
+.VPLocalNav .VPLocalNavOutlineDropdown .items .outline,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .outline {
+  border-bottom-left-radius: var(--myal-home-card-radius) !important;
+  border-bottom-right-radius: var(--myal-home-card-radius) !important;
+}
+
+/* TOC overlay inner side padding: 16px -> 24px (+50%) */
+.VPLocalNav .VPLocalNavOutlineDropdown .items .top-link,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .top-link {
+  padding-inline: 24px !important;
+}
+
+.VPLocalNav .VPLocalNavOutlineDropdown .items .outline,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .outline {
+  padding-inline: 24px !important;
+}
+
+/* Keep "Return to top" visible while scrolling + persistent divider below it */
+.VPLocalNav .VPLocalNavOutlineDropdown .items .header,
+.myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items .header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+/* Fix TOC overlay: anchor panel to trigger (navbar + local nav variants). */
+@media (min-width: 960px) {
+
+  .VPLocalNav .VPLocalNavOutlineDropdown,
+  .myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown {
+    position: relative;
+  }
+
+  .VPLocalNav .VPLocalNavOutlineDropdown .items,
+  .myal-nav-bar-outline--desktop-mid .VPLocalNavOutlineDropdown .items {
+    left: auto !important;
+    right: 0 !important;
+    width: 320px;
+  }
+}
+
+.VPDocAsideOutline .outline-title {
+  white-space: nowrap;
+}
+
+/* VitePress default: `.aside-curtain` is a bottom fade on the TOC column — remove it */
+.VPDoc .aside-curtain {
+  display: none !important;
+}
+
+/*
+ * VitePress `vp-doc.css` puts `border-top` + `padding-top` on every `h2` for section breaks.
+ * The first `h2` has nothing above it — drop the orphan rule (e.g. Apps page categories).
+ */
+.vp-doc h2:first-of-type {
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+.vp-doc h2:first-of-type .header-anchor {
+  top: 0 !important;
+}
+
+.VPSidebar .group {
+  display: none !important;
+}
+
+aside.VPSidebar {
+  background-color: var(--vp-c-bg) !important;
+}
+
+aside.VPSidebar .curtain {
+  background-color: var(--vp-c-bg) !important;
+}
+
+/*
+ * Sidebar padding: VP scoped CSS keeps `padding-left/right` from `padding: 32px 32px 96px` because
+ * the 960px query only overrides `padding-top` — our rules must win with !important.
+ */
+@media (max-width: 959px) {
+  aside.VPSidebar {
+    padding-top: 32px !important;
+    padding-bottom: 96px !important;
+    padding-inline-start: max(0.75rem, env(safe-area-inset-left, 0px)) !important;
+    padding-inline-end: max(0.75rem, env(safe-area-inset-right, 0px)) !important;
+  }
+}
+
+@media (min-width: 960px) {
+
+  /* Rail is full height beside the top bar — no spacer for a full-width header over the rail */
+  aside.VPSidebar {
+    padding-top: var(--myal-sidebar-offset-top) !important;
+    padding-bottom: 96px !important;
+    padding-inline: var(--myal-sidebar-inline-pad) !important;
+    z-index: var(--vp-z-index-sidebar) !important;
+    transition: width 220ms ease;
+  }
+
+  aside.VPSidebar .curtain {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  aside.VPSidebar {
+    padding-top: var(--myal-sidebar-offset-top) !important;
+    padding-bottom: 96px !important;
+    padding-inline-start: max(var(--myal-sidebar-inline-pad), env(safe-area-inset-left, 0px)) !important;
+    padding-inline-end: max(var(--myal-sidebar-inline-pad), env(safe-area-inset-right, 0px)) !important;
+    width: var(--vp-sidebar-width) !important;
+    max-width: var(--vp-sidebar-width) !important;
+  }
+}
+
+/* Desktop-only: MYAL lockup above Beer rail (mobile uses top nav bar only) */
+.myal-sidebar-brand--desktop-only {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .myal-sidebar-brand--desktop-only {
+    display: block;
+  }
+
+  .myal-sidebar-brand {
+    padding-inline-start: calc(var(--myal-beer-rail-inline) + var(--myal-beer-link-inline));
+    padding-inline-end: var(--myal-beer-link-inline);
+    margin-bottom: 0;
+  }
+
+  /* Default desktop (apps, docs, …): compact lockup — NOT home */
+  .myal-sidebar-brand-link {
+    display: grid;
+    grid-template-columns: calc(var(--myal-sidebar-row-size) + var(--myal-rail-logo-nudge)) auto;
+    column-gap: 0.5rem;
+    align-items: center;
+    justify-content: start;
+    max-width: 100%;
+    min-block-size: var(--myal-sidebar-row-size);
+    height: var(--myal-sidebar-row-size);
+    padding: 0;
+    text-decoration: none;
+    color: var(--vp-c-text-1);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .myal-sidebar-brand-logo {
+    width: 62.1px;
+    height: 62.1px;
+    object-fit: contain;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    transform: translateX(var(--myal-rail-logo-nudge)) !important;
+  }
+
+  .myal-sidebar-brand-text {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+  }
+}
+
+/*
+ * Desktop home + sidebar: larger MYAL in Beer rail (e.g. if a page used home layout with sidebar).
+ * Normal `layout: home` has NO sidebar — top-nav rules above apply instead.
+ */
+@media (min-width: 960px) {
+  html:has(#VPContent.is-home) {
+    --myal-desktop-home-brand-logo: 45px;
+  }
+
+  html:has(#VPContent.is-home) .myal-sidebar-brand-link {
+    display: grid !important;
+    grid-template-columns: calc(var(--myal-desktop-home-brand-logo) + var(--myal-rail-logo-nudge)) minmax(0, auto);
+    column-gap: 0.6rem;
+    align-items: center;
+    justify-content: start;
+    max-width: 100%;
+    min-block-size: calc(var(--vp-nav-height) / 2 * 1.25);
+    height: calc(var(--vp-nav-height) / 2 * 1.25);
+    padding: 0;
+    text-decoration: none;
+    color: var(--vp-c-text-1);
+    font-weight: 700 !important;
+    font-size: 1.328125rem !important;
+    line-height: 1.1 !important;
+  }
+
+  html:has(#VPContent.is-home) .myal-sidebar-brand-logo {
+    display: block;
+    box-sizing: border-box;
+    width: var(--myal-desktop-home-brand-logo) !important;
+    height: var(--myal-desktop-home-brand-logo) !important;
+    min-width: var(--myal-desktop-home-brand-logo) !important;
+    min-height: var(--myal-desktop-home-brand-logo) !important;
+    max-width: var(--myal-desktop-home-brand-logo) !important;
+    max-height: var(--myal-desktop-home-brand-logo) !important;
+    object-fit: contain;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    transform: translateX(var(--myal-rail-logo-nudge)) !important;
+  }
+
+  html:has(#VPContent.is-home) .myal-sidebar-brand-text {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+  }
+}
+
+.myal-app-beer-nav nav:is(.left, .right) {
+  background-color: transparent !important;
+  block-size: auto !important;
+  min-block-size: 0 !important;
+}
+
+.myal-app-beer-nav {
+  margin-bottom: 8px;
+}
+
+.myal-app-beer-nav .material-icons-outlined {
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+.myal-app-beer-nav nav.max:is(.left, .right) {
+  padding-inline: var(--myal-beer-rail-inline);
+}
+
+/* Tighter than Beercss default `1rem` so pills don’t float in a wide column */
+.myal-app-beer-nav nav.max:is(.left, .right)>a:not(.button, .chip) {
+  padding-inline: var(--myal-beer-link-inline);
+}
+
+/* Collapsed rail: hide text labels, keep icon positions stable */
+@media (min-width: 960px) {
+  .myal-app-beer-nav {
+    position: relative;
+  }
+
+  /*
+   * Beer `button.extra` uses content-box + large horizontal padding — fixed inline-size
+   * became “oval”. Match `nav.max > a` pill: square footprint, `square` zeros `--_padding`.
+   */
+  .myal-rail-toggle {
+    box-sizing: border-box !important;
+    --_padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0 !important;
+    inline-size: var(--myal-sidebar-row-size) !important;
+    block-size: var(--myal-sidebar-row-size) !important;
+    min-inline-size: var(--myal-sidebar-row-size) !important;
+    max-inline-size: var(--myal-sidebar-row-size) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 2rem;
+    background: transparent !important;
+    border: 1px solid transparent;
+    flex: 0 0 auto;
+    line-height: 1;
+  }
+
+  /* Smooth collapse/expand: animate label width/opacity instead of `display:none` */
+  .myal-sidebar-brand-text {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 10rem;
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+      max-width 220ms ease,
+      opacity 160ms ease,
+      transform 220ms ease;
+  }
+
+  .myal-app-beer-nav nav.max:is(.left, .right)>a>span {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 10rem;
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+      max-width 220ms ease,
+      opacity 160ms ease,
+      transform 220ms ease;
+  }
+
+  .myal-rail-collapsed .myal-sidebar-brand-text {
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(-0.25rem);
+    pointer-events: none;
+  }
+
+  /* Hide all row labels; keep icons in-place */
+  .myal-rail-collapsed .myal-app-beer-nav nav.max:is(.left, .right)>a>span {
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(-0.25rem);
+    pointer-events: none;
+  }
+
+  /* BeerCSS `.nav.max > a` keeps `gap: 0.5rem`; when the span collapses, that gap
+     makes the rounded pill wider than its height (oval look). Remove the gap
+     so width == height and the highlight becomes a perfect circle. */
+  .myal-rail-collapsed .myal-app-beer-nav nav.max:is(.left, .right)>a {
+    gap: 0 !important;
+  }
+
+  /* Keep glyphs inside the narrowed `aside` width (VP uses `width: var(--vp-sidebar-width)`) */
+  aside.VPSidebar:has(.myal-rail-collapsed) {
+    overflow-x: clip;
+  }
+}
+
+@media (max-width: 959px) {
+  .VPLocalNav .menu {
+    display: none !important;
+  }
+
+  .VPNav .VPNavBarSearch {
+    display: none !important;
+  }
+
+  .Layout:has(.myal-mobile-bottom-wrap) {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px) + 12px);
+  }
+
+  .myal-mobile-bottom-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 45;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    pointer-events: none;
+  }
+
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav {
+    pointer-events: auto;
+    position: relative;
+    inset: auto;
+    margin: 0;
+    border-radius: 0;
+    min-block-size: 3.5rem;
+    background-color: var(--vp-c-bg) !important;
+    border-top: 1px solid var(--vp-c-divider);
+    color: var(--vp-c-text-2);
+  }
+
+  /*
+   * BeerCSS `nav.bottom > a` sets `inline-size: 3.5rem` — that fixed tab width forces the icon
+   * strip into a square, so the active chip reads as a circle. Override width so tabs share
+   * space (`flex: 1`) and icons keep the stock pill: `padding` + `border-radius: 2rem` on `i`.
+   */
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav > a:not(.button, .chip) {
+    flex: 1 1 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.25rem;
+    min-inline-size: 0 !important;
+    max-inline-size: none !important;
+    inline-size: auto !important;
+    padding-inline: 0.125rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav > a:not(.button, .chip) > i.material-icons-outlined {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto;
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0.25rem 1rem !important;
+    border-radius: 2rem !important;
+    font-size: 1.375rem !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+  }
+
+  .myal-mobile-bottom-label {
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.625rem;
+    font-weight: 600;
+    line-height: 1.1;
+    text-align: center !important;
+    letter-spacing: 0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav > a.active:not(.button, .chip) > i.material-icons-outlined {
+    background-color: var(--vp-c-brand-soft) !important;
+    color: var(--vp-c-brand-1) !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .myal-mobile-bottom-wrap {
+    display: none;
+  }
+
+  /* Sidebar “More” card: options / legend / tag filters — desktop uses FAB cluster */
+  aside.VPSidebar .myal-beer-scope {
+    display: none !important;
+  }
+}
+
+/* App list FAB (speed dial + search), /app only — mobile + desktop */
+.myal-mobile-fab-cluster {
+  --myal-fab-stack-gap: 1rem;
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+  z-index: 48;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--myal-fab-stack-gap);
+  pointer-events: none;
+}
+
+.myal-mobile-fab-cluster>* {
+  pointer-events: auto;
+}
+
+@media (max-width: 959px) {
+  .Layout:has(.myal-mobile-bottom-wrap) .myal-mobile-fab-cluster {
+    bottom: calc(3.5rem + 36px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Desktop doc + outline (VPDoc `.aside`): fixed FAB stack just left of TOC column */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .myal-mobile-fab-cluster {
+    left: auto;
+    right: calc(32px + var(--myal-doc-toc-aside-width) + var(--myal-fab-gap-from-toc) + env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (min-width: 1440px) {
+  .myal-mobile-fab-cluster {
+    left: auto;
+    right: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--myal-doc-toc-aside-width) + var(--myal-fab-gap-from-toc) + env(safe-area-inset-right, 0px));
+  }
+}
+
+.myal-speed-dial {
+  --myal-speed-dial-filters-width: min(13rem, calc(100vw - 2rem));
+  --myal-filter-gap: 0.375rem;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: var(--myal-fab-stack-gap, 1rem);
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.myal-speed-dial-toolbar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--myal-filter-gap, 0.375rem);
+  inline-size: max-content;
+  max-inline-size: calc(100vw - 2rem);
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+
+.myal-speed-dial-toolbar-chip {
+  inline-size: auto;
+  max-inline-size: calc(100vw - 2rem);
+}
+
+.myal-speed-dial-chips {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--myal-filter-gap);
+  box-sizing: border-box;
+  inline-size: var(--myal-speed-dial-filters-width);
+  min-inline-size: 0;
+  max-inline-size: calc(100vw - 2rem);
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.myal-speed-dial-row {
+  display: flex;
+  justify-content: stretch;
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.myal-speed-dial-row--quad {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, auto);
+  gap: var(--myal-filter-gap, 0.375rem);
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.myal-speed-dial-row--quad .myal-speed-dial-chip--pill {
+  inline-size: 100%;
+  align-self: stretch;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.myal-speed-dial-chips .myal-speed-dial-row--quad .myal-speed-dial-chip--pill>span {
+  flex: 0 1 auto;
+  min-inline-size: min-content;
+  max-inline-size: none;
+  overflow: visible;
+  text-overflow: unset;
+  white-space: nowrap;
+}
+
+.myal-speed-dial-chip--wide {
+  flex: 1 1 auto;
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.myal-speed-dial-chips .chip,
+.myal-speed-dial-toolbar .chip {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  margin: 0;
+  min-block-size: 2rem;
+  padding-block: 0.2rem;
+  padding-inline: 0.4rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-family: var(--vp-font-family-base);
+  color: var(--vp-c-text-1);
+  border: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg-elv) !important;
+  opacity: 1;
+  gap: 0.3rem;
+}
+
+.myal-speed-dial-chips .chip {
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  overflow: hidden;
+}
+
+.myal-speed-dial-chips .chip.myal-speed-dial-chip--pill {
+  overflow: visible;
+}
+
+.myal-speed-dial-chips .chip>span {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  text-align: start;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.myal-speed-dial-toolbar .chip>span {
+  flex: 0 1 auto;
+  min-inline-size: 0;
+  text-align: start;
+  line-height: 1.2;
+}
+
+.myal-speed-dial-chips .chip>.material-icons-outlined,
+.myal-speed-dial-toolbar .chip>.material-icons-outlined {
+  flex: 0 0 auto;
+  font-size: 0.9375rem;
+  line-height: 1;
+}
+
+.myal-speed-dial-chips .chip.round,
+.myal-speed-dial-toolbar .chip.round {
+  border-color: var(--vp-c-brand-1);
+  background-color: color-mix(in srgb, var(--vp-c-brand-1) 28%, var(--vp-c-bg-elv)) !important;
+  color: var(--vp-c-brand-1);
+  opacity: 1;
+}
+
+.myal-speed-dial-trigger {
+  --_size: 3.25rem !important;
+  box-sizing: border-box;
+  inline-size: 3.25rem !important;
+  block-size: 3.25rem !important;
+  padding: 0 !important;
+  overflow: visible;
+  background-color: var(--vp-c-bg-elv) !important;
+  color: var(--vp-c-text-1) !important;
+  border: 1px solid var(--vp-c-divider);
+  box-shadow: var(--myal-shadow-sm);
+}
+
+.myal-speed-dial-trigger .material-icons-outlined {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  line-height: 1;
+  overflow: visible;
+}
+
+.myal-search-fab {
+  --_size: 4.875rem !important;
+  box-sizing: border-box;
+  inline-size: 4.875rem !important;
+  block-size: 4.875rem !important;
+  min-inline-size: 4.875rem;
+  min-block-size: 4.875rem;
+  padding: 0.375rem;
+  overflow: visible;
+  background-color: var(--vp-c-brand-1) !important;
+  color: var(--myal-on-primary) !important;
+  border: none;
+  box-shadow: var(--myal-shadow-md);
+}
+
+.myal-search-fab .material-icons-outlined {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  font-size: 2.25rem;
+  line-height: 1;
+  overflow: visible;
+}
+
+@media (min-width: 960px) {
+  .myal-speed-dial {
+    --myal-speed-dial-filters-width: min(11.25rem, calc(100vw - 5rem));
+    --myal-filter-gap: 0.25rem;
+  }
+
+  /* Desktop: navbar search only — hide floating search FAB; shortcuts trigger matches former search FAB */
+  .myal-mobile-fab-cluster .myal-search-fab {
+    display: none !important;
+  }
+
+  /* Compact filter panel: hug content width, align with FAB / toolbar (right edge) */
+  .myal-speed-dial-chips {
+    align-self: flex-end;
+    inline-size: max-content;
+    max-inline-size: var(--myal-speed-dial-filters-width);
+  }
+
+  .myal-speed-dial-row {
+    justify-content: flex-end;
+  }
+
+  .myal-speed-dial-chip--wide {
+    flex: 0 1 auto;
+    inline-size: auto;
+    max-inline-size: 100%;
+  }
+
+  .myal-speed-dial-row--quad {
+    grid-template-columns: repeat(2, auto);
+    justify-content: end;
+    inline-size: max-content;
+    max-inline-size: 100%;
+    margin-inline-start: auto;
+  }
+
+  .myal-speed-dial-row--quad .myal-speed-dial-chip--pill {
+    inline-size: auto;
+    min-inline-size: 4.25rem;
+    justify-content: center;
+  }
+
+  .myal-speed-dial-chips .chip {
+    min-block-size: 1.625rem;
+    padding-block: 0.1rem;
+    padding-inline: 0.3rem;
+    font-size: 0.625rem;
+    gap: 0.2rem;
+  }
+
+  .myal-speed-dial-chips .chip>.material-icons-outlined {
+    font-size: 0.8125rem;
+  }
+
+  .myal-speed-dial-toolbar {
+    gap: var(--myal-filter-gap, 0.25rem);
+  }
+
+  .myal-speed-dial-toolbar .chip {
+    min-block-size: 1.625rem;
+    padding-block: 0.1rem;
+    padding-inline: 0.35rem;
+    font-size: 0.625rem;
+    gap: 0.2rem;
+  }
+
+  .myal-speed-dial-toolbar .chip>.material-icons-outlined {
+    font-size: 0.8125rem;
+  }
+
+  .myal-speed-dial-trigger {
+    --_size: 4.875rem !important;
+    box-sizing: border-box;
+    inline-size: 4.875rem !important;
+    block-size: 4.875rem !important;
+    min-inline-size: 4.875rem;
+    min-block-size: 4.875rem;
+    padding: 0.375rem !important;
+    overflow: visible;
+    background-color: var(--vp-c-brand-1) !important;
+    color: var(--myal-on-primary) !important;
+    border: none !important;
+    box-shadow: var(--myal-shadow-md);
+  }
+
+  .myal-speed-dial-trigger .material-icons-outlined {
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+}
+
 .myal-more-card {
   margin-top: 16px;
 }
@@ -229,13 +1495,6 @@ img.emoji {
   background: linear-gradient(180deg, color-mix(in srgb, var(--vp-c-bg-soft) 88%, var(--vp-c-brand-soft) 12%), var(--vp-c-bg-soft));
   display: grid;
   gap: 12px;
-}
-
-.myal-legend-panel h4 {
-  margin: 0 0 8px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--vp-c-text-1);
 }
 
 .myal-legend-details {
@@ -285,7 +1544,7 @@ img.emoji {
 .myal-tag {
   min-width: 46px;
   padding: 2px 6px;
-  border-radius: 6px;
+  border-radius: var(--myal-home-card-radius);
   border: 1px solid var(--vp-c-divider);
   color: var(--vp-c-text-1);
   background: var(--vp-c-bg);
@@ -398,6 +1657,153 @@ img.emoji {
   display: none !important;
 }
 
+/*
+ * Inline tags (`MDY`, `FOSS`, …) — match home feature card radius site-wide.
+ * Same selector shape as vp-doc.css: only direct children of non-`pre` parents (not fenced blocks).
+ */
+.vp-doc :not(pre) > code {
+  border-radius: var(--myal-home-card-radius);
+}
+
+.vp-doc sup {
+  border-radius: var(--myal-home-card-radius);
+}
+
+/*
+ * 🐾 “personally used” — Twemoji SVG reads dark-on-dark; invert so the paw reads on force-dark UI.
+ */
+img.emoji[alt^='🐾'] {
+  filter: invert(1);
+}
+
+/* VitePress local search overlay — match homepage feature card radius + roomier padding */
+.VPLocalSearchBox .shell {
+  border-radius: var(--myal-home-card-radius) !important;
+  padding-block-start: 28px !important;
+  padding-block-end: 20px !important;
+  padding-inline: 28px !important;
+}
+
+@media (max-width: 767px) {
+  .VPLocalSearchBox .shell {
+    border-radius: var(--myal-home-card-radius) var(--myal-home-card-radius) 0 0 !important;
+    padding-block: max(20px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) !important;
+    padding-inline: max(1.25rem, env(safe-area-inset-left, 0px))
+      max(1.25rem, env(safe-area-inset-right, 0px)) !important;
+  }
+}
+
+/* Inner panels + tags — same radius as home feature cards */
+.VPLocalSearchBox .search-bar {
+  border-radius: var(--myal-home-card-radius) !important;
+  padding-inline: 18px !important;
+}
+
+.VPLocalSearchBox .search-input {
+  padding-inline: 14px !important;
+}
+
+/* Local search icon: use Material Icons Outlined instead of VP icon font */
+.VPLocalSearchBox .search-icon.local-search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  font-size: 0 !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  background-color: transparent !important;
+}
+
+@media (max-width: 767px) {
+  /* VP local search hides `.search-icon` on mobile; keep Material icon visible. */
+  .VPLocalSearchBox .search-icon.local-search-icon {
+    display: inline-flex !important;
+  }
+}
+
+.VPLocalSearchBox .search-icon.local-search-icon::before {
+  content: 'search' !important;
+  display: block;
+  font-family: 'Material Icons Outlined' !important;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  color: currentColor;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+/* Nav/home search button icon (VPNavBarSearchButton.vue) */
+.DocSearch-Button .DocSearch-Search-Icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  -webkit-mask: none !important;
+  mask: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  font-size: 0 !important;
+}
+
+.DocSearch-Button .DocSearch-Search-Icon::before {
+  content: 'search' !important;
+  display: block;
+  font-family: 'Material Icons Outlined' !important;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  color: currentColor;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+@media (max-width: 767px) {
+  .VPLocalSearchBox .search-input {
+    padding-inline: 12px !important;
+  }
+}
+
+.VPLocalSearchBox .result > div {
+  margin-block: 14px !important;
+  margin-inline: 22px !important;
+}
+
+@media (max-width: 767px) {
+  .VPLocalSearchBox .result > div {
+    margin-block: 12px !important;
+    margin-inline: 16px !important;
+  }
+}
+
+.VPLocalSearchBox .result {
+  border-radius: calc(var(--myal-home-card-radius) * 0.625) !important;
+}
+
+.VPLocalSearchBox .search-keyboard-shortcuts kbd {
+  border-radius: var(--myal-home-card-radius) !important;
+}
+
+/* Search: code blocks in excerpts (`.vp-doc code` above applies to inline tags in hits) */
+.VPLocalSearchBox .excerpt div[class*='language-'] {
+  border-radius: var(--myal-home-card-radius) !important;
+}
+
 .VPFooter,
 .VPHomeFooter {
   display: none !important;
@@ -413,19 +1819,17 @@ img.emoji {
   }
 }
 
-
-
 @keyframes myal-pulse-green {
   0% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.65);
+    box-shadow: 0 0 0 0 var(--myal-status-live-ring);
   }
 
   70% {
-    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+    box-shadow: 0 0 0 8px transparent;
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    box-shadow: 0 0 0 0 transparent;
   }
 }
 
@@ -435,83 +1839,84 @@ img.emoji {
   }
 }
 
-/* ── Floating Browse Apps Button ─────────────────────────────────────── */
-.myal-browse-fab {
+/* Beercss-filled-styled CTA: `BrowseAppsButton.vue` — home palette */
+.myal-browse-apps-beer {
   position: fixed;
-  bottom: 40px;
+  bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
+  --primary: #d0bcff;
+  --on-primary: #1a1125;
+}
 
-  display: inline-flex;
+/* Match desktop navbar rail height (--vp-nav-height, 64px) for a bulky pill */
+.myal-browse-apps-beer .myal-browse-apps-link {
+  --_size: var(--vp-nav-height);
+  --_padding: 1.5rem;
+  display: inline-flex !important;
   align-items: center;
-  gap: 12px;
-  padding: 26px 20px;
-  border-radius: 999px;
-
-  background: var(--vp-c-brand-1);
-  color: var(--vp-c-black);
-  font-size: 21px;
-  font-weight: 700;
+  gap: 0.65rem;
+  min-block-size: var(--vp-nav-height);
+  font-size: 1.0625rem;
+  font-weight: 800 !important;
   letter-spacing: 0.01em;
   white-space: nowrap;
-  text-decoration: none;
-
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.18),
-    0 1px 3px rgba(0, 0, 0, 0.12);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.myal-browse-fab:hover {
-  background: var(--vp-c-brand-2);
-  transform: translateX(-50%) translateY(-2px);
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.22),
-    0 2px 6px rgba(0, 0, 0, 0.14);
-}
-
-.myal-browse-fab:active {
-  transform: translateX(-50%) translateY(0px);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.18),
-    0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.myal-browse-fab-icon {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  font-size: 27px;
-  line-height: 1;
-}
-
-/* Dark mode: use the lighter brand color for better contrast */
-.dark .myal-browse-fab {
+  background-color: #d0bcff !important;
   color: #1a1125;
 }
 
-/* Fade + slide-up entry transition */
+.myal-browse-apps-beer .myal-browse-apps-link .myal-browse-apps-label {
+  font-weight: 800 !important;
+  color: #1a1125;
+}
+
+.myal-browse-apps-beer .myal-browse-apps-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  inline-size: calc(var(--vp-nav-height) * 0.68);
+  block-size: calc(var(--vp-nav-height) * 0.68);
+  border-radius: 999px;
+  background: #1a1125;
+  color: #d0bcff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 960px) {
+  .myal-browse-apps-beer .myal-browse-apps-link {
+    --_padding: 2rem;
+    font-size: 1.125rem;
+  }
+}
+
+.myal-browse-apps-beer .myal-browse-apps-link:hover {
+  background-color: color-mix(in srgb, #000 10%, #d0bcff) !important;
+}
+
+.myal-browse-apps-beer .myal-browse-apps-icon-wrap .material-icons-outlined {
+  font-size: calc(var(--vp-nav-height) * 0.36);
+  line-height: 1;
+  color: inherit;
+}
+
 .myal-fab-enter-active {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .myal-fab-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  /* Instant hide — primary fix is `dismissed` in BrowseAppsButton.vue; this avoids extra linger */
+  transition: opacity 0s, transform 0s;
 }
-.myal-fab-enter-from {
-  opacity: 0;
-  transform: translateX(-50%) translateY(12px);
-}
+
+.myal-fab-enter-from,
 .myal-fab-leave-to {
   opacity: 0;
   transform: translateX(-50%) translateY(12px);
 }
 
-/* Add bottom breathing room so content isn't obscured by FAB */
 .VPHome .VPHomeFeatures {
   padding-bottom: 96px;
 }

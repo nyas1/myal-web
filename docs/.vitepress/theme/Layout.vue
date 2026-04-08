@@ -1,18 +1,45 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useData, withBase } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import AppBeerSidebarNav from './components/AppBeerSidebarNav.vue'
 import AsideMoreCard from './components/AsideMoreCard.vue'
 import BrowseAppsButton from './components/BrowseAppsButton.vue'
+import MobileBottomNav from './components/MobileBottomNav.vue'
+import MobileFabCluster from './components/MobileFabCluster.vue'
+import NavBarTocDropdown from './components/NavBarTocDropdown.vue'
 
 const { Layout } = DefaultTheme
+const { page } = useData()
+const isAppPage = computed(() => page.value.relativePath === 'app.md')
+
+/** Used in `style.css` for `::before` — plain `url(/...)` ignores VitePress `base`. */
+const heroAndroidBg = computed(
+  () => `url('${withBase('/hero-android.svg')}?v=20260303a')`
+)
 </script>
 
 <template>
   <Layout>
+    <template #nav-bar-content-before>
+      <NavBarTocDropdown />
+    </template>
+    <template #sidebar-nav-before>
+      <AppBeerSidebarNav />
+    </template>
     <template #sidebar-nav-after>
       <AsideMoreCard />
     </template>
     <template #layout-bottom>
       <BrowseAppsButton />
+      <MobileBottomNav />
+      <MobileFabCluster v-if="isAppPage" />
     </template>
   </Layout>
 </template>
+
+<style>
+:root {
+  --myal-hero-android-bg: v-bind(heroAndroidBg);
+}
+</style>

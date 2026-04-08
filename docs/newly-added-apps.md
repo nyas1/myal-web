@@ -1,5 +1,6 @@
 ---
 title: Newly Added Apps
+outline: false
 ---
 
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
@@ -36,3 +37,11 @@ title: Newly Added Apps
 - `MD` [VK X](https://vkx.app/)
 - `MDY` [Payload Dumper](https://github.com/rhythmcache/payload-dumper-gui) <sup>`FOSS`</sup>
 - `MD` [ANX Reader](https://github.com/Anxcye/anx-reader) <sup>`FOSS`</sup>
+- `MDY` [Muviz Widgets](https://play.google.com/store/apps/details?id=com.sparkine.widgets) <sup>`💰`</sup>
+- `MDY` [Video Player - Material Player](https://play.google.com/store/apps/details?id=com.akira.material)
+- `MDY` [EON](https://play.google.com/store/apps/details?id=qijaz221.github.io.musicplayer)
+- `MDY` [Harmonoid](https://github.com/harmonoid/harmonoid) <sup>`FOSS`</sup>
+- `MDY` [SaTunes](https://codeberg.org/antoinepirlot/Satunes) <sup>`FOSS`</sup>
+- `MD3E` [VIVI](https://github.com/vivizzz007/vivi-music) <sup>`FOSS`</sup>
+
+<!-- END AUTO-GENERATED -->

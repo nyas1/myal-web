@@ -1,8 +1,8 @@
 ---
-title: How to Contribute
+title: Contribute
 ---
 
-# 💡 How to contribute
+# 💡 Contribute
 
 Please open an issue in the main repo:
 
