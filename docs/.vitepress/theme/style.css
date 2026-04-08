@@ -1660,6 +1660,76 @@ img.emoji[alt^='🐾'] {
   padding-inline: 14px !important;
 }
 
+/* Local search icon: use Material Icons Outlined instead of VP icon font */
+.VPLocalSearchBox .search-icon.local-search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  font-size: 0 !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  background-color: transparent !important;
+}
+
+@media (max-width: 767px) {
+  /* VP local search hides `.search-icon` on mobile; keep Material icon visible. */
+  .VPLocalSearchBox .search-icon.local-search-icon {
+    display: inline-flex !important;
+  }
+}
+
+.VPLocalSearchBox .search-icon.local-search-icon::before {
+  content: 'search' !important;
+  display: block;
+  font-family: 'Material Icons Outlined' !important;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  color: currentColor;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+/* Nav/home search button icon (VPNavBarSearchButton.vue) */
+.DocSearch-Button .DocSearch-Search-Icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  -webkit-mask: none !important;
+  mask: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  font-size: 0 !important;
+}
+
+.DocSearch-Button .DocSearch-Search-Icon::before {
+  content: 'search' !important;
+  display: block;
+  font-family: 'Material Icons Outlined' !important;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  color: currentColor;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
 @media (max-width: 767px) {
   .VPLocalSearchBox .search-input {
     padding-inline: 12px !important;
@@ -1679,7 +1749,7 @@ img.emoji[alt^='🐾'] {
 }
 
 .VPLocalSearchBox .result {
-  border-radius: var(--myal-home-card-radius) !important;
+  border-radius: calc(var(--myal-home-card-radius) * 0.625) !important;
 }
 
 .VPLocalSearchBox .search-keyboard-shortcuts kbd {
