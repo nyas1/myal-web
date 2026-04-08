@@ -10,10 +10,15 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-04-08 | [074b9c6](https://github.com/nyas1/Material-You-app-list/commit/074b9c668784891bf540c9994ef47ab1f2985495) | Merge pull request #440 from Giuig/main |
+| 2026-04-08 | [f580e73](https://github.com/nyas1/Material-You-app-list/commit/f580e73e42b3d77bb8f2910e04e16313e7934e5a) | Merge pull request #444 from Pankaj-Meharchandani/main |
+| 2026-04-08 | [ce421fe](https://github.com/nyas1/Material-You-app-list/commit/ce421fe9612a61dda6a7a7308d2e9d57dad78f6b) | Merge upstream/main - resolve conflicts, add auraninja, decisioninja, tvninja FOSS entries |
+| 2026-04-05 | [5181326](https://github.com/nyas1/Material-You-app-list/commit/51813268d35d35291788c0682db9f15b0f0165d2) | Remove Nekogram from the list of projects |
 | 2026-04-04 | [c8b09b7](https://github.com/nyas1/Material-You-app-list/commit/c8b09b7ff159de7a018b8c9d78f625ecbb5abb78) | README: formatting fixes, list cleanup, and tags |
 | 2026-04-04 | [1ca19f3](https://github.com/nyas1/Material-You-app-list/commit/1ca19f35aa1c9511c3200a3c7cbc971ef9baf544) | docs: add Fcitx5 for Android and Torrent Search |
 | 2026-04-04 | [ca54d36](https://github.com/nyas1/Material-You-app-list/commit/ca54d36a47292f9285ef07cd438fc1359fe5dab1) | docs: add RebootNya, GPTMobile, FoodYou, AniSync |
 | 2026-04-04 | [57e234c](https://github.com/nyas1/Material-You-app-list/commit/57e234c77591a1a426da4b7fa0164aad66cc1196) | Update Better xCloud and Smart Cleaner entries |
+| 2026-04-03 | [ab195b7](https://github.com/nyas1/Material-You-app-list/commit/ab195b7deff12a0c1c22a2b5ddd73ee6b01d5d81) | Remove obsolete Play Store entries and add FOSS versions for ninja apps |
 | 2026-03-30 | [1f6a431](https://github.com/nyas1/Material-You-app-list/commit/1f6a431d2ac815f5017b7b2e9dc7827c02ab507a) | Merge pull request #432 from sosauce/main |
 | 2026-03-30 | [0d4b9c9](https://github.com/nyas1/Material-You-app-list/commit/0d4b9c9eb4fa2a42e7a4cd4a495b0581375b2f1f) | docs: add LeanType & DisCorkie; cleanup Play Store links |
 | 2026-03-29 | [9f7f1fa](https://github.com/nyas1/Material-You-app-list/commit/9f7f1fa95e15067a2c28809f54425b6b3948747d) | docs: tag apps based on personal usage |
@@ -105,14 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-02-26 | [3bbbe82](https://github.com/nyas1/Material-You-app-list/commit/3bbbe8221c0e8854c252c6a09a47795b2706efd0) | Update Key Mapper link to Play Store |
 | 2026-02-26 | [5f4a1a1](https://github.com/nyas1/Material-You-app-list/commit/5f4a1a1446e100fe4eadd8de20af0c680a3cb736) | Remove grave marker from Key Mapper |
 | 2026-02-26 | [cf69a71](https://github.com/nyas1/Material-You-app-list/commit/cf69a71810bfdd2569e25e626975e36c3340a222) | Update name for AnonAddy to addy.io |
-| 2026-02-26 | [d9e6900](https://github.com/nyas1/Material-You-app-list/commit/d9e6900af2d83c28b2e419943307a6948a886371) | Add `MD3E` Kori to note apps |
-| 2026-02-26 | [64c3ca0](https://github.com/nyas1/Material-You-app-list/commit/64c3ca0dd628d51e36d8f3836aad609138c9517d) | Add grave marker to OpenNote and Clock You |
-| 2026-02-26 | [0992429](https://github.com/nyas1/Material-You-app-list/commit/0992429d614852dd6ff745682c43571f074ab658) | Add tombstone emoji to Clipious and Harmony Music |
-| 2026-02-26 | [a674ca1](https://github.com/nyas1/Material-You-app-list/commit/a674ca1f6ef088e570b602a2172c7731eafbf50f) | Rename Vibe Music to Gyawun Music |
-| 2026-02-25 | [fc0dbe9](https://github.com/nyas1/Material-You-app-list/commit/fc0dbe9da0db840222fee7c750ed1b59ac13c3da) | Add Seal Plus to YouTube downloaders |
-| 2026-02-25 | [a8cc417](https://github.com/nyas1/Material-You-app-list/commit/a8cc4178530a0ceabffbe3356c089c0c7c7b14f6) | Reverts false changes |
-| 2026-02-24 | [39cc8d7](https://github.com/nyas1/Material-You-app-list/commit/39cc8d78168b37934597b77503a8f110cea87e3f) | Add Rhythm music player to README |
-| 2026-02-24 | [ddb1597](https://github.com/nyas1/Material-You-app-list/commit/ddb1597719f251f12669dd9a49e978f094281484) | Music players sorted for `MD3E` listed top |
-| 2026-02-24 | [0e7103e](https://github.com/nyas1/Material-You-app-list/commit/0e7103e7b0b57bbb2a2764f319421d1fc44321fa) | Updated App Ops |
 
 <!-- END AUTO-GENERATED -->
