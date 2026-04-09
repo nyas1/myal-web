@@ -77,6 +77,23 @@ html:not(.dark) {
   color-scheme: dark !important;
 }
 
+/* Use Google icon font only (avoid Beercss Material Symbols payload). */
+.material-symbols-outlined {
+  font-family: 'Material Icons Outlined' !important;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  font-variation-settings: normal;
+}
+
 .dark {
   --vp-c-brand-1: #d0bcff;
   --vp-c-brand-2: #bfa5ff;
