@@ -22,6 +22,14 @@ export default defineConfig({
   appearance: 'force-dark',
   lastUpdated: true,
   head: [
+    ['script', {}, `(() => {
+      const key = 'vitepress-theme-appearance'
+      try { localStorage.setItem(key, 'dark') } catch {}
+      const root = document.documentElement
+      root.classList.remove('light')
+      root.classList.add('dark')
+      root.style.colorScheme = 'dark'
+    })();`],
     ['link', { rel: 'icon', href: publicUrl('icon.svg'), type: 'image/svg+xml' }],
     ['link', { rel: 'apple-touch-icon', href: publicUrl('icon.svg') }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
