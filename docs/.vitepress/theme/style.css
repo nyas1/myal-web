@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   /* Matches VPDoc `.aside { max-width: 256px }` — FAB sits just left of the TOC column */
   --myal-doc-toc-aside-width: 256px;
   --myal-fab-gap-from-toc: 12px;
@@ -69,6 +70,28 @@
   --myal-nav-lockup-nudge-y: -4px;
   /* Fine-tune horizontal alignment (right positive) */
   --myal-rail-logo-nudge: 0.65rem;
+}
+
+html.light,
+html:not(.dark) {
+  color-scheme: dark !important;
+}
+
+/* Use Google icon font only (avoid Beercss Material Symbols payload). */
+.material-symbols-outlined {
+  font-family: 'Material Icons Outlined' !important;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  font-variation-settings: normal;
 }
 
 .dark {

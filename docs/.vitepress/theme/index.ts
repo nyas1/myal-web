@@ -13,6 +13,38 @@ export default {
   enhanceApp({ router }) {
     if (typeof window === 'undefined') return
 
+    const root = document.documentElement
+    const applyDarkToElement = (element: HTMLElement | null) => {
+      if (!element) return
+      element.classList.remove('light')
+      element.classList.add('dark')
+      element.style.colorScheme = 'dark'
+    }
+
+    // Force a single theme mode (dark) regardless of OS/browser preference.
+    const enforceDarkTheme = () => {
+      applyDarkToElement(root)
+      applyDarkToElement(document.body)
+      try {
+        localStorage.setItem('vitepress-theme-appearance', 'dark')
+      } catch {
+        // Ignore storage errors (private mode / disabled storage).
+      }
+    }
+    enforceDarkTheme()
+
+    // Re-apply if any script/plugin mutates theme classes/styles after hydration.
+    const themeObserver = new MutationObserver(() => {
+      if (!root.classList.contains('dark') || root.classList.contains('light')) {
+        enforceDarkTheme()
+      }
+    })
+    themeObserver.observe(root, {
+      attributes: true,
+      attributeFilter: ['class', 'style']
+    })
+    window.addEventListener('pagehide', () => themeObserver.disconnect(), { once: true })
+
     // Beercss "scoped" scopes component styles under `.beer`; the bundle may still
     // ship a few global :root/html/body rules—keep Beer UI markup inside `.beer`.
     if (!beercssClientLoaded) {
@@ -62,6 +94,14 @@ export default {
       const focus = { x: 0, y: 0 }
       let currentStrength = 0
       let targetStrength = 0
+      let strokeColor = 'rgba(127, 103, 190, 0.22)'
+
+      const syncGridColors = () => {
+        const styles = getComputedStyle(document.documentElement)
+        const divider = styles.getPropertyValue('--vp-c-divider').trim()
+        const soft = styles.getPropertyValue('--vp-c-brand-soft').trim()
+        strokeColor = soft || divider || 'rgba(127, 103, 190, 0.22)'
+      }
 
       const resize = () => {
         dpr = Math.max(window.devicePixelRatio || 1, 1)
@@ -81,6 +121,8 @@ export default {
           focus.x = pointer.x
           focus.y = pointer.y
         }
+
+        syncGridColors()
       }
 
       const distendPoint = (x: number, y: number) => {
@@ -107,15 +149,8 @@ export default {
       const drawWarpedGrid = () => {
         context.clearRect(0, 0, width, height)
 
-        const divider = getComputedStyle(document.documentElement)
-          .getPropertyValue('--vp-c-divider')
-          .trim()
-        const soft = getComputedStyle(document.documentElement)
-          .getPropertyValue('--vp-c-brand-soft')
-          .trim()
-
         context.lineWidth = 1
-        context.strokeStyle = soft || divider || 'rgba(127, 103, 190, 0.22)'
+        context.strokeStyle = strokeColor
         context.globalAlpha = 0.8
 
         const spacing = 22
@@ -160,24 +195,55 @@ export default {
         targetStrength = 0
       }
 
+      const onVisibilityChange = () => {
+        if (document.visibilityState === 'hidden') {
+          targetStrength = 0
+        }
+      }
+
       resize()
       animate()
 
       window.addEventListener('pointermove', onMove)
       window.addEventListener('pointerleave', onLeave)
       window.addEventListener('resize', resize)
+      document.addEventListener('visibilitychange', onVisibilityChange)
 
       cleanupHomeGrid = () => {
         window.removeEventListener('pointermove', onMove)
         window.removeEventListener('pointerleave', onLeave)
         window.removeEventListener('resize', resize)
+        document.removeEventListener('visibilitychange', onVisibilityChange)
         window.cancelAnimationFrame(rafId)
         canvas.remove()
       }
     }
 
-    const applyTwemoji = () => {
-      twemoji.parse(document.body, {
+    const emojiPattern = (() => {
+      try {
+        return /[\p{Extended_Pictographic}\uFE0F]/u
+      } catch {
+        return /[\u2600-\u27BF\uD83C-\uDBFF\uDC00-\uDFFF]/
+      }
+    })()
+
+    const nodeHasEmoji = (node: Node): boolean => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        return emojiPattern.test(node.textContent ?? '')
+      }
+      if (node.nodeType !== Node.ELEMENT_NODE) return false
+      const element = node as Element
+      if (element.tagName === 'IMG' && element.classList.contains('emoji')) return false
+      return emojiPattern.test(element.textContent ?? '')
+    }
+
+    const applyTwemoji = (target: Node = document.body) => {
+      if (target.nodeType === Node.ELEMENT_NODE) {
+        const element = target as Element
+        if (element.tagName === 'IMG' && element.classList.contains('emoji')) return
+      }
+
+      twemoji.parse(target, {
         folder: 'svg',
         ext: '.svg'
       })
@@ -188,11 +254,15 @@ export default {
       cleanupTwemojiObserver = null
 
       let rafId = 0
+      const pendingTargets = new Set<Node>()
       const queueParse = () => {
         if (rafId) return
         rafId = window.requestAnimationFrame(() => {
           rafId = 0
-          applyTwemoji()
+          const targets = Array.from(pendingTargets)
+          pendingTargets.clear()
+          if (targets.length === 0) return
+          targets.forEach((target) => applyTwemoji(target))
         })
       }
 
@@ -200,17 +270,21 @@ export default {
         for (const mutation of mutations) {
           if (mutation.type === 'childList') {
             if (mutation.addedNodes.length > 0) {
-              queueParse()
-              return
+              for (const node of mutation.addedNodes) {
+                if (!nodeHasEmoji(node)) continue
+                pendingTargets.add(node.nodeType === Node.TEXT_NODE ? mutation.target : node)
+              }
             }
             continue
           }
 
           if (mutation.type === 'characterData') {
-            queueParse()
-            return
+            if (!nodeHasEmoji(mutation.target)) continue
+            pendingTargets.add(mutation.target.parentNode ?? mutation.target)
           }
         }
+
+        if (pendingTargets.size > 0) queueParse()
       })
 
       observer.observe(document.body, {
@@ -219,17 +293,10 @@ export default {
         subtree: true
       })
 
-      // Some desktop dropdowns/menus toggle existing nodes instead of inserting new ones.
-      // Re-parse once after user interaction so Twemoji stays applied everywhere.
-      const onInteraction = () => queueParse()
-      window.addEventListener('click', onInteraction, true)
-      window.addEventListener('keyup', onInteraction, true)
-
       cleanupTwemojiObserver = () => {
         observer.disconnect()
-        window.removeEventListener('click', onInteraction, true)
-        window.removeEventListener('keyup', onInteraction, true)
         if (rafId) window.cancelAnimationFrame(rafId)
+        pendingTargets.clear()
       }
     }
 
