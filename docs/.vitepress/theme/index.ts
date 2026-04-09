@@ -22,6 +22,7 @@ export default {
     }
 
     // Force a single theme mode (dark) regardless of OS/browser preference.
+    // Hydration-safe: touch <html> always; touch <body> only after hydration.
     const enforceDarkTheme = () => {
       applyDarkToElement(root)
       applyDarkToElement(document.body)
@@ -31,19 +32,22 @@ export default {
         // Ignore storage errors (private mode / disabled storage).
       }
     }
-    enforceDarkTheme()
-
-    // Re-apply if any script/plugin mutates theme classes/styles after hydration.
-    const themeObserver = new MutationObserver(() => {
-      if (!root.classList.contains('dark') || root.classList.contains('light')) {
-        enforceDarkTheme()
-      }
-    })
-    themeObserver.observe(root, {
-      attributes: true,
-      attributeFilter: ['class', 'style']
-    })
-    window.addEventListener('pagehide', () => themeObserver.disconnect(), { once: true })
+    let themeObserver: MutationObserver | null = null
+    const startThemeEnforcer = () => {
+      enforceDarkTheme()
+      if (themeObserver) return
+      // Re-apply if any script/plugin mutates theme classes/styles after hydration.
+      themeObserver = new MutationObserver(() => {
+        if (!root.classList.contains('dark') || root.classList.contains('light')) {
+          enforceDarkTheme()
+        }
+      })
+      themeObserver.observe(root, {
+        attributes: true,
+        attributeFilter: ['class', 'style']
+      })
+      window.addEventListener('pagehide', () => themeObserver?.disconnect(), { once: true })
+    }
 
     // Beercss "scoped" scopes component styles under `.beer`; the bundle may still
     // ship a few global :root/html/body rules—keep Beer UI markup inside `.beer`.
@@ -453,6 +457,7 @@ export default {
     }
 
     const runPostHydrationEffects = () => {
+      startThemeEnforcer()
       applyTwemoji()
       setupTwemojiObserver()
       applyTocToggle()
