@@ -2,6 +2,8 @@
 title: Apps
 ---
 
+# 📱 Apps
+
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 ## 🌐 Social & Communication

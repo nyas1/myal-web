@@ -3,9 +3,10 @@ title: Newly Added Apps
 outline: false
 ---
 
+# 🆕 Newly Added Apps
+
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
-## 🆕 Newly Added Apps!
 *Last **30 apps** that were recently added to list!*
 - `MY` [Fcitx5 for Android](https://github.com/fcitx5-android/fcitx5-android) <sup>`FOSS`</sup>
 - `MD3E` [Torrent Search](https://github.com/prajwalch/TorrentSearch) <sup>`FOSS`</sup>

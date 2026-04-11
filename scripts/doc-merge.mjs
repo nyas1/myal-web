@@ -20,19 +20,19 @@ export const CHANGELOG_TABLE_AUTO_COMMENT =
   '<!-- AUTO-GENERATED: upstream commit table (scripts/generate-changelog.mjs) -->'
 
 /**
- * Keep frontmatter and optional markdown before the AUTO marker.
- * Replace only the generated inner content between AUTO and END markers.
- * Markdown after the block is preserved only when `END_AUTO_GENERATED` is present;
- * if AUTO exists but END is missing, content after AUTO may be replaced on the next write.
+ * Keep frontmatter and optional markdown before the AUTO marker; replace only the inner block
+ * between AUTO and END. Optional `docHeading` is an H1 line inserted before AUTO (e.g. `# 📱 Apps`).
  */
-export function writeMergedReadmeDerivedDoc(filePath, defaultFrontmatter, generatedInner) {
+export function writeMergedReadmeDerivedDoc(filePath, defaultFrontmatter, generatedInner, docHeading = '') {
   const inner = generatedInner.trimEnd()
   const AUTO = README_AUTO_COMMENT
   const END = END_AUTO_GENERATED
   const defaultFm = defaultFrontmatter.trimEnd()
+  const headingLine = typeof docHeading === 'string' ? docHeading.trimEnd() : ''
+  const headingBlock = headingLine ? `${headingLine}\n\n` : ''
 
   if (!existsSync(filePath)) {
-    writeFileSync(filePath, `---\n${defaultFm}\n---\n\n${AUTO}\n\n${inner}\n\n${END}\n`)
+    writeFileSync(filePath, `---\n${defaultFm}\n---\n\n${headingBlock}${AUTO}\n\n${inner}\n\n${END}\n`)
     return
   }
 
@@ -42,7 +42,7 @@ export function writeMergedReadmeDerivedDoc(filePath, defaultFrontmatter, genera
 
   const autoIdx = body.indexOf(AUTO)
   if (autoIdx === -1) {
-    writeFileSync(filePath, `---\n${fm}\n---\n\n${AUTO}\n\n${inner}\n\n${END}\n`)
+    writeFileSync(filePath, `---\n${fm}\n---\n\n${headingBlock}${AUTO}\n\n${inner}\n\n${END}\n`)
     return
   }
 
@@ -53,8 +53,12 @@ export function writeMergedReadmeDerivedDoc(filePath, defaultFrontmatter, genera
   const endIdx = afterFirstLine.indexOf(END)
   const suffix = endIdx === -1 ? '' : afterFirstLine.slice(endIdx + END.length).replace(/^\s*\n?/, '')
   const beforeAuto = body.slice(0, autoIdx).replace(/\s+$/, '')
+  const trimmedBefore = beforeAuto
+    .replace(/\n{3,}/g, '\n\n')
+    .trimEnd()
+    .replace(/^\n+/, '')
 
-  const prefixBlock = beforeAuto ? `${beforeAuto}\n\n` : ''
+  const prefixBlock = trimmedBefore ? `${trimmedBefore}\n\n` : headingBlock
   const suffixBlock = suffix ? `\n\n${suffix}` : ''
   writeFileSync(
     filePath,

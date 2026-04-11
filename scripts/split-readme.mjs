@@ -39,6 +39,31 @@ function stripTocBacklinks(markdown) {
     .trim()
 }
 
+/** Drop README section title when the doc page already has a matching `#` heading (avoids duplicate titles). */
+function stripLeadingReadmeHeading(markdown, headingLines) {
+  let rest = markdown.replace(/\r\n/g, '\n').trimStart()
+  for (const line of headingLines) {
+    if (rest.startsWith(line)) {
+      rest = rest.slice(line.length).replace(/^\s*\n+/, '')
+      return rest.trimStart()
+    }
+  }
+  return markdown
+}
+
+function prepareNewlyAddedSlice(markdown) {
+  const headings = README_HEADINGS.newlyAdded
+  const body = stripLeadingReadmeHeading(markdown, headings)
+  for (const h of headings) {
+    if (body.startsWith(h)) {
+      throw new Error(
+        `split-readme: newly-added slice still starts with ${JSON.stringify(h)}. Update README_HEADINGS or stripLeadingReadmeHeading.`
+      )
+    }
+  }
+  return body
+}
+
 function normalizeAppsStructure(markdown) {
   return markdown
     .replace(/^###\s*🔧\s*Uncategorized\s*Tools\s*$/im, '## 🔧 Uncategorized Tools')
@@ -48,7 +73,9 @@ function normalizeAppsStructure(markdown) {
 const APP_LINE_PATTERN =
   /^\s*[-*+]\s+(?:\*\*)?`[^`]+`(?:\*\*)?\s+\[([^\]]+?)\]\(\s*([^) \t]+)\s*(?:\s+(['"])(.*?)\3)?\s*\)\s*(?:<sup>.*)?\s*$/gmu
 
-const newlyAdded = stripTocBacklinks(readme.slice(newlyStart, appsStart).trim())
+const newlyAdded = prepareNewlyAddedSlice(
+  stripTocBacklinks(readme.slice(newlyStart, appsStart).trim())
+)
 const apps = normalizeAppsStructure(stripTocBacklinks(readme.slice(appsStart, sourcesStart).trim()))
 const sourcesEnd = toolsUsedStart !== -1 && toolsUsedStart > sourcesStart ? toolsUsedStart : readme.length
 const sources = stripTocBacklinks(readme.slice(sourcesStart, sourcesEnd).trim())
@@ -137,16 +164,18 @@ patchOrCreateHomeIndex(resolve(docsDir, 'index.md'), {
   appCount,
   indexDocFullDefault: indexDoc
 })
-writeMergedReadmeDerivedDoc(resolve(docsDir, 'app.md'), 'title: Apps', apps)
+writeMergedReadmeDerivedDoc(resolve(docsDir, 'app.md'), 'title: Apps', apps, '# 📱 Apps')
 writeMergedReadmeDerivedDoc(
   resolve(docsDir, 'newly-added-apps.md'),
   'title: Newly Added Apps\noutline: false',
-  newlyAdded
+  newlyAdded,
+  '# 🆕 Newly Added Apps'
 )
 writeMergedReadmeDerivedDoc(
   resolve(docsDir, 'credits.md'),
   'title: Credits\noutline: false',
-  sources
+  sources,
+  '# 📝 Credits'
 )
 
 console.log('Generated docs/index.md, docs/app.md, docs/newly-added-apps.md, docs/credits.md')

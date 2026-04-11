@@ -3,6 +3,8 @@ title: Credits
 outline: false
 ---
 
+# 📝 Credits
+
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 ## 🪢 Sources

@@ -53,15 +53,7 @@
    * Collapsed rail: intrinsic min (brand row + aside padding) × 1.25 — 25% wider than the
    * minimum that prevented overflow into `#VPContent`.
    */
-  --myal-sidebar-collapsed-width: calc(
-    (
-      var(--myal-sidebar-inline-pad) * 2 +
-      var(--myal-beer-rail-inline) +
-      var(--myal-beer-link-inline) * 2 +
-      var(--myal-sidebar-row-size) +
-      var(--myal-rail-logo-nudge)
-    ) * 1.25
-  );
+  --myal-sidebar-collapsed-width: calc((var(--myal-sidebar-inline-pad) * 2 + var(--myal-beer-rail-inline) + var(--myal-beer-link-inline) * 2 + var(--myal-sidebar-row-size) + var(--myal-rail-logo-nudge)) * 1.25);
   /* Nudge sidebar content (MYAL rail, nav) slightly below the top edge */
   --myal-sidebar-offset-top: 10px;
   --myal-beer-rail-inline: 0.0625rem;
@@ -209,7 +201,7 @@ html:not(.dark) {
  * `.myal-sidebar-brand` only — a transform on `.VPNavBarTitle` there has no visible effect.
  */
 @media (max-width: 959px) {
-  .VPNavBar:not(.home) .container > .title .VPNavBarTitle {
+  .VPNavBar:not(.home) .container>.title .VPNavBarTitle {
     transform: translateY(var(--myal-nav-lockup-nudge-y));
   }
 }
@@ -1111,7 +1103,7 @@ aside.VPSidebar .curtain {
    * strip into a square, so the active chip reads as a circle. Override width so tabs share
    * space (`flex: 1`) and icons keep the stock pill: `padding` + `border-radius: 2rem` on `i`.
    */
-  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav > a:not(.button, .chip) {
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav>a:not(.button, .chip) {
     flex: 1 1 0;
     display: flex !important;
     flex-direction: column !important;
@@ -1126,7 +1118,7 @@ aside.VPSidebar .curtain {
     text-align: center;
   }
 
-  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav > a:not(.button, .chip) > i.material-icons-outlined {
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav>a:not(.button, .chip)>i.material-icons-outlined {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1157,7 +1149,7 @@ aside.VPSidebar .curtain {
     white-space: nowrap;
   }
 
-  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav > a.active:not(.button, .chip) > i.material-icons-outlined {
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav>a.active:not(.button, .chip)>i.material-icons-outlined {
     background-color: var(--vp-c-brand-soft) !important;
     color: var(--vp-c-brand-1) !important;
   }
@@ -1684,7 +1676,7 @@ aside.VPSidebar .curtain {
  * Inline tags (`MDY`, `FOSS`, …) — match home feature card radius site-wide.
  * Same selector shape as vp-doc.css: only direct children of non-`pre` parents (not fenced blocks).
  */
-.vp-doc :not(pre) > code {
+.vp-doc :not(pre)>code {
   border-radius: var(--myal-home-card-radius);
 }
 
@@ -1711,8 +1703,7 @@ img.emoji[alt^='🐾'] {
   .VPLocalSearchBox .shell {
     border-radius: var(--myal-home-card-radius) var(--myal-home-card-radius) 0 0 !important;
     padding-block: max(20px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) !important;
-    padding-inline: max(1.25rem, env(safe-area-inset-left, 0px))
-      max(1.25rem, env(safe-area-inset-right, 0px)) !important;
+    padding-inline: max(1.25rem, env(safe-area-inset-left, 0px)) max(1.25rem, env(safe-area-inset-right, 0px)) !important;
   }
 }
 
@@ -1740,6 +1731,7 @@ img.emoji[alt^='🐾'] {
 }
 
 @media (max-width: 767px) {
+
   /* VP local search hides `.search-icon` on mobile; keep Material icon visible. */
   .VPLocalSearchBox .search-icon.local-search-icon {
     display: inline-flex !important;
@@ -1802,13 +1794,13 @@ img.emoji[alt^='🐾'] {
   }
 }
 
-.VPLocalSearchBox .result > div {
+.VPLocalSearchBox .result>div {
   margin-block: 14px !important;
   margin-inline: 22px !important;
 }
 
 @media (max-width: 767px) {
-  .VPLocalSearchBox .result > div {
+  .VPLocalSearchBox .result>div {
     margin-block: 12px !important;
     margin-inline: 16px !important;
   }
