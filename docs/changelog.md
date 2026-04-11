@@ -10,6 +10,7 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-04-11 | [e3e10ba](https://github.com/nyas1/Material-You-app-list/commit/e3e10ba3864a136785fcad4bb8e060e0a901c9e2) | README: tighten setup notes for Discord, WhatsApp, Mixplorer |
 | 2026-04-08 | [074b9c6](https://github.com/nyas1/Material-You-app-list/commit/074b9c668784891bf540c9994ef47ab1f2985495) | Merge pull request #440 from Giuig/main |
 | 2026-04-08 | [f580e73](https://github.com/nyas1/Material-You-app-list/commit/f580e73e42b3d77bb8f2910e04e16313e7934e5a) | Merge pull request #444 from Pankaj-Meharchandani/main |
 | 2026-04-08 | [ce421fe](https://github.com/nyas1/Material-You-app-list/commit/ce421fe9612a61dda6a7a7308d2e9d57dad78f6b) | Merge upstream/main - resolve conflicts, add auraninja, decisioninja, tvninja FOSS entries |
@@ -109,6 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-02-26 | [4ed3ce0](https://github.com/nyas1/Material-You-app-list/commit/4ed3ce023ac1b194ebfdd95177b0273ea2a4bc0a) | Moved Food-E app Uncategorized to Health & Lifestyle and added grave marker |
 | 2026-02-26 | [3bbbe82](https://github.com/nyas1/Material-You-app-list/commit/3bbbe8221c0e8854c252c6a09a47795b2706efd0) | Update Key Mapper link to Play Store |
 | 2026-02-26 | [5f4a1a1](https://github.com/nyas1/Material-You-app-list/commit/5f4a1a1446e100fe4eadd8de20af0c680a3cb736) | Remove grave marker from Key Mapper |
-| 2026-02-26 | [cf69a71](https://github.com/nyas1/Material-You-app-list/commit/cf69a71810bfdd2569e25e626975e36c3340a222) | Update name for AnonAddy to addy.io |
 
 <!-- END AUTO-GENERATED -->
