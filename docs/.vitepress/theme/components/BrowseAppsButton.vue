@@ -27,7 +27,8 @@ function onBrowseAppsClick(e: MouseEvent) {
   <Transition name="myal-fab">
     <div v-if="showFab" class="beer myal-browse-apps-beer">
       <a
-        class="button elevate myal-browse-apps-link"
+        class="button no-wave myal-browse-apps-link"
+        data-myal-browse-apps
         :href="withBase('/app')"
         aria-label="Browse Apps"
         @click="onBrowseAppsClick"

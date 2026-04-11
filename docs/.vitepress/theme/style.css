@@ -1870,56 +1870,79 @@ img.emoji[alt^='🐾'] {
   --on-primary: #1a1125;
 }
 
-/* Match desktop navbar rail height (--vp-nav-height, 64px) for a bulky pill */
-.myal-browse-apps-beer .myal-browse-apps-link {
-  --_size: var(--vp-nav-height);
-  --_padding: 1.5rem;
+/*
+ * FAB link: `!important` + `[data-myal-browse-apps]` so async BeerCSS (.button padding, ripple ::after,
+ * elevate shadow, border-radius) cannot win after hydration. Pseudo reset is backup if `no-wave` were dropped.
+ */
+.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps]::before,
+.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps]::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+}
+
+.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] {
+  --myal-browse-icon-box: calc(var(--vp-nav-height) * 0.68);
+  --myal-browse-text-pad: 0.75rem;
   display: inline-flex !important;
-  align-items: center;
-  gap: 0.65rem;
-  min-block-size: var(--vp-nav-height);
-  font-size: 1.0625rem;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+  block-size: var(--vp-nav-height) !important;
+  min-block-size: 0 !important;
+  gap: var(--myal-browse-text-pad) !important;
+  padding-block: 0 !important;
+  padding-inline-start: calc((var(--vp-nav-height) - var(--myal-browse-icon-box)) / 2) !important;
+  padding-inline-end: var(--myal-browse-text-pad) !important;
+  font-size: 1.0625rem !important;
   font-weight: 800 !important;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
   background-color: #d0bcff !important;
-  color: #1a1125;
+  color: #1a1125 !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: calc(var(--vp-nav-height) / 2) !important;
 }
 
-.myal-browse-apps-beer .myal-browse-apps-link .myal-browse-apps-label {
+.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] .myal-browse-apps-label {
   font-weight: 800 !important;
-  color: #1a1125;
+  line-height: 1 !important;
+  color: #1a1125 !important;
 }
 
-.myal-browse-apps-beer .myal-browse-apps-icon-wrap {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  inline-size: calc(var(--vp-nav-height) * 0.68);
-  block-size: calc(var(--vp-nav-height) * 0.68);
-  border-radius: 999px;
-  background: #1a1125;
-  color: #d0bcff;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] .myal-browse-apps-icon-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+  inline-size: var(--myal-browse-icon-box) !important;
+  block-size: var(--myal-browse-icon-box) !important;
+  border-radius: 999px !important;
+  background: #1a1125 !important;
+  color: #d0bcff !important;
+  box-shadow: none !important;
 }
 
 @media (min-width: 960px) {
-  .myal-browse-apps-beer .myal-browse-apps-link {
-    --_padding: 2rem;
-    font-size: 1.125rem;
+  .myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] {
+    --myal-browse-text-pad: 0.85rem;
+    font-size: 1.125rem !important;
   }
 }
 
-.myal-browse-apps-beer .myal-browse-apps-link:hover {
+.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps]:hover {
   background-color: color-mix(in srgb, #000 10%, #d0bcff) !important;
 }
 
-.myal-browse-apps-beer .myal-browse-apps-icon-wrap .material-icons-outlined {
-  font-size: calc(var(--vp-nav-height) * 0.36);
-  line-height: 1;
-  color: inherit;
+.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] .myal-browse-apps-icon-wrap .material-icons-outlined {
+  font-size: calc(var(--vp-nav-height) * 0.36) !important;
+  line-height: 1 !important;
+  color: inherit !important;
 }
 
 .myal-fab-enter-active {
