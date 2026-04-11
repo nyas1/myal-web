@@ -34,14 +34,15 @@
       transparent 72%);
   --myal-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
   --myal-shadow-md: 0 1px 3px rgba(0, 0, 0, 0.14);
-  --vp-font-family-base: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --vp-font-family-base: 'Google Sans Flex', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* BeerCSS sets `--font: Inter…` later; pin to our UI stack */
+  --font: var(--vp-font-family-base) !important;
   /* Shared sidebar geometry (avoid fixed pixels across breakpoints) */
   --myal-sidebar-row-size: 3.5rem;
   /* Expanded rail: fixed width (no viewport scaling — same idea as collapsed). Drives VP layout. */
   --myal-sidebar-expanded-width: 210px;
   --vp-sidebar-width: var(--myal-sidebar-expanded-width);
-  /* Corner blend pseudo-element seam offsets (desktop) */
-  /* Horizontal nudge for corner patch (px okay here; keeps math stable across rem changes) */
+  /* Corner blend seam (desktop); px keeps math stable across rem */
   --myal-corner-seam-x: 0px;
   --myal-corner-seam-y: 0px;
   --myal-corner-size: calc(var(--myal-sidebar-row-size) * 0.7142857);
@@ -67,6 +68,12 @@
 html.light,
 html:not(.dark) {
   color-scheme: dark !important;
+}
+
+/* BeerCSS loads after this file and sets body font — override + Google Sans Flex ROND (geometric) */
+html body {
+  font-family: var(--vp-font-family-base) !important;
+  font-variation-settings: 'ROND' 0 !important;
 }
 
 /* Use Google icon font only (avoid Beercss Material Symbols payload). */
@@ -276,19 +283,17 @@ html:not(.dark) {
   max-width: 960px;
 }
 
+/* VPHero `.name` max-width is ~392–576px by default */
+.VPHome .VPHero .name {
+  max-width: none;
+  white-space: nowrap;
+}
+
 .VPHome {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   overflow-x: clip;
-}
-
-@media (hover: none),
-(pointer: coarse) {
-  .VPHome {
-    overflow: hidden;
-    overflow-x: clip;
-  }
 }
 
 html,

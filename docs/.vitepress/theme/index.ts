@@ -1,5 +1,6 @@
 import type { Theme } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
+// Default theme without bundled Inter; Google Sans Flex is linked in config.mts head.
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import { inject } from '@vercel/analytics'
 import twemoji from 'twemoji'
 import Layout from './Layout.vue'
