@@ -1,4 +1,4 @@
-<h1 align="center">🎨 Material You Apps List 🎨</h1>
+<h1 align="center">🎨 Material You App List 🎨</h1>
 <p align="center">
 	<img src="images/material_you.png" alt="Material You"/>
 </p>
