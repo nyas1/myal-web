@@ -15,7 +15,7 @@ const svg = readFileSync(svgPath)
 
 async function writePng(size, filename) {
   await sharp(svg)
-    .resize(size, size)
+    .resize(size, size, { kernel: sharp.kernel.lanczos3 })
     .png()
     .toFile(join(publicDir, filename))
 }
@@ -23,7 +23,10 @@ async function writePng(size, filename) {
 /** Safe zone ~80% for maskable launcher icons. */
 async function writeMaskable512() {
   const inner = 410
-  const buf = await sharp(svg).resize(inner, inner).png().toBuffer()
+  const buf = await sharp(svg)
+    .resize(inner, inner, { kernel: sharp.kernel.lanczos3 })
+    .png()
+    .toBuffer()
   const pad = Math.floor((512 - inner) / 2)
   await sharp({
     create: {
@@ -38,9 +41,12 @@ async function writeMaskable512() {
     .toFile(join(publicDir, 'pwa-maskable-512x512.png'))
 }
 
-await writePng(192, 'pwa-192x192.png')
+await writePng(1024, 'pwa-1024x1024.png')
 await writePng(512, 'pwa-512x512.png')
+await writePng(192, 'pwa-192x192.png')
 await writePng(180, 'apple-touch-icon.png')
 await writeMaskable512()
 
-console.log('Wrote pwa-192x192.png, pwa-512x512.png, apple-touch-icon.png, pwa-maskable-512x512.png')
+console.log(
+  'Wrote pwa-1024x1024.png, pwa-512x512.png, pwa-192x192.png, apple-touch-icon.png, pwa-maskable-512x512.png'
+)

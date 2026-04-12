@@ -113,6 +113,12 @@ export default withPwa(
           purpose: 'any'
         },
         {
+          src: 'pwa-1024x1024.png',
+          sizes: '1024x1024',
+          type: 'image/png',
+          purpose: 'any'
+        },
+        {
           src: 'pwa-maskable-512x512.png',
           sizes: '512x512',
           type: 'image/png',
