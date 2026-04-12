@@ -1,4 +1,5 @@
 import { fileURLToPath } from 'node:url'
+import { withPwa } from '@vite-pwa/vitepress'
 import { defineConfig } from 'vitepress'
 import { MYAL_MOBILE_NAV_CHROME } from './chrome'
 import { meta, nav, sidebar, socialLinks } from './shared'
@@ -27,7 +28,8 @@ function injectEarlyChromeMeta(html: string): string {
   return html.replace(/(<meta\s+name="viewport"[^>]*>)/i, `$1${block}`)
 }
 
-export default defineConfig({
+export default withPwa(
+  defineConfig({
   base: pagesBase,
   title: 'MYAL',
   description: meta.description,
@@ -48,8 +50,7 @@ export default defineConfig({
       root.style.colorScheme = 'dark'
     })();`],
     ['link', { rel: 'icon', href: publicUrl('icon.svg'), type: 'image/svg+xml' }],
-    ['link', { rel: 'manifest', href: publicUrl('site.webmanifest') }],
-    ['link', { rel: 'apple-touch-icon', href: publicUrl('icon.svg') }],
+    ['link', { rel: 'apple-touch-icon', href: publicUrl('apple-touch-icon.png') }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { rel: 'stylesheet', href: googleSansFlexStylesheet }],
@@ -79,6 +80,51 @@ export default defineConfig({
       options: {
         detailedView: true
       }
+    }
+  },
+  pwa: {
+    registerType: 'autoUpdate',
+    injectRegister: 'script-defer',
+    experimental: {
+      includeAllowlist: true
+    },
+    manifest: {
+      name: meta.name,
+      short_name: 'MYAL',
+      description: meta.description,
+      lang: 'en',
+      theme_color: MYAL_MOBILE_NAV_CHROME,
+      background_color: MYAL_MOBILE_NAV_CHROME,
+      display: 'standalone',
+      orientation: 'portrait',
+      scope: pagesBase,
+      start_url: pagesBase,
+      icons: [
+        {
+          src: 'pwa-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+          purpose: 'any'
+        },
+        {
+          src: 'pwa-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any'
+        },
+        {
+          src: 'pwa-maskable-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'maskable'
+        }
+      ]
+    },
+    workbox: {
+      globPatterns: ['**/*.{css,js,html,ico,png,svg,woff2,json,xml,webmanifest}']
+    },
+    devOptions: {
+      enabled: false
     }
   },
   vite: {
@@ -112,4 +158,5 @@ export default defineConfig({
     }
   },
   srcExclude: ['README.md']
-})
+  })
+)
