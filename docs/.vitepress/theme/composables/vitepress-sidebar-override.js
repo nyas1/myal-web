@@ -25,17 +25,16 @@ export function useSidebar() {
   const hasSidebar = computed(() => {
     return frontmatter.value.sidebar !== false && sidebar.value.length > 0
   })
-  const leftAside = computed(() => {
-    if (hasAside)
-      return frontmatter.value.aside == null
-        ? theme.value.aside === 'left'
-        : frontmatter.value.aside === 'left'
-    return false
-  })
   const hasAside = computed(() => {
     if (frontmatter.value.layout === 'home') return false
     if (frontmatter.value.aside != null) return !!frontmatter.value.aside
     return theme.value.aside !== false
+  })
+  const leftAside = computed(() => {
+    if (!hasAside.value) return false
+    return frontmatter.value.aside == null
+      ? theme.value.aside === 'left'
+      : frontmatter.value.aside === 'left'
   })
   const isSidebarEnabled = computed(() => hasSidebar.value && is960.value)
   const sidebarGroups = computed(() => {

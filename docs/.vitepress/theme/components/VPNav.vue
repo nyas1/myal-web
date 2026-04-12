@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useData, inBrowser } from 'vitepress'
-import { computed, provide, watchEffect, onMounted } from 'vue'
+import { computed, provide, watchEffect } from 'vue'
 import { useNav } from 'vitepress/dist/client/theme-default/composables/nav'
 import VPNavBar from 'vitepress/dist/client/theme-default/components/VPNavBar.vue'
 import VPNavScreen from 'vitepress/dist/client/theme-default/components/VPNavScreen.vue'
@@ -13,15 +13,11 @@ const hasNavbar = computed(() => frontmatter.value.navbar !== false)
 provide('close-screen', closeScreen)
 
 watchEffect(() => {
-  if (inBrowser) {
-    document.documentElement.classList.toggle('hide-nav', !hasNavbar.value)
-  }
-})
-
-/** Mobile <960px: top bar stays visible on all pages (no scroll-away). */
-onMounted(() => {
   if (!inBrowser) return
-  document.documentElement.classList.add('vp-nav-shown-mobile')
+  const root = document.documentElement
+  root.classList.toggle('hide-nav', !hasNavbar.value)
+  /* Mobile local-nav offset: only when the top bar is actually shown. */
+  root.classList.toggle('vp-nav-shown-mobile', hasNavbar.value)
 })
 </script>
 
