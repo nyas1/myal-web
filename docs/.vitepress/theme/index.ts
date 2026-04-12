@@ -110,16 +110,21 @@ export default {
       cleanupTwemojiObserver?.()
       cleanupTwemojiObserver = null
 
-      let rafId = 0
+      /** Double rAF: Vue often patches the DOM across frames; one rAF can re-parse before markup settles. */
+      let rafOuter = 0
+      let rafInner = 0
       const pendingTargets = new Set<Node>()
       const queueParse = () => {
-        if (rafId) return
-        rafId = window.requestAnimationFrame(() => {
-          rafId = 0
-          const targets = Array.from(pendingTargets)
-          pendingTargets.clear()
-          if (targets.length === 0) return
-          targets.forEach((target) => applyTwemoji(target))
+        if (rafOuter) return
+        rafOuter = window.requestAnimationFrame(() => {
+          rafOuter = 0
+          rafInner = window.requestAnimationFrame(() => {
+            rafInner = 0
+            const targets = Array.from(pendingTargets)
+            pendingTargets.clear()
+            if (targets.length === 0) return
+            targets.forEach((target) => applyTwemoji(target))
+          })
         })
       }
 
@@ -152,8 +157,20 @@ export default {
 
       cleanupTwemojiObserver = () => {
         observer.disconnect()
-        if (rafId) window.cancelAnimationFrame(rafId)
+        if (rafOuter) window.cancelAnimationFrame(rafOuter)
+        if (rafInner) window.cancelAnimationFrame(rafInner)
         pendingTargets.clear()
+      }
+    }
+
+    /** Full-body parse only once; re-parsing chrome on every route tears down Twemoji imgs and makes them “reload”. */
+    const applyTwemojiAfterRouteChange = () => {
+      const roots: (Element | null)[] = [
+        document.querySelector('#VPContent'),
+        document.querySelector('.VPDocAsideOutline')
+      ]
+      for (const el of roots) {
+        if (el) applyTwemoji(el)
       }
     }
 
@@ -309,18 +326,22 @@ export default {
       }
     }
 
-    const runPostHydrationEffects = () => {
+    const runPostHydrationEffects = (afterRouteChange: boolean) => {
       startThemeEnforcer()
-      applyTwemoji()
+      if (afterRouteChange) {
+        applyTwemojiAfterRouteChange()
+      } else {
+        applyTwemoji()
+      }
       setupTwemojiObserver()
       applyTocToggle()
       syncHomeBodyClass()
       updateSyncBadge()
     }
 
-    runAfterHydrationPaint(runPostHydrationEffects)
+    runAfterHydrationPaint(() => runPostHydrationEffects(false))
     router.onAfterRouteChanged = () => {
-      runAfterHydrationPaint(runPostHydrationEffects)
+      runAfterHydrationPaint(() => runPostHydrationEffects(true))
     }
   }
 } satisfies Theme
