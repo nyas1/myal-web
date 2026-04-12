@@ -34,7 +34,7 @@ export default defineConfig({
   lang: 'en-US',
   cleanUrls: true,
   appearance: 'force-dark',
-  lastUpdated: true,
+  lastUpdated: false,
   transformHtml(html) {
     return injectEarlyChromeMeta(html)
   },
@@ -69,18 +69,17 @@ export default defineConfig({
       level: 'deep',
       label: 'Table of contents'
     },
+    docFooter: {
+      prev: false,
+      next: false
+    },
     socialLinks,
     search: {
       provider: 'local',
       options: {
         detailedView: true
       }
-    },
-    editLink: {
-      pattern: 'https://github.com/nyas1/Material-You-app-list/edit/main/docs/:path',
-      text: 'Edit this page on GitHub'
-    },
-
+    }
   },
   vite: {
     plugins: [
