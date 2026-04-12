@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
-import { meta, nav, sidebar, socialLinks, themeColorChromeUi } from './shared'
+import { meta, nav, sidebar, socialLinks } from './shared'
 import { vitepressSidebarOverridePlugin } from './theme/vitepress-sidebar-plugin'
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1]
@@ -26,15 +26,6 @@ export default defineConfig({
   appearance: 'force-dark',
   lastUpdated: true,
   head: [
-    [
-      'meta',
-      {
-        name: 'viewport',
-        content:
-          'width=device-width, initial-scale=1.0, viewport-fit=cover'
-      }
-    ],
-    ['meta', { name: 'theme-color', content: themeColorChromeUi }],
     ['script', {}, `(() => {
       const key = 'vitepress-theme-appearance'
       try { localStorage.setItem(key, 'dark') } catch {}
@@ -51,7 +42,14 @@ export default defineConfig({
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined' }],
     ['meta', { name: 'application-name', content: meta.name }],
     ['meta', { property: 'og:site_name', content: meta.name }],
-    ['meta', { name: 'apple-mobile-web-app-title', content: meta.name }]
+    ['meta', { name: 'apple-mobile-web-app-title', content: meta.name }],
+    /*
+     * Android Chrome: colors the system gesture/nav strip under the page. Without this it stays
+     * default black while our fixed bottom bar uses VitePress dark --vp-c-bg (#1b1b1f). Does not
+     * change layout or nav height. (True transparency is not exposed to normal sites here.)
+     */
+    ['meta', { name: 'theme-color', content: '#1b1b1f' }],
+    ['meta', { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#1b1b1f' }]
   ],
   themeConfig: {
     logo: {
