@@ -1090,7 +1090,12 @@ aside.VPSidebar .curtain {
     padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px) + 12px);
   }
 
-  .myal-mobile-bottom-wrap {
+  /*
+   * BeerCSS scopes under `.beer` with higher specificity than `.myal-mobile-bottom-wrap` alone,
+   * so `nav:is(.top,.bottom)` keeps `gap: 0.25rem`, `padding: 0.5rem`, `min-block-size: 4.5rem`, etc.
+   * Prefix `.beer` + `!important` so our bar actually wins after async Beer loads.
+   */
+  .beer.myal-mobile-bottom-wrap {
     position: fixed;
     left: 0;
     right: 0;
@@ -1098,34 +1103,35 @@ aside.VPSidebar .curtain {
     z-index: 45;
     padding-bottom: env(safe-area-inset-bottom, 0px);
     pointer-events: none;
-    /* Same as `.myal-mobile-bottom-nav` so safe-area padding isn’t a different color than the bar. */
     background-color: var(--vp-c-bg);
   }
 
-  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav {
+  .beer.myal-mobile-bottom-wrap nav.myal-mobile-bottom-nav.bottom {
     pointer-events: auto;
     position: relative;
     inset: auto;
     margin: 0;
     border-radius: 0;
-    min-block-size: 3.5rem;
+    padding: 0 !important;
+    min-block-size: 3.5rem !important;
+    block-size: auto !important;
+    max-block-size: none !important;
     background-color: var(--vp-c-bg) !important;
     border-top: 1px solid var(--vp-c-divider);
     color: var(--vp-c-text-2);
   }
 
   /*
-   * BeerCSS `nav.bottom > a` sets `inline-size: 3.5rem` — that fixed tab width forces the icon
-   * strip into a square, so the active chip reads as a circle. Override width so tabs share
-   * space (`flex: 1`) and icons keep the stock pill: `padding` + `border-radius: 2rem` on `i`.
+   * BeerCSS `nav.bottom > a` uses fixed `inline-size: 3.5rem` — override so tabs share space (`flex: 1`).
    */
-  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav>a:not(.button, .chip) {
+  .beer.myal-mobile-bottom-wrap nav.myal-mobile-bottom-nav.bottom > a:not(.button, .chip) {
     flex: 1 1 0;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 0.0625rem;
+    gap: 0 !important;
+    line-height: 1 !important;
     min-inline-size: 0 !important;
     max-inline-size: none !important;
     inline-size: auto !important;
@@ -1134,7 +1140,7 @@ aside.VPSidebar .curtain {
     text-align: center;
   }
 
-  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav>a:not(.button, .chip)>i.material-icons-outlined {
+  .beer.myal-mobile-bottom-wrap nav.myal-mobile-bottom-nav.bottom > a:not(.button, .chip) > i.material-icons-outlined {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1143,22 +1149,25 @@ aside.VPSidebar .curtain {
     min-width: 0 !important;
     height: auto !important;
     margin: 0 auto !important;
-    padding: 0.125rem 1rem !important;
+    padding-block: 0.0625rem !important;
+    padding-inline: 1rem !important;
     border-radius: 2rem !important;
     font-size: 1.375rem !important;
     line-height: 1 !important;
     box-sizing: border-box !important;
   }
 
-  .myal-mobile-bottom-label {
+  .beer.myal-mobile-bottom-wrap .myal-mobile-bottom-label {
     display: block;
     align-self: stretch;
     width: 100%;
     max-width: 100%;
-    margin: 0;
+    margin: 0 !important;
+    margin-block-start: 0 !important;
+    padding: 0 !important;
     font-size: 0.625rem;
     font-weight: 600;
-    line-height: 1;
+    line-height: 1 !important;
     text-align: center !important;
     letter-spacing: 0.01em;
     overflow: hidden;
@@ -1166,7 +1175,7 @@ aside.VPSidebar .curtain {
     white-space: nowrap;
   }
 
-  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav>a.active:not(.button, .chip)>i.material-icons-outlined {
+  .beer.myal-mobile-bottom-wrap nav.myal-mobile-bottom-nav.bottom > a.active:not(.button, .chip) > i.material-icons-outlined {
     background-color: var(--vp-c-brand-soft) !important;
     color: var(--vp-c-brand-1) !important;
   }
