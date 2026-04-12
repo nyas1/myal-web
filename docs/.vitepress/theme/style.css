@@ -292,7 +292,7 @@ body,
   transform: translate(-50%, -50%) rotate(0deg);
   width: clamp(107px, 11.34vw, 158px);
   height: clamp(107px, 11.34vw, 158px);
-  background: var(--myal-hero-android-bg, url('/hero-android.svg?v=20260303a')) center / contain no-repeat;
+  background: var(--myal-hero-android-bg, url('/hero-android.svg')) center / contain no-repeat;
   opacity: 1;
   pointer-events: none;
   z-index: 4;
@@ -658,6 +658,30 @@ img.emoji {
   margin: 0 0.08em 0 0.02em;
   line-height: 1;
   vertical-align: -0.15em;
+}
+
+/* Twemoji load failure / offline: glyph from data-attr (no text node → no parse → observer loop). */
+span.emoji.myal-emoji-fallback {
+  display: inline-block;
+  height: 1.1em;
+  width: 1.1em;
+  margin: 0 0.08em 0 0.02em;
+  line-height: 1;
+  vertical-align: -0.15em;
+  position: relative;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+span.emoji.myal-emoji-fallback::before {
+  content: attr(data-emoji);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-indent: 0;
+  font-size: 1em;
+  line-height: 1;
 }
 
 .VPDocAsideOutline .root>li>ul {

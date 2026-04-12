@@ -95,6 +95,8 @@ export default {
     }
 
     const applyTwemoji = (target: Node = document.body) => {
+      if (typeof navigator !== 'undefined' && !navigator.onLine) return
+
       if (target.nodeType === Node.ELEMENT_NODE) {
         const element = target as Element
         if (element.tagName === 'IMG' && element.classList.contains('emoji')) return
@@ -102,7 +104,24 @@ export default {
 
       twemoji.parse(target, {
         folder: 'svg',
-        ext: '.svg'
+        ext: '.svg',
+        /**
+         * Default Twemoji onerror inserts a text node with the emoji; our MutationObserver
+         * then calls parse again → failed img → loop (visible “glitching”), especially offline.
+         * Replace with an empty span that shows the glyph via `data-emoji` + CSS `::before`
+         * so there is no text node for Twemoji to re-parse.
+         */
+        onerror(this: HTMLImageElement) {
+          const alt = this.alt
+          const parent = this.parentNode
+          if (!alt || !parent) return
+          const span = document.createElement('span')
+          span.className = 'emoji myal-emoji-fallback'
+          span.setAttribute('role', 'img')
+          span.setAttribute('aria-label', alt)
+          span.dataset.emoji = alt
+          parent.replaceChild(span, this)
+        }
       })
     }
 
@@ -123,12 +142,15 @@ export default {
             const targets = Array.from(pendingTargets)
             pendingTargets.clear()
             if (targets.length === 0) return
+            if (typeof navigator !== 'undefined' && !navigator.onLine) return
             targets.forEach((target) => applyTwemoji(target))
           })
         })
       }
 
       const observer = new MutationObserver((mutations) => {
+        if (typeof navigator !== 'undefined' && !navigator.onLine) return
+
         for (const mutation of mutations) {
           if (mutation.type === 'childList') {
             if (mutation.addedNodes.length > 0) {
@@ -338,6 +360,11 @@ export default {
       syncHomeBodyClass()
       updateSyncBadge()
     }
+
+    const onBrowserOnline = () => {
+      applyTwemoji(document.body)
+    }
+    window.addEventListener('online', onBrowserOnline)
 
     runAfterHydrationPaint(() => runPostHydrationEffects(false))
     router.onAfterRouteChanged = () => {

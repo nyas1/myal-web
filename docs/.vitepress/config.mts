@@ -121,7 +121,24 @@ export default withPwa(
       ]
     },
     workbox: {
-      globPatterns: ['**/*.{css,js,html,ico,png,svg,woff2,json,xml,webmanifest}']
+      globPatterns: ['**/*.{css,js,html,ico,png,svg,woff2,json,xml,webmanifest}'],
+      ignoreURLParametersMatching: [/^v$/],
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/twemoji\.maxcdn\.com\/.*/i,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'myal-twemoji-svg',
+            expiration: {
+              maxEntries: 500,
+              maxAgeSeconds: 60 * 60 * 24 * 365
+            },
+            cacheableResponse: {
+              statuses: [0, 200]
+            }
+          }
+        }
+      ]
     },
     devOptions: {
       enabled: false
