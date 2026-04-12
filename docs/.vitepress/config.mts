@@ -99,12 +99,19 @@ export default withPwa(
       orientation: 'portrait',
       scope: pagesBase,
       start_url: pagesBase,
+      // Largest first; Android splash often picks maskable — include 1024 maskable so it is not upscaled from 512.
       icons: [
         {
-          src: 'pwa-192x192.png',
-          sizes: '192x192',
+          src: 'pwa-1024x1024.png',
+          sizes: '1024x1024',
           type: 'image/png',
           purpose: 'any'
+        },
+        {
+          src: 'pwa-maskable-1024x1024.png',
+          sizes: '1024x1024',
+          type: 'image/png',
+          purpose: 'maskable'
         },
         {
           src: 'pwa-512x512.png',
@@ -113,16 +120,16 @@ export default withPwa(
           purpose: 'any'
         },
         {
-          src: 'pwa-1024x1024.png',
-          sizes: '1024x1024',
-          type: 'image/png',
-          purpose: 'any'
-        },
-        {
           src: 'pwa-maskable-512x512.png',
           sizes: '512x512',
           type: 'image/png',
           purpose: 'maskable'
+        },
+        {
+          src: 'pwa-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+          purpose: 'any'
         }
       ]
     },
