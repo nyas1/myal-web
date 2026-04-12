@@ -96,6 +96,7 @@ html body {
 }
 
 .dark {
+  --myal-mobile-nav-chrome: #202126;
   --vp-c-brand-1: #d0bcff;
   --vp-c-brand-2: #bfa5ff;
   --vp-c-brand-3: #ad8df8;
@@ -334,7 +335,7 @@ body,
 @media (max-width: 959px) {
   .Layout:has(#VPContent.is-home):has(.myal-mobile-bottom-wrap) #VPContent.is-home {
     min-height: calc(
-      100dvh - var(--vp-nav-height) - var(--vp-local-nav-height, 48px) - 4.5rem - 12px -
+      100dvh - var(--vp-nav-height) - var(--vp-local-nav-height, 48px) - 3.5rem - 12px -
         env(safe-area-inset-bottom, 0px)
     ) !important;
   }
@@ -1086,53 +1087,75 @@ aside.VPSidebar .curtain {
     display: none !important;
   }
 
-  .Layout:has(.myal-mobile-bottom-wrap) {
-    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px) + 12px);
+  /* Gesture bar samples scroll layer; paint body/layout bottom to match tab bar (chrome.ts). */
+  html.dark body:has(.myal-mobile-bottom-wrap) {
+    background-color: var(--myal-mobile-nav-chrome) !important;
   }
 
-  /*
-   * BeerCSS scopes under `.beer` with higher specificity than `.myal-mobile-bottom-wrap` alone,
-   * so `nav:is(.top,.bottom)` keeps `gap: 0.25rem`, `padding: 0.5rem`, `min-block-size: 4.5rem`, etc.
-   * Prefix `.beer` + `!important` so our bar actually wins after async Beer loads.
-   */
-  .beer.myal-mobile-bottom-wrap {
+  html.dark body:has(.myal-mobile-bottom-wrap) #app {
+    min-height: 100dvh;
+    background-color: var(--vp-c-bg);
+  }
+
+  .Layout:has(.myal-mobile-bottom-wrap) {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px) + 12px);
+    background-color: var(--vp-c-bg);
+    background-image: linear-gradient(
+      to bottom,
+      var(--vp-c-bg) 0,
+      var(--vp-c-bg) max(0%, calc(100% - (3.5rem + env(safe-area-inset-bottom, 0px) + 12px))),
+      var(--myal-mobile-nav-chrome) max(0%, calc(100% - (3.5rem + env(safe-area-inset-bottom, 0px) + 12px))),
+      var(--myal-mobile-nav-chrome) 100%
+    );
+  }
+
+  .Layout:has(.myal-mobile-bottom-wrap) .vp-nav-spacer,
+  .Layout:has(.myal-mobile-bottom-wrap) .VPNav,
+  .Layout:has(.myal-mobile-bottom-wrap) #VPContent,
+  .Layout:has(.myal-mobile-bottom-wrap) .VPLocalNav {
+    background-color: var(--vp-c-bg);
+  }
+
+  .Layout:has(.myal-mobile-bottom-wrap) aside.VPSidebar,
+  .Layout:has(.myal-mobile-bottom-wrap) aside.VPSidebar .curtain {
+    background-color: var(--vp-sidebar-bg-color);
+  }
+
+  .myal-mobile-bottom-wrap {
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 45;
+    background-color: var(--myal-mobile-nav-chrome);
     padding-bottom: env(safe-area-inset-bottom, 0px);
     pointer-events: none;
-    background-color: var(--vp-c-bg);
   }
 
-  .beer.myal-mobile-bottom-wrap nav.myal-mobile-bottom-nav.bottom {
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav {
     pointer-events: auto;
     position: relative;
     inset: auto;
     margin: 0;
     border-radius: 0;
-    /* Match BeerCSS `nav:is(.top, .bottom)` vertical chrome (was over-compressed at 3.5rem + 0 pad). */
-    padding: 0.5rem !important;
-    min-block-size: 4.5rem !important;
-    block-size: auto !important;
-    max-block-size: none !important;
-    background-color: var(--vp-c-bg) !important;
-    border-top: none !important;
+    min-block-size: 3.5rem;
+    background-color: var(--myal-mobile-nav-chrome) !important;
+    border-top: 1px solid var(--vp-c-divider);
     color: var(--vp-c-text-2);
   }
 
   /*
-   * BeerCSS `nav.bottom > a` uses fixed `inline-size: 3.5rem` — override so tabs share space (`flex: 1`).
+   * BeerCSS `nav.bottom > a` sets `inline-size: 3.5rem` — that fixed tab width forces the icon
+   * strip into a square, so the active chip reads as a circle. Override width so tabs share
+   * space (`flex: 1`) and icons keep the stock pill: `padding` + `border-radius: 2rem` on `i`.
    */
-  .beer.myal-mobile-bottom-wrap nav.myal-mobile-bottom-nav.bottom > a:not(.button, .chip) {
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav>a:not(.button, .chip) {
     flex: 1 1 0;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 0 !important;
-    line-height: 1 !important;
+    gap: 0.25rem;
     min-inline-size: 0 !important;
     max-inline-size: none !important;
     inline-size: auto !important;
@@ -1141,7 +1164,7 @@ aside.VPSidebar .curtain {
     text-align: center;
   }
 
-  .beer.myal-mobile-bottom-wrap nav.myal-mobile-bottom-nav.bottom > a:not(.button, .chip) > i.material-icons-outlined {
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav>a:not(.button, .chip)>i.material-icons-outlined {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1150,25 +1173,21 @@ aside.VPSidebar .curtain {
     min-width: 0 !important;
     height: auto !important;
     margin: 0 auto !important;
-    padding-block: 0.25rem !important;
-    padding-inline: 1rem !important;
+    padding: 0.25rem 1rem !important;
     border-radius: 2rem !important;
     font-size: 1.375rem !important;
     line-height: 1 !important;
     box-sizing: border-box !important;
   }
 
-  .beer.myal-mobile-bottom-wrap .myal-mobile-bottom-label {
+  .myal-mobile-bottom-label {
     display: block;
     align-self: stretch;
     width: 100%;
     max-width: 100%;
-    margin: 0 !important;
-    margin-block-start: 0 !important;
-    padding: 0 !important;
     font-size: 0.625rem;
     font-weight: 600;
-    line-height: 1 !important;
+    line-height: 1.1;
     text-align: center !important;
     letter-spacing: 0.01em;
     overflow: hidden;
@@ -1176,7 +1195,7 @@ aside.VPSidebar .curtain {
     white-space: nowrap;
   }
 
-  .beer.myal-mobile-bottom-wrap nav.myal-mobile-bottom-nav.bottom > a.active:not(.button, .chip) > i.material-icons-outlined {
+  .myal-mobile-bottom-wrap .myal-mobile-bottom-nav>a.active:not(.button, .chip)>i.material-icons-outlined {
     background-color: var(--vp-c-brand-soft) !important;
     color: var(--vp-c-brand-1) !important;
   }
@@ -1213,7 +1232,7 @@ aside.VPSidebar .curtain {
 
 @media (max-width: 959px) {
   .Layout:has(.myal-mobile-bottom-wrap) .myal-mobile-fab-cluster {
-    bottom: calc(4.5rem + 36px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(3.5rem + 36px + env(safe-area-inset-bottom, 0px));
   }
 }
 

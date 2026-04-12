@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
+import { MYAL_MOBILE_NAV_CHROME } from './chrome'
 import { meta, nav, sidebar, socialLinks } from './shared'
 import { vitepressSidebarOverridePlugin } from './theme/vitepress-sidebar-plugin'
 
@@ -17,6 +18,15 @@ function publicUrl(path: string): string {
   return `${pagesBase}${normalized}`
 }
 
+/** VP merges `head` late; inject `theme-color` right after viewport (build via transformHtml, dev via plugin). */
+const EARLY_CHROME_MARKER = '<!--myal:early-chrome-->'
+
+function injectEarlyChromeMeta(html: string): string {
+  if (html.includes(EARLY_CHROME_MARKER)) return html
+  const block = `\n    ${EARLY_CHROME_MARKER}\n    <meta name="color-scheme" content="dark">\n    <meta name="theme-color" content="${MYAL_MOBILE_NAV_CHROME}">\n    <meta name="theme-color" media="(prefers-color-scheme: light)" content="${MYAL_MOBILE_NAV_CHROME}">\n    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="${MYAL_MOBILE_NAV_CHROME}">`
+  return html.replace(/(<meta\s+name="viewport"[^>]*>)/i, `$1${block}`)
+}
+
 export default defineConfig({
   base: pagesBase,
   title: 'MYAL',
@@ -25,6 +35,9 @@ export default defineConfig({
   cleanUrls: true,
   appearance: 'force-dark',
   lastUpdated: true,
+  transformHtml(html) {
+    return injectEarlyChromeMeta(html)
+  },
   head: [
     ['script', {}, `(() => {
       const key = 'vitepress-theme-appearance'
@@ -35,6 +48,7 @@ export default defineConfig({
       root.style.colorScheme = 'dark'
     })();`],
     ['link', { rel: 'icon', href: publicUrl('icon.svg'), type: 'image/svg+xml' }],
+    ['link', { rel: 'manifest', href: publicUrl('site.webmanifest') }],
     ['link', { rel: 'apple-touch-icon', href: publicUrl('icon.svg') }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
@@ -42,14 +56,7 @@ export default defineConfig({
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined' }],
     ['meta', { name: 'application-name', content: meta.name }],
     ['meta', { property: 'og:site_name', content: meta.name }],
-    ['meta', { name: 'apple-mobile-web-app-title', content: meta.name }],
-    /*
-     * Android Chrome: colors the system gesture/nav strip under the page. Without this it stays
-     * default black while our fixed bottom bar uses VitePress dark --vp-c-bg (#1b1b1f). Does not
-     * change layout or nav height. (True transparency is not exposed to normal sites here.)
-     */
-    ['meta', { name: 'theme-color', content: '#1b1b1f' }],
-    ['meta', { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#1b1b1f' }]
+    ['meta', { name: 'apple-mobile-web-app-title', content: meta.name }]
   ],
   themeConfig: {
     logo: {
@@ -76,7 +83,15 @@ export default defineConfig({
 
   },
   vite: {
-    plugins: [vitepressSidebarOverridePlugin()],
+    plugins: [
+      vitepressSidebarOverridePlugin(),
+      {
+        name: 'myal-early-chrome',
+        transformIndexHtml(html) {
+          return injectEarlyChromeMeta(html)
+        }
+      }
+    ],
     resolve: {
       alias: [
         {

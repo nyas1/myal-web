@@ -1,0 +1,17 @@
+{
+  "name": "MYAL",
+  "short_name": "MYAL",
+  "description": "A curated list of Android apps with Material You / Material Design support.",
+  "theme_color": "#202126",
+  "background_color": "#202126",
+  "display": "browser",
+  "start_url": ".",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -5,9 +5,6 @@ export const meta = {
   description: 'A curated list of Android apps with Material You / Material Design support.'
 }
 
-/** Android Chrome UI tint (`meta theme-color`). Must match VitePress default dark `--vp-c-bg`. */
-export const themeColorChromeUi = '#1b1b1f'
-
 export const socialLinks: DefaultTheme.SocialLink[] = [
   {
     icon: {
