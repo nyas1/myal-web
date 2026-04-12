@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
-import { meta, nav, sidebar, socialLinks } from './shared'
+import { meta, nav, sidebar, socialLinks, themeColorChromeUi } from './shared'
 import { vitepressSidebarOverridePlugin } from './theme/vitepress-sidebar-plugin'
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1]
@@ -26,6 +26,15 @@ export default defineConfig({
   appearance: 'force-dark',
   lastUpdated: true,
   head: [
+    [
+      'meta',
+      {
+        name: 'viewport',
+        content:
+          'width=device-width, initial-scale=1.0, viewport-fit=cover'
+      }
+    ],
+    ['meta', { name: 'theme-color', content: themeColorChromeUi }],
     ['script', {}, `(() => {
       const key = 'vitepress-theme-appearance'
       try { localStorage.setItem(key, 'dark') } catch {}

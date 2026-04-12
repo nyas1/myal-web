@@ -1098,6 +1098,8 @@ aside.VPSidebar .curtain {
     z-index: 45;
     padding-bottom: env(safe-area-inset-bottom, 0px);
     pointer-events: none;
+    /* Same as `.myal-mobile-bottom-nav` so safe-area padding isn’t a different color than the bar. */
+    background-color: var(--vp-c-bg);
   }
 
   .myal-mobile-bottom-wrap .myal-mobile-bottom-nav {
