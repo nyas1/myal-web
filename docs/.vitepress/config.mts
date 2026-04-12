@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import { meta, nav, sidebar, socialLinks } from './shared'
+import { vitepressSidebarOverridePlugin } from './theme/vitepress-sidebar-plugin'
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1]
 const pagesBase = process.env.GITHUB_ACTIONS === 'true' && repositoryName
@@ -68,6 +69,7 @@ export default defineConfig({
 
   },
   vite: {
+    plugins: [vitepressSidebarOverridePlugin()],
     resolve: {
       alias: [
         {

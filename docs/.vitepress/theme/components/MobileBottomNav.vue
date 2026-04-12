@@ -5,7 +5,8 @@ import { useData, useRoute, withBase } from 'vitepress'
 const route = useRoute()
 const { frontmatter } = useData()
 
-const showBar = computed(() => frontmatter.value.layout !== 'home')
+/** Same primary nav on every page (incl. home); hide only if navbar disabled in frontmatter. */
+const showBar = computed(() => frontmatter.value.navbar !== false)
 
 const items = [
   { rel: '/', label: 'Home', icon: 'home' },

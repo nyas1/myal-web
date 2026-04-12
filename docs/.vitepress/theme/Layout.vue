@@ -4,7 +4,6 @@ import { useData, withBase } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import AppBeerSidebarNav from './components/AppBeerSidebarNav.vue'
 import AsideMoreCard from './components/AsideMoreCard.vue'
-import BrowseAppsButton from './components/BrowseAppsButton.vue'
 import MobileBottomNav from './components/MobileBottomNav.vue'
 import MobileFabCluster from './components/MobileFabCluster.vue'
 import NavBarTocDropdown from './components/NavBarTocDropdown.vue'
@@ -31,7 +30,6 @@ const heroAndroidBg = computed(
       <AsideMoreCard />
     </template>
     <template #layout-bottom>
-      <BrowseAppsButton />
       <MobileBottomNav />
       <MobileFabCluster v-if="isAppPage" />
     </template>

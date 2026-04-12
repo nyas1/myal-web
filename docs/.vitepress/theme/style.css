@@ -5,6 +5,8 @@
   --myal-fab-gap-from-toc: 12px;
   /* Extra space under fixed nav so hero glow / blurred halo is not clipped */
   --myal-hero-below-nav: 40px;
+  /* Homepage: vertical offset for `.VPHome` (viewport-relative; not `%` margin, which uses width). */
+  --myal-home-nudge-y: 10dvh;
   /* Increase top navbar height slightly (default is 64px) */
   --vp-nav-height: 72px;
   --vp-local-nav-height: 48px;
@@ -127,34 +129,8 @@ html body {
 }
 
 /*
- * Desktop home: larger lockup in the TOP NAV only.
- * VitePress `useSidebar()` sets `hasSidebar === false` when `layout === 'home'`, so there is no
- * `VPSidebar` / `AppBeerSidebarNav` on `/` — the only MYAL logo is `.VPNavBarTitle` (default
- * `--vp-nav-logo-height` is 24px from VP vars).
- */
-@media (min-width: 960px) {
-  html:has(#VPContent.is-home) .VPNavBarTitle {
-    --vp-nav-logo-height: 45px;
-  }
-
-  html:has(#VPContent.is-home) .VPNavBarTitle .title {
-    font-size: 1.328125rem !important;
-    font-weight: 700 !important;
-    line-height: 1.1 !important;
-  }
-
-  html:has(#VPContent.is-home) .VPNavBarTitle .logo {
-    width: 45px !important;
-    height: 45px !important;
-    max-width: 45px !important;
-    max-height: 45px !important;
-    object-fit: contain;
-  }
-}
-
-/*
  * Mobile / tablet nav (<960px): align MYAL lockup with chrome hit targets — VP hamburger is 48px
- * wide × `--vp-nav-height`; VPNavBarMenuLink uses 14px / 500. (Desktop uses sidebar or home rules above.)
+ * wide × `--vp-nav-height`; VPNavBarMenuLink uses 14px / 500. (Desktop ≥960px uses sidebar rail.)
  */
 @media (max-width: 959px) {
   .VPNavBarTitle {
@@ -214,7 +190,7 @@ html body {
 }
 
 @media (min-width: 960px) {
-  html:not(:has(#VPContent.is-home)) .myal-sidebar-brand {
+  .myal-sidebar-brand {
     transform: translateY(var(--myal-nav-lockup-nudge-y));
   }
 }
@@ -252,11 +228,11 @@ html body {
 
 /* Desktop: full-width nav chrome; rail offset + clear VPNavBar `.content` padding-left */
 @media (min-width: 960px) {
-  .VPNavBar.has-sidebar:not(.home) {
+  .VPNavBar.has-sidebar {
     background-color: var(--vp-nav-bg-color) !important;
   }
 
-  .VPNavBar.has-sidebar:not(.home) .content-body {
+  .VPNavBar.has-sidebar .content-body {
     background-color: transparent !important;
   }
 
@@ -302,20 +278,12 @@ body,
   overflow-x: clip;
 }
 
-.myal-home-grid-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.95;
-}
-
-.myal-home-grid-page #app {
+.myal-home-page #app {
   position: relative;
   z-index: 1;
 }
 
-.myal-home-grid-page .VPHome .VPHero .image-container::before {
+.myal-home-page .VPHome .VPHero .image-container::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -329,14 +297,102 @@ body,
   z-index: 4;
 }
 
-.VPHome> :not(.myal-home-grid-canvas) {
+.VPHome > * {
   position: relative;
   z-index: 1;
 }
 
-/* Home: no top search (use sidebar / mobile nav elsewhere). */
-.Layout:has(.VPHome) .VPNavBarSearch {
-  display: none !important;
+/* Homepage: `#VPContent.is-home` — flex column in main pane; avoid `min-height: 0 !important` here. */
+.Layout:has(#VPContent.is-home) {
+  min-height: 100dvh;
+}
+
+#VPContent.is-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: 1 1 auto !important;
+  flex-shrink: 1 !important;
+  width: 100%;
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
+#VPContent.is-home .VPHome {
+  width: min(100%, 1200px);
+  margin-inline: auto;
+  margin-top: var(--myal-home-nudge-y);
+  margin-bottom: 0 !important;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+@media (max-width: 959px) {
+  .Layout:has(#VPContent.is-home):has(.myal-mobile-bottom-wrap) #VPContent.is-home {
+    min-height: calc(
+      100dvh - var(--vp-nav-height) - var(--vp-local-nav-height, 48px) - 3.5rem - 12px -
+        env(safe-area-inset-bottom, 0px)
+    ) !important;
+  }
+}
+
+@media (min-width: 960px) {
+  /* No fixed `height` on this pane — tall hero + cards scroll inside `#VPContent`. `safe center` when it fits. */
+  #VPContent.is-home {
+    justify-content: flex-start;
+  }
+
+  @supports (justify-content: safe center) {
+    #VPContent.is-home {
+      justify-content: safe center;
+    }
+  }
+
+  #VPContent.is-home.has-sidebar {
+    min-height: calc(100dvh - var(--vp-layout-top-height, 0px)) !important;
+  }
+
+  html:has(#VPContent.is-home),
+  body:has(#VPContent.is-home) {
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow-y: hidden;
+  }
+
+  html:has(#VPContent.is-home) #app {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    max-height: 100dvh;
+    flex: 1 1 auto;
+  }
+
+  html:has(#VPContent.is-home) .Layout {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 100dvh;
+  }
+}
+
+/* Home hero: nav offset is on `#VPContent` padding-top; light padding here for glow only. */
+#VPContent.is-home .VPHome .VPHero {
+  padding-top: calc(1.25rem + var(--myal-hero-below-nav)) !important;
+}
+
+@media (min-width: 640px) {
+  #VPContent.is-home .VPHome .VPHero {
+    padding-top: calc(1.75rem + var(--myal-hero-below-nav)) !important;
+  }
+}
+
+@media (min-width: 960px) {
+  #VPContent.is-home .VPHome .VPHero {
+    padding-top: calc(2rem + var(--myal-hero-below-nav)) !important;
+  }
 }
 
 /*
@@ -716,7 +772,7 @@ img.emoji {
 }
 
 @media (max-width: 959px) {
-  .VPContent:not(.is-home) {
+  .VPContent {
     padding-top: var(--vp-local-nav-height, 48px) !important;
   }
 }
@@ -879,7 +935,7 @@ aside.VPSidebar .curtain {
     margin-bottom: 0;
   }
 
-  /* Default desktop (apps, docs, …): compact lockup — NOT home */
+  /* Default desktop: compact lockup in the Beer rail */
   .myal-sidebar-brand-link {
     display: grid;
     grid-template-columns: calc(var(--myal-sidebar-row-size) + var(--myal-rail-logo-nudge)) auto;
@@ -911,53 +967,6 @@ aside.VPSidebar .curtain {
     white-space: nowrap;
     overflow: visible;
     text-overflow: clip;
-  }
-}
-
-/*
- * Desktop home + sidebar: larger MYAL in Beer rail (e.g. if a page used home layout with sidebar).
- * Normal `layout: home` has NO sidebar — top-nav rules above apply instead.
- */
-@media (min-width: 960px) {
-  html:has(#VPContent.is-home) {
-    --myal-desktop-home-brand-logo: 45px;
-  }
-
-  html:has(#VPContent.is-home) .myal-sidebar-brand-link {
-    display: grid !important;
-    grid-template-columns: calc(var(--myal-desktop-home-brand-logo) + var(--myal-rail-logo-nudge)) minmax(0, auto);
-    column-gap: 0.6rem;
-    align-items: center;
-    justify-content: start;
-    max-width: 100%;
-    min-block-size: calc(var(--vp-nav-height) / 2 * 1.25);
-    height: calc(var(--vp-nav-height) / 2 * 1.25);
-    padding: 0;
-    text-decoration: none;
-    color: var(--vp-c-text-1);
-    font-weight: 700 !important;
-    font-size: 1.328125rem !important;
-    line-height: 1.1 !important;
-  }
-
-  html:has(#VPContent.is-home) .myal-sidebar-brand-logo {
-    display: block;
-    box-sizing: border-box;
-    width: var(--myal-desktop-home-brand-logo) !important;
-    height: var(--myal-desktop-home-brand-logo) !important;
-    min-width: var(--myal-desktop-home-brand-logo) !important;
-    min-height: var(--myal-desktop-home-brand-logo) !important;
-    max-width: var(--myal-desktop-home-brand-logo) !important;
-    max-height: var(--myal-desktop-home-brand-logo) !important;
-    object-fit: contain;
-    margin: 0 !important;
-    margin-left: 0 !important;
-    transform: translateX(var(--myal-rail-logo-nudge)) !important;
-  }
-
-  html:has(#VPContent.is-home) .myal-sidebar-brand-text {
-    font-size: inherit !important;
-    font-weight: inherit !important;
   }
 }
 
@@ -1859,107 +1868,12 @@ img.emoji[alt^='🐾'] {
   }
 }
 
-/* Beercss-filled-styled CTA: `BrowseAppsButton.vue` — home palette */
-.myal-browse-apps-beer {
-  position: fixed;
-  bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  --primary: #d0bcff;
-  --on-primary: #1a1125;
-}
-
-/*
- * FAB link: `!important` + `[data-myal-browse-apps]` so async BeerCSS (.button padding, ripple ::after,
- * elevate shadow, border-radius) cannot win after hydration. Pseudo reset is backup if `no-wave` were dropped.
- */
-.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps]::before,
-.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps]::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  box-shadow: none !important;
-  opacity: 0 !important;
-}
-
-.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] {
-  --myal-browse-icon-box: calc(var(--vp-nav-height) * 0.68);
-  --myal-browse-text-pad: 0.75rem;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  box-sizing: border-box !important;
-  block-size: var(--vp-nav-height) !important;
-  min-block-size: 0 !important;
-  gap: var(--myal-browse-text-pad) !important;
-  padding-block: 0 !important;
-  padding-inline-start: calc((var(--vp-nav-height) - var(--myal-browse-icon-box)) / 2) !important;
-  padding-inline-end: var(--myal-browse-text-pad) !important;
-  font-size: 1.0625rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.01em !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  background-color: #d0bcff !important;
-  color: #1a1125 !important;
-  box-shadow: none !important;
-  border: none !important;
-  border-radius: calc(var(--vp-nav-height) / 2) !important;
-}
-
-.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] .myal-browse-apps-label {
-  font-weight: 800 !important;
-  line-height: 1 !important;
-  color: #1a1125 !important;
-}
-
-.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] .myal-browse-apps-icon-wrap {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
-  box-sizing: border-box !important;
-  inline-size: var(--myal-browse-icon-box) !important;
-  block-size: var(--myal-browse-icon-box) !important;
-  border-radius: 999px !important;
-  background: #1a1125 !important;
-  color: #d0bcff !important;
-  box-shadow: none !important;
-}
-
-@media (min-width: 960px) {
-  .myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] {
-    --myal-browse-text-pad: 0.85rem;
-    font-size: 1.125rem !important;
-  }
-}
-
-.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps]:hover {
-  background-color: color-mix(in srgb, #000 10%, #d0bcff) !important;
-}
-
-.myal-browse-apps-beer a.myal-browse-apps-link[data-myal-browse-apps] .myal-browse-apps-icon-wrap .material-icons-outlined {
-  font-size: calc(var(--vp-nav-height) * 0.36) !important;
-  line-height: 1 !important;
-  color: inherit !important;
-}
-
-.myal-fab-enter-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.myal-fab-leave-active {
-  /* Instant hide — primary fix is `dismissed` in BrowseAppsButton.vue; this avoids extra linger */
-  transition: opacity 0s, transform 0s;
-}
-
-.myal-fab-enter-from,
-.myal-fab-leave-to {
-  opacity: 0;
-  transform: translateX(-50%) translateY(12px);
-}
-
 .VPHome .VPHomeFeatures {
-  padding-bottom: 96px;
+  padding-bottom: 48px;
+}
+
+@media (max-width: 959px) {
+  .VPHome .VPHomeFeatures {
+    padding-bottom: 40px;
+  }
 }

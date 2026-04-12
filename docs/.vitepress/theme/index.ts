@@ -63,7 +63,6 @@ export default {
       analyticsWindow.__myalVercelAnalyticsInitialized = true
     }
 
-    let cleanupHomeGrid: (() => void) | null = null
     let cleanupTocSync: (() => void) | null = null
     let cleanupTwemojiObserver: (() => void) | null = null
 
@@ -72,156 +71,9 @@ export default {
       return path === '' || path === '/'
     }
 
-    const syncHomePageClass = () => {
-      document.body.classList.toggle('myal-home-grid-page', isHomeRoute())
-    }
-
-    const setupHomeGrid = () => {
-      cleanupHomeGrid?.()
-      cleanupHomeGrid = null
-
-      if (!isHomeRoute()) return
-      if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return
-
-      const canvas = document.createElement('canvas')
-      canvas.className = 'myal-home-grid-canvas'
-      document.body.prepend(canvas)
-
-      const context = canvas.getContext('2d')
-      if (!context) return
-
-      let width = 0
-      let height = 0
-      let dpr = Math.max(window.devicePixelRatio || 1, 1)
-      let rafId = 0
-
-      const pointer = { x: 0, y: 0 }
-      const focus = { x: 0, y: 0 }
-      let currentStrength = 0
-      let targetStrength = 0
-      let strokeColor = 'rgba(127, 103, 190, 0.22)'
-
-      const syncGridColors = () => {
-        const styles = getComputedStyle(document.documentElement)
-        const divider = styles.getPropertyValue('--vp-c-divider').trim()
-        const soft = styles.getPropertyValue('--vp-c-brand-soft').trim()
-        strokeColor = soft || divider || 'rgba(127, 103, 190, 0.22)'
-      }
-
-      const resize = () => {
-        dpr = Math.max(window.devicePixelRatio || 1, 1)
-        width = window.innerWidth
-        height = window.innerHeight
-
-        canvas.width = Math.max(1, Math.floor(width * dpr))
-        canvas.height = Math.max(1, Math.floor(height * dpr))
-        canvas.style.width = `${width}px`
-        canvas.style.height = `${height}px`
-
-        context.setTransform(dpr, 0, 0, dpr, 0, 0)
-
-        if (pointer.x === 0 && pointer.y === 0) {
-          pointer.x = width * 0.5
-          pointer.y = height * 0.35
-          focus.x = pointer.x
-          focus.y = pointer.y
-        }
-
-        syncGridColors()
-      }
-
-      const distendPoint = (x: number, y: number) => {
-        const dx = x - focus.x
-        const dy = y - focus.y
-        const distance = Math.hypot(dx, dy)
-        const radius = 240
-
-        if (distance >= radius || distance === 0) {
-          return { x, y }
-        }
-
-        const t = 1 - distance / radius
-        const magnitude = t * t * 26 * currentStrength
-        const nx = dx / distance
-        const ny = dy / distance
-
-        return {
-          x: x + nx * magnitude,
-          y: y + ny * magnitude
-        }
-      }
-
-      const drawWarpedGrid = () => {
-        context.clearRect(0, 0, width, height)
-
-        context.lineWidth = 1
-        context.strokeStyle = strokeColor
-        context.globalAlpha = 0.8
-
-        const spacing = 22
-
-        for (let x = -spacing; x <= width + spacing; x += spacing) {
-          context.beginPath()
-          for (let y = -spacing; y <= height + spacing; y += 8) {
-            const p = distendPoint(x, y)
-            if (y === -spacing) context.moveTo(p.x, p.y)
-            else context.lineTo(p.x, p.y)
-          }
-          context.stroke()
-        }
-
-        for (let y = -spacing; y <= height + spacing; y += spacing) {
-          context.beginPath()
-          for (let x = -spacing; x <= width + spacing; x += 8) {
-            const p = distendPoint(x, y)
-            if (x === -spacing) context.moveTo(p.x, p.y)
-            else context.lineTo(p.x, p.y)
-          }
-          context.stroke()
-        }
-      }
-
-      const animate = () => {
-        focus.x += (pointer.x - focus.x) * 0.16
-        focus.y += (pointer.y - focus.y) * 0.16
-        currentStrength += (targetStrength - currentStrength) * 0.12
-
-        drawWarpedGrid()
-        rafId = window.requestAnimationFrame(animate)
-      }
-
-      const onMove = (event: PointerEvent) => {
-        pointer.x = event.clientX
-        pointer.y = event.clientY
-        targetStrength = 1
-      }
-
-      const onLeave = () => {
-        targetStrength = 0
-      }
-
-      const onVisibilityChange = () => {
-        if (document.visibilityState === 'hidden') {
-          targetStrength = 0
-        }
-      }
-
-      resize()
-      animate()
-
-      window.addEventListener('pointermove', onMove)
-      window.addEventListener('pointerleave', onLeave)
-      window.addEventListener('resize', resize)
-      document.addEventListener('visibilitychange', onVisibilityChange)
-
-      cleanupHomeGrid = () => {
-        window.removeEventListener('pointermove', onMove)
-        window.removeEventListener('pointerleave', onLeave)
-        window.removeEventListener('resize', resize)
-        document.removeEventListener('visibilitychange', onVisibilityChange)
-        window.cancelAnimationFrame(rafId)
-        canvas.remove()
-      }
+    /** Body hook for home-only hero chrome (stacking + Android watermark in CSS). */
+    const syncHomeBodyClass = () => {
+      document.body.classList.toggle('myal-home-page', isHomeRoute())
     }
 
     const emojiPattern = (() => {
@@ -462,8 +314,7 @@ export default {
       applyTwemoji()
       setupTwemojiObserver()
       applyTocToggle()
-      syncHomePageClass()
-      setupHomeGrid()
+      syncHomeBodyClass()
       updateSyncBadge()
     }
 
