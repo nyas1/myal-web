@@ -11,13 +11,16 @@
     "docs:changelog": "node scripts/generate-changelog.mjs",
     "docs:prepare": "node scripts/split-readme.mjs && node scripts/generate-changelog.mjs && node scripts/verify-docs-split.mjs",
     "docs:verify-split": "node scripts/verify-docs-split.mjs",
-    "docs:sync": "node scripts/fetch-upstream-readme.mjs && node scripts/split-readme.mjs && node scripts/generate-changelog.mjs && node scripts/verify-docs-split.mjs"
+    "docs:sync": "node scripts/fetch-upstream-readme.mjs && node scripts/split-readme.mjs && node scripts/generate-changelog.mjs && node scripts/verify-docs-split.mjs",
+    "docs:pwa-icons": "node scripts/generate-pwa-icons.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
     "beercss": "^4.0.16"
   },
   "devDependencies": {
+    "@vite-pwa/vitepress": "^1.1.0",
+    "sharp": "^0.34.5",
     "twemoji": "^14.0.2",
     "typescript": "^5.9.3",
     "vitepress": "^1.6.4"

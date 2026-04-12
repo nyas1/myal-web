@@ -13,9 +13,8 @@ const { page } = useData()
 const isAppPage = computed(() => page.value.relativePath === 'app.md')
 
 /** Used in `style.css` for `::before` — plain `url(/...)` ignores VitePress `base`. */
-const heroAndroidBg = computed(
-  () => `url('${withBase('/hero-android.svg')}?v=20260303a')`
-)
+/** No query string: must match precached `hero-android.svg` URL so the PWA SW can serve it offline. */
+const heroAndroidBg = computed(() => `url('${withBase('/hero-android.svg')}')`)
 </script>
 
 <template>
