@@ -95,6 +95,8 @@ export default {
     }
 
     const applyTwemoji = (target: Node = document.body) => {
+      if (typeof navigator !== 'undefined' && !navigator.onLine) return
+
       if (target.nodeType === Node.ELEMENT_NODE) {
         const element = target as Element
         if (element.tagName === 'IMG' && element.classList.contains('emoji')) return
@@ -102,7 +104,24 @@ export default {
 
       twemoji.parse(target, {
         folder: 'svg',
-        ext: '.svg'
+        ext: '.svg',
+        /**
+         * Default Twemoji onerror inserts a text node with the emoji; our MutationObserver
+         * then calls parse again → failed img → loop (visible “glitching”), especially offline.
+         * Replace with an empty span that shows the glyph via `data-emoji` + CSS `::before`
+         * so there is no text node for Twemoji to re-parse.
+         */
+        onerror(this: HTMLImageElement) {
+          const alt = this.alt
+          const parent = this.parentNode
+          if (!alt || !parent) return
+          const span = document.createElement('span')
+          span.className = 'emoji myal-emoji-fallback'
+          span.setAttribute('role', 'img')
+          span.setAttribute('aria-label', alt)
+          span.dataset.emoji = alt
+          parent.replaceChild(span, this)
+        }
       })
     }
 
@@ -110,20 +129,28 @@ export default {
       cleanupTwemojiObserver?.()
       cleanupTwemojiObserver = null
 
-      let rafId = 0
+      /** Double rAF: Vue often patches the DOM across frames; one rAF can re-parse before markup settles. */
+      let rafOuter = 0
+      let rafInner = 0
       const pendingTargets = new Set<Node>()
       const queueParse = () => {
-        if (rafId) return
-        rafId = window.requestAnimationFrame(() => {
-          rafId = 0
-          const targets = Array.from(pendingTargets)
-          pendingTargets.clear()
-          if (targets.length === 0) return
-          targets.forEach((target) => applyTwemoji(target))
+        if (rafOuter) return
+        rafOuter = window.requestAnimationFrame(() => {
+          rafOuter = 0
+          rafInner = window.requestAnimationFrame(() => {
+            rafInner = 0
+            const targets = Array.from(pendingTargets)
+            pendingTargets.clear()
+            if (targets.length === 0) return
+            if (typeof navigator !== 'undefined' && !navigator.onLine) return
+            targets.forEach((target) => applyTwemoji(target))
+          })
         })
       }
 
       const observer = new MutationObserver((mutations) => {
+        if (typeof navigator !== 'undefined' && !navigator.onLine) return
+
         for (const mutation of mutations) {
           if (mutation.type === 'childList') {
             if (mutation.addedNodes.length > 0) {
@@ -152,8 +179,20 @@ export default {
 
       cleanupTwemojiObserver = () => {
         observer.disconnect()
-        if (rafId) window.cancelAnimationFrame(rafId)
+        if (rafOuter) window.cancelAnimationFrame(rafOuter)
+        if (rafInner) window.cancelAnimationFrame(rafInner)
         pendingTargets.clear()
+      }
+    }
+
+    /** Full-body parse only once; re-parsing chrome on every route tears down Twemoji imgs and makes them “reload”. */
+    const applyTwemojiAfterRouteChange = () => {
+      const roots: (Element | null)[] = [
+        document.querySelector('#VPContent'),
+        document.querySelector('.VPDocAsideOutline')
+      ]
+      for (const el of roots) {
+        if (el) applyTwemoji(el)
       }
     }
 
@@ -309,18 +348,27 @@ export default {
       }
     }
 
-    const runPostHydrationEffects = () => {
+    const runPostHydrationEffects = (afterRouteChange: boolean) => {
       startThemeEnforcer()
-      applyTwemoji()
+      if (afterRouteChange) {
+        applyTwemojiAfterRouteChange()
+      } else {
+        applyTwemoji()
+      }
       setupTwemojiObserver()
       applyTocToggle()
       syncHomeBodyClass()
       updateSyncBadge()
     }
 
-    runAfterHydrationPaint(runPostHydrationEffects)
+    const onBrowserOnline = () => {
+      applyTwemoji(document.body)
+    }
+    window.addEventListener('online', onBrowserOnline)
+
+    runAfterHydrationPaint(() => runPostHydrationEffects(false))
     router.onAfterRouteChanged = () => {
-      runAfterHydrationPaint(runPostHydrationEffects)
+      runAfterHydrationPaint(() => runPostHydrationEffects(true))
     }
   }
 } satisfies Theme
