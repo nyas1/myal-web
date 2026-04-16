@@ -1,3 +1,6 @@
 node_modules
 docs/.vitepress/cache
 docs/.vitepress/dist
+
+# Local backups (e.g. icon.svg.old)
+*.old
