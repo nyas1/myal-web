@@ -9,13 +9,13 @@ App data is synced automatically from [nyas1/Material-You-app-list](https://gith
 
 ## ✨ Features
 
+- Material Design 3 interface
 - Installable PWA on Android (works fully offline)
 - Search apps quickly
 - Tag filters (MD3E, MDY, MD, MY)
 - Filter FOSS-only apps
 - Hide archived apps
 - Changelog synced from upstream repo
-- Material Design 3 interface
 - Table of contents sidebar for quick navigation
 - Live app count on homepage
 
