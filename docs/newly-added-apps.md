@@ -8,6 +8,13 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MD3E` [Caffeine Health](https://github.com/ohuc/CaffeineHealth) <sup>`FOSS`</sup>
+- `MDY` [DueDate](https://github.com/MateYou-Apps/DueDate) <sup>`FOSS`</sup>
+- `MDY` [BiBi Keyboard](https://github.com/BryceWG/BiBi-Keyboard) <sup>`FOSS`</sup> <sup>`💰`</sup>
+- `MD3E` [MonoGram](https://github.com/monogram-android/monogram) <sup>`FOSS`</sup>
+- `MD3E` [Reef](https://github.com/aload0/Reef) <sup>`FOSS`</sup>
+- `MDY` [SoundPod](https://github.com/arunnechully/SoundPod) <sup>`FOSS`</sup>
+- `MY` [MonoTracker](https://github.com/QinMoMeak/MonoTracker) <sup>`FOSS`</sup>
 - `MY` [Fcitx5 for Android](https://github.com/fcitx5-android/fcitx5-android) <sup>`FOSS`</sup>
 - `MD3E` [Torrent Search](https://github.com/prajwalch/TorrentSearch) <sup>`FOSS`</sup>
 - `MD` [RebootNya](https://github.com/daisukiKaffuChino/RebootNya) <sup>`FOSS`</sup>
@@ -31,12 +38,5 @@ outline: false
 - `MD3E` [Essentials](https://github.com/sameerasw/essentials) <sup>`FOSS`</sup>
 - `MD3E` [AirSync](https://github.com/sameerasw/airsync-android) <sup>`FOSS`</sup>
 - `MDY` [Revenge Manager](https://github.com/revenge-mod/revenge-manager) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MDY` [QuaX](https://github.com/Teskann/QuaX) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MDY` [Pixelix](https://github.com/ghostbyte-dev/pixelix) <sup>`FOSS`</sup>
-- `MDY` [KashCal](https://github.com/KashCal/KashCal/) <sup>`FOSS`</sup>
-- `MDY` [Material Download Manager](https://play.google.com/store/apps/details?id=com.akira.mdm)
-- `MD` [VK X](https://vkx.app/)
-- `MDY` [Payload Dumper](https://github.com/rhythmcache/payload-dumper-gui) <sup>`FOSS`</sup>
-- `MD` [ANX Reader](https://github.com/Anxcye/anx-reader) <sup>`FOSS`</sup>
 
 <!-- END AUTO-GENERATED -->
