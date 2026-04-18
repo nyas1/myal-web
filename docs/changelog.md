@@ -10,6 +10,7 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-04-17 | [c4ae827](https://github.com/nyas1/Material-You-app-list/commit/c4ae827e0430b16bba5ee6e53c7ab7bdca1c02ac) | README: update Self Attendance source and tag from issue #451 |
 | 2026-04-16 | [b53736a](https://github.com/nyas1/Material-You-app-list/commit/b53736ace0619ac8001cf6c89b52899156689d05) | README: add Caffeine Health, DueDate, BiBi Keyboard, MonoGram, Reef, SoundPod, MonoTracker |
 | 2026-04-11 | [e3e10ba](https://github.com/nyas1/Material-You-app-list/commit/e3e10ba3864a136785fcad4bb8e060e0a901c9e2) | README: tighten setup notes for Discord, WhatsApp, Mixplorer |
 | 2026-04-08 | [074b9c6](https://github.com/nyas1/Material-You-app-list/commit/074b9c668784891bf540c9994ef47ab1f2985495) | Merge pull request #440 from Giuig/main |
@@ -109,6 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-02-26 | [e8926b0](https://github.com/nyas1/Material-You-app-list/commit/e8926b016a733414658bf03278e607552f31ce49) | Rename ToDark to Zest and Spooky to StoryPad |
 | 2026-02-26 | [82d620c](https://github.com/nyas1/Material-You-app-list/commit/82d620c354d03eafb63eede9c4fedb9f6afa1d1f) | Added Audile |
 | 2026-02-26 | [4ed3ce0](https://github.com/nyas1/Material-You-app-list/commit/4ed3ce023ac1b194ebfdd95177b0273ea2a4bc0a) | Moved Food-E app Uncategorized to Health & Lifestyle and added grave marker |
-| 2026-02-26 | [3bbbe82](https://github.com/nyas1/Material-You-app-list/commit/3bbbe8221c0e8854c252c6a09a47795b2706efd0) | Update Key Mapper link to Play Store |
 
 <!-- END AUTO-GENERATED -->
