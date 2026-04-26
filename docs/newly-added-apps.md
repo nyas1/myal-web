@@ -8,6 +8,12 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MD3E` [MicYou](https://github.com/LanRhyme/MicYou) <sup>`FOSS`</sup>
+- `MD3E` [Nouto](https://github.com/HotarunIchijou/Nouto) <sup>`FOSS`</sup>
+- `MD3E` [LibreFit](https://github.com/LibreFitOrg/LibreFit) <sup>`FOSS`</sup>
+- `MDY` [Love Alarm](https://github.com/harsh251004/LoveAlarm) <sup>`FOSS`</sup>
+- `MDY` [Restoid](https://github.com/hddq/restoid) <sup>`FOSS`</sup>
+- `MD3E` [Vitals: ICD-10 & 11 Browser](https://play.google.com/store/apps/details?id=com.icdbrowser.app)
 - `MD3E` [Caffeine Health](https://github.com/ohuc/CaffeineHealth) <sup>`FOSS`</sup>
 - `MDY` [DueDate](https://github.com/MateYou-Apps/DueDate) <sup>`FOSS`</sup>
 - `MDY` [BiBi Keyboard](https://github.com/BryceWG/BiBi-Keyboard) <sup>`FOSS`</sup> <sup>`💰`</sup>
@@ -32,11 +38,5 @@ outline: false
 - `MD` [Episteme Reader](https://github.com/Aryan-Raj3112/episteme) <sup>`FOSS`</sup>
 - `MDY` [vFlow](https://github.com/Chaomixian/vFlow) <sup>`FOSS`</sup>
 - `MDY` [DosesPro](https://play.google.com/store/apps/details?id=com.hseuniversal.dosespro) <sup>`💰`</sup>
-- `MD3E` [Outify](https://github.com/iTomKo/Outify) <sup>`FOSS`</sup>
-- `MD3E` [Gumroad Stats](https://github.com/sameerasw/GumroadStats) <sup>`FOSS`</sup>
-- `MD3E` [Canvas](https://github.com/sameerasw/canvas) <sup>`FOSS`</sup>
-- `MD3E` [Essentials](https://github.com/sameerasw/essentials) <sup>`FOSS`</sup>
-- `MD3E` [AirSync](https://github.com/sameerasw/airsync-android) <sup>`FOSS`</sup>
-- `MDY` [Revenge Manager](https://github.com/revenge-mod/revenge-manager) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 
 <!-- END AUTO-GENERATED -->

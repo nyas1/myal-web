@@ -10,6 +10,15 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-04-25 | [180ae83](https://github.com/nyas1/Material-You-app-list/commit/180ae83ca315e8843016a1251a8c1fecb942caba) | README: add MicYou and update recently added list |
+| 2026-04-25 | [df35b3d](https://github.com/nyas1/Material-You-app-list/commit/df35b3d904970411356b2201d58585d2d1e740b0) | README: remove OpenTune entry |
+| 2026-04-25 | [12a17d9](https://github.com/nyas1/Material-You-app-list/commit/12a17d9b089f9c8e17c7c5862689ca4ab4f60da9) | Merge pull request #459 from HotarunIchijou/patch-9 |
+| 2026-04-25 | [9f73d08](https://github.com/nyas1/Material-You-app-list/commit/9f73d08b33e7b76f1cfc2638e6ef8ae89766dc49) | Resolve merge conflicts with main for PR #459 |
+| 2026-04-25 | [540c35a](https://github.com/nyas1/Material-You-app-list/commit/540c35aa489f36426d7ec5769ea182a8f463bdf4) | README: add LibreFit to Newly Added Apps |
+| 2026-04-25 | [3b9591b](https://github.com/nyas1/Material-You-app-list/commit/3b9591bac0d17f00374a0f69db5264f79b212bf4) | Merge pull request #458 from zarins-zip/librefit |
+| 2026-04-25 | [7590505](https://github.com/nyas1/Material-You-app-list/commit/75905051fba10ad21183b785a14ad700fa9b77d3) | README: add Vitals and Restoid, update LoveAlarm tags |
+| 2026-04-23 | [3514da9](https://github.com/nyas1/Material-You-app-list/commit/3514da9a583718ab2e475ab5e3333edb7dbd4b9c) | Add Nouto |
+| 2026-04-22 | [5f1a96e](https://github.com/nyas1/Material-You-app-list/commit/5f1a96e60b924c2ba5d130f3e8e6fe79572a87f9) | README: add LibreFit |
 | 2026-04-17 | [c4ae827](https://github.com/nyas1/Material-You-app-list/commit/c4ae827e0430b16bba5ee6e53c7ab7bdca1c02ac) | README: update Self Attendance source and tag from issue #451 |
 | 2026-04-16 | [b53736a](https://github.com/nyas1/Material-You-app-list/commit/b53736ace0619ac8001cf6c89b52899156689d05) | README: add Caffeine Health, DueDate, BiBi Keyboard, MonoGram, Reef, SoundPod, MonoTracker |
 | 2026-04-11 | [e3e10ba](https://github.com/nyas1/Material-You-app-list/commit/e3e10ba3864a136785fcad4bb8e060e0a901c9e2) | README: tighten setup notes for Discord, WhatsApp, Mixplorer |
@@ -101,14 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-02-27 | [07b2d8b](https://github.com/nyas1/Material-You-app-list/commit/07b2d8bf9b2b2f55bfe7f477373c4e9fabc5e5c3) | Add grave marker to Qwotable |
 | 2026-02-27 | [43351df](https://github.com/nyas1/Material-You-app-list/commit/43351df4c5c11fbb9778b09eeded20dc8ae5ff4e) | Add FOSS label to Atomic - Periodic Table |
 | 2026-02-27 | [43352eb](https://github.com/nyas1/Material-You-app-list/commit/43352eb94cc69a88980e9656860e443686d0e6aa) | Add Solid Explorer to File Explorers list |
-| 2026-02-27 | [17d8f4c](https://github.com/nyas1/Material-You-app-list/commit/17d8f4cc47be633b81ccd019792ada27b031c128) | Update Google Translator, Google Calculator and CuteCalculator MD3E |
-| 2026-02-27 | [f24e2f9](https://github.com/nyas1/Material-You-app-list/commit/f24e2f97ad3d57b311e9dad1c94043b62d280b63) | Add Google Journal to Diary/Journal section |
-| 2026-02-27 | [424a911](https://github.com/nyas1/Material-You-app-list/commit/424a91194b9f8662fd7c7c72b2f28060e78f4b19) | Add grave marker to Mulch and Styx |
-| 2026-02-27 | [61ab375](https://github.com/nyas1/Material-You-app-list/commit/61ab3759692183942011e902f9d320d14d0ded29) | Add Traffic Light app to Device Info section |
-| 2026-02-27 | [e0cbb54](https://github.com/nyas1/Material-You-app-list/commit/e0cbb543960e418bdcfcb7a8d910700d854f8c3c) | Add Boundo to Device Info/Monitors category |
-| 2026-02-27 | [ae1b826](https://github.com/nyas1/Material-You-app-list/commit/ae1b8261b9d3bd9a9306c2b35298670218e43a26) | Update music downloaders |
-| 2026-02-26 | [e8926b0](https://github.com/nyas1/Material-You-app-list/commit/e8926b016a733414658bf03278e607552f31ce49) | Rename ToDark to Zest and Spooky to StoryPad |
-| 2026-02-26 | [82d620c](https://github.com/nyas1/Material-You-app-list/commit/82d620c354d03eafb63eede9c4fedb9f6afa1d1f) | Added Audile |
-| 2026-02-26 | [4ed3ce0](https://github.com/nyas1/Material-You-app-list/commit/4ed3ce023ac1b194ebfdd95177b0273ea2a4bc0a) | Moved Food-E app Uncategorized to Health & Lifestyle and added grave marker |
 
 <!-- END AUTO-GENERATED -->
