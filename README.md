@@ -9,7 +9,7 @@ App data is synced automatically from [nyas1/Material-You-app-list](https://gith
 
 ## ✨ Features
 
-- Material Design 3 interface
+- Material Design 3 interface using [Beer CSS](https://github.com/beercss/beercss)
 - Installable PWA on Android (works fully offline)
 - Search apps quickly
 - Tag filters (MD3E, MDY, MD, MY)
