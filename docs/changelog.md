@@ -10,6 +10,20 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-05-08 | [a6621cd](https://github.com/nyas1/Material-You-app-list/commit/a6621cd0d82b250dfb7818198c808c414cadb233) | README: add Helium to Newly Added; add Facebook to TOC |
+| 2026-05-08 | [e364b3c](https://github.com/nyas1/Material-You-app-list/commit/e364b3cb40e7f617fc7167a753f109b7ea08789d) | Merge pull request #468 from aKqir24/patch-1 |
+| 2026-05-08 | [7a43e1f](https://github.com/nyas1/Material-You-app-list/commit/7a43e1faeeb587b482a7dd406b7499ea4448ae28) | Merge pull request #469 from aKqir24/main |
+| 2026-05-08 | [c91734e](https://github.com/nyas1/Material-You-app-list/commit/c91734ee5e08468023886049ff13fa05ecf46d3c) | Merge branch 'main' into main |
+| 2026-05-08 | [b188c4d](https://github.com/nyas1/Material-You-app-list/commit/b188c4d05bc7546512470c8657f474fd11bd3f54) | Merge pull request #466 from Abhinav-Abster/echo |
+| 2026-05-08 | [d8484e9](https://github.com/nyas1/Material-You-app-list/commit/d8484e9bdabf9bd053ebfa936c0793fea46a9853) | Merge branch 'main' into echo |
+| 2026-05-08 | [45933d4](https://github.com/nyas1/Material-You-app-list/commit/45933d406da0956d9beae82059cd82f5cd564d9d) | README: add FolkPatch, Sound profiles, Echo, Momentum, Harmoni, Hear quran |
+| 2026-05-08 | [9e798d0](https://github.com/nyas1/Material-You-app-list/commit/9e798d0d96c66cfa1ed0a667a9fb7208df619381) | README: add Materialbook, Zenith; update Omni to MD3E; fix TRIAGE rules |
+| 2026-05-08 | [58f7b1c](https://github.com/nyas1/Material-You-app-list/commit/58f7b1c6a365bf0266ec40663151efca09ea1a3c) | README: add Med, Telephoto, Notebook, n0widgets, WhatHDR |
+| 2026-05-08 | [60bb6a5](https://github.com/nyas1/Material-You-app-list/commit/60bb6a5fe48954ac6291c1b996575ec19c4d4d7d) | README: add MasterKey, Time wise, Pixel bookmarks, CoMaps, Inaho |
+| 2026-05-08 | [f7cb935](https://github.com/nyas1/Material-You-app-list/commit/f7cb935cd6453396468cb36a3a320e347dd005c5) | README: add mpvRx, Echo Equalizer, Animeko, Cashiro, Netgety |
+| 2026-05-02 | [bea6e6c](https://github.com/nyas1/Material-You-app-list/commit/bea6e6cbb8eae1257a9cde5dce7acec5721b4c13) | Change Episteme Reader status from 'MD' to 'MDY' |
+| 2026-05-02 | [e6b60b9](https://github.com/nyas1/Material-You-app-list/commit/e6b60b91a74bc49d5030798d9cc96547c4128309) | Add Helium browser to the list of browsers |
+| 2026-05-01 | [e75dd29](https://github.com/nyas1/Material-You-app-list/commit/e75dd295dcabecdaa125ab1e956a119a8f7d1b3e) | added echo music |
 | 2026-04-25 | [180ae83](https://github.com/nyas1/Material-You-app-list/commit/180ae83ca315e8843016a1251a8c1fecb942caba) | README: add MicYou and update recently added list |
 | 2026-04-25 | [df35b3d](https://github.com/nyas1/Material-You-app-list/commit/df35b3d904970411356b2201d58585d2d1e740b0) | README: remove OpenTune entry |
 | 2026-04-25 | [12a17d9](https://github.com/nyas1/Material-You-app-list/commit/12a17d9b089f9c8e17c7c5862689ca4ab4f60da9) | Merge pull request #459 from HotarunIchijou/patch-9 |
@@ -96,19 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-02 | [6e92b07](https://github.com/nyas1/Material-You-app-list/commit/6e92b0726822bbdb880703582cba9cfedbf1d5e0) | Merge pull request #405 from Super12138/main |
 | 2026-03-02 | [916a44e](https://github.com/nyas1/Material-You-app-list/commit/916a44e3804ad856512ea30d79cb3f96d2cae022) | Merge branch 'main' into main |
 | 2026-03-02 | [b484f4a](https://github.com/nyas1/Material-You-app-list/commit/b484f4a3548a55a81c3d113e78aae77dd729f383) | Merge pull request #402 from ThatOneCalculator/futo |
-| 2026-03-02 | [78c1ab4](https://github.com/nyas1/Material-You-app-list/commit/78c1ab43d3d947305b164ab47d294682c97413fe) | Merge pull request #397 from peppx/patch-1 |
-| 2026-03-01 | [58a3e97](https://github.com/nyas1/Material-You-app-list/commit/58a3e97ae9dc539b884bb0455db53dcdbea66517) | Add Continuum |
-| 2026-03-01 | [ffd182d](https://github.com/nyas1/Material-You-app-list/commit/ffd182da79a82e3011759e1059e7828a5c3c0314) | Update Orion Store to MD |
-| 2026-03-01 | [60c0740](https://github.com/nyas1/Material-You-app-list/commit/60c074025cec992c0985e61e8c75e33aea0aaa78) | Update Booming Music link |
-| 2026-03-01 | [932ee6a](https://github.com/nyas1/Material-You-app-list/commit/932ee6a69aab9796e9fe51a8bd947ab87b851932) | Merge branch 'main' into main |
-| 2026-03-01 | [4074313](https://github.com/nyas1/Material-You-app-list/commit/4074313d800d17e8cc65c3bec4a8e52fa69af456) | Merge pull request #403 from ThatOneCalculator/pixelplayer |
-| 2026-03-01 | [d86d7a9](https://github.com/nyas1/Material-You-app-list/commit/d86d7a9097910704910e0a6cee3df7654900af8d) | Merge pull request #408 from yg-sudo/main |
-| 2026-02-27 | [76172b2](https://github.com/nyas1/Material-You-app-list/commit/76172b2a5977f4f511fd00f4ab61835e4892c4b2) | Add Orion Store |
-| 2026-02-27 | [b2e2018](https://github.com/nyas1/Material-You-app-list/commit/b2e20181b91fbfa4410107db17347a92d88f603b) | Add 'FOSS' label to URV Manager and Morphe Manager |
-| 2026-02-27 | [057d925](https://github.com/nyas1/Material-You-app-list/commit/057d925d6abf8698a77a3c84258a047eea94ba90) | Added paid info to Solid Explorer |
-| 2026-02-27 | [d568f9d](https://github.com/nyas1/Material-You-app-list/commit/d568f9ddf5d3373ff1d9ecd4a6f81df61be69809) | Add URV Manager and Morphe Manager |
-| 2026-02-27 | [07b2d8b](https://github.com/nyas1/Material-You-app-list/commit/07b2d8bf9b2b2f55bfe7f477373c4e9fabc5e5c3) | Add grave marker to Qwotable |
-| 2026-02-27 | [43351df](https://github.com/nyas1/Material-You-app-list/commit/43351df4c5c11fbb9778b09eeded20dc8ae5ff4e) | Add FOSS label to Atomic - Periodic Table |
-| 2026-02-27 | [43352eb](https://github.com/nyas1/Material-You-app-list/commit/43352eb94cc69a88980e9656860e443686d0e6aa) | Add Solid Explorer to File Explorers list |
 
 <!-- END AUTO-GENERATED -->
