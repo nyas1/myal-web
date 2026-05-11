@@ -290,7 +290,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MDY` [Dynamic Wallpaper](https://play.google.com/store/apps/details?id=rk.android.app.dynamic.wallpaper)
 	- `MDY` [Pixr: Wallpaper Showcase](https://play.google.com/store/apps/details?id=com.paget96.pixr) <sup>`💰`</sup>
 	- `MDY` [Pallax](https://github.com/patzly/pallax-android) <sup>`FOSS`</sup> <sup>`🪦`</sup>
-	- `MDY` [WaifuPX](https://github.com/WaifuPX-DG/WaifuPX) <sup>`🪦`</sup>
+	- `MDY` [WaifuPX](https://github.com/WaifuPX-DG/WaifuPX)
 	- `MDY` [UtopiaWalls+](https://github.com/WaifuPX-DG/UtopiaWalls) <sup>`🪦`</sup>
 	- `MDY` [MWalls](https://play.google.com/store/apps/details?id=com.theveloper.mwalls.app)
 	- `MDY` [Wallfever](https://play.google.com/store/apps/details?id=com.amaan.wallfever)
@@ -1154,7 +1154,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 - **Screen Time**
 	- `MD3E` [Digital Wellbeing](https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing)
 - **Medicine Reminder**
-	- `MD3E` [Med](https://github.com/FeDeveloper95/Med)
+	- `MD3E` [Med](https://github.com/FeDeveloper95/Med) <sup>`FOSS`</sup>
 	- `MDY` [DosesPro - GLP-1 Tracker](https://play.google.com/store/apps/details?id=com.hseuniversal.dosespro) <sup>`💰`</sup>
 	- `MDY` [Home Medkit](https://github.com/pewaru-333/HomeMedkit-App) <sup>`FOSS`</sup>
 	- `MDY` [MedTimer](https://github.com/Futsch1/medTimer)  <sup>`FOSS`</sup>
@@ -1215,6 +1215,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MDY` [Xpense](https://play.google.com/store/apps/details?id=com.chiranth.xpense)
 	- `MD` [Waterfly III](https://github.com/dreautall/waterfly-iii) <sup>`FOSS`</sup>
 	- `MD` [WalletCount](https://github.com/GittyMac/WalletCount) <sup>`FOSS`</sup>
+	- `MD` [Expensy](https://github.com/mina-android/Expensy) <sup>`FOSS`</sup>
 - **Cryptocurrency**
 	- `MDY` [PapriCoin](https://github.com/T8RIN/PapriCoin) <sup>`FOSS`</sup>
 	- `MDY` [CoinTrend](https://github.com/CoinTrend/CoinTrend) <sup>`FOSS`</sup>

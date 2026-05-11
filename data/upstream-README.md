@@ -250,7 +250,8 @@ This list is solely a compilation of apps that adopt the Material You design gui
 
 ## 🆕 Newly Added Apps!
 *Last **30 apps** that were recently added to list!*
-- `MD3E` [FolkPatch](https://github.com/LyraVoid/FolkPatch) <sup>`FOSS`</sup> <sup>`FORK`</sup> <sup>`🐾`</sup>
+- `MD` [Expensy](https://github.com/mina-android/Expensy) <sup>`FOSS`</sup>
+- `MD3E` [FolkPatch](https://github.com/LyraVoid/FolkPatch) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Helium](https://github.com/jqssun/android-helium-browser) <sup>`FOSS`</sup>
 - `MD` [Hear quran](https://play.google.com/store/apps/details?id=com.psh.hear_quran)
 - `MD3E` [Momentum](https://github.com/shub39/Momentum) <sup>`FOSS`</sup>
@@ -262,7 +263,7 @@ This list is solely a compilation of apps that adopt the Material You design gui
 - `MD3E` [Zenith](https://github.com/1372Slash/Zenith) <sup>`FOSS`</sup>
 - `MD3E` [WhatHDR](https://github.com/trlef19/WhatHDR) <sup>`FOSS`</sup>
 - `MD3E` [n0widgets](https://github.com/n0white/n0widgets)
-- `MD3E` [Med](https://github.com/FeDeveloper95/Med)
+- `MD3E` [Med](https://github.com/FeDeveloper95/Med) <sup>`FOSS`</sup>
 - `MD` [Telephoto](https://github.com/ASRumon/Telephoto)
 - `MD` [Notebook](https://github.com/SaadhJawwadh/Note-taking) <sup>`FOSS`</sup>
 - `MD` [Echo Equalizer](https://play.google.com/store/apps/details?id=com.hapibits.soundlift) <sup>`💰`</sup>
@@ -279,7 +280,6 @@ This list is solely a compilation of apps that adopt the Material You design gui
 - `MD3E` [LibreFit](https://github.com/LibreFitOrg/LibreFit) <sup>`FOSS`</sup>
 - `MDY` [Love Alarm](https://github.com/harsh251004/LoveAlarm) <sup>`FOSS`</sup>
 - `MDY` [Restoid](https://github.com/hddq/restoid) <sup>`FOSS`</sup>
-- `MD3E` [Vitals: ICD-10 & 11 Browser](https://play.google.com/store/apps/details?id=com.icdbrowser.app)
 
 <sub>[📜Table Of Contents](#-table-of-contents)</sub>
 
@@ -584,7 +584,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MDY` [Dynamic Wallpaper](https://play.google.com/store/apps/details?id=rk.android.app.dynamic.wallpaper)
 	- `MDY` [Pixr: Wallpaper Showcase](https://play.google.com/store/apps/details?id=com.paget96.pixr) <sup>`💰`</sup>
 	- `MDY` [Pallax](https://github.com/patzly/pallax-android) <sup>`FOSS`</sup> <sup>`🪦`</sup>
-	- `MDY` [WaifuPX](https://github.com/WaifuPX-DG/WaifuPX) <sup>`🪦`</sup>
+	- `MDY` [WaifuPX](https://github.com/WaifuPX-DG/WaifuPX)
 	- `MDY` [UtopiaWalls+](https://github.com/WaifuPX-DG/UtopiaWalls) <sup>`🪦`</sup>
 	- `MDY` [MWalls](https://play.google.com/store/apps/details?id=com.theveloper.mwalls.app)
 	- `MDY` [Wallfever](https://play.google.com/store/apps/details?id=com.amaan.wallfever)
@@ -1526,7 +1526,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 - **Screen Time**
 	- `MD3E` [Digital Wellbeing](https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing)
 - **Medicine Reminder**
-	- `MD3E` [Med](https://github.com/FeDeveloper95/Med)
+	- `MD3E` [Med](https://github.com/FeDeveloper95/Med) <sup>`FOSS`</sup>
 	- `MDY` [DosesPro - GLP-1 Tracker](https://play.google.com/store/apps/details?id=com.hseuniversal.dosespro) <sup>`💰`</sup>
 	- `MDY` [Home Medkit](https://github.com/pewaru-333/HomeMedkit-App) <sup>`FOSS`</sup>
 	- `MDY` [MedTimer](https://github.com/Futsch1/medTimer)  <sup>`FOSS`</sup>
@@ -1591,6 +1591,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MDY` [Xpense](https://play.google.com/store/apps/details?id=com.chiranth.xpense)
 	- `MD` [Waterfly III](https://github.com/dreautall/waterfly-iii) <sup>`FOSS`</sup>
 	- `MD` [WalletCount](https://github.com/GittyMac/WalletCount) <sup>`FOSS`</sup>
+	- `MD` [Expensy](https://github.com/mina-android/Expensy) <sup>`FOSS`</sup>
 - **Cryptocurrency**
 	- `MDY` [PapriCoin](https://github.com/T8RIN/PapriCoin) <sup>`FOSS`</sup>
 	- `MDY` [CoinTrend](https://github.com/CoinTrend/CoinTrend) <sup>`FOSS`</sup>
@@ -1898,6 +1899,6 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 ## 🪢 Sources
 
 - **Reddit:** [#1](https://www.reddit.com/r/androidapps/comments/106iwa2/apps_that_i_use_with_material_you_support/), [#2](https://www.reddit.com/r/androidapps/comments/10bshxh/list_2_for_apps_with_material_you_support/), [#3](https://www.reddit.com/r/androidapps/comments/utjsl2/best_material_you_applications/), [#4](https://www.reddit.com/r/androidapps/comments/rnnhhm/material_you_apps/)
-- **Telegram:** [popMODS](https://t.me/popMODS), [WSTprojects](https://t.me/WSTprojects), [WPX Projects](https://t.me/WSTprojects), [DroidDen](https://t.me/DroidDen), [FossDroid](https://t.me/FossDroidAndroid), [Free Softwares [Android]](https://t.me/foss_Android)
+- **Telegram:** [popMODS](https://t.me/popMODS), [WSTprojects](https://t.me/WSTprojects), [WPX Projects](https://t.me/waifupx_official), [DroidDen](https://t.me/DroidDen), [FossDroid](https://t.me/FossDroidAndroid), [Free Softwares [Android]](https://t.me/foss_Android)
 - **Similar Lists:** [sysworx's](https://github.com/sysworx/Material-You-app-list)<sup><sup>🪦</sup></sup>, [Naverim's](https://github.com/Naverim/Material-You-app-list)<sup><sup>🪦</sup></sup>, [TeaEndsAcronyms's](https://github.com/AAGaming00/Material-You-Apps)<sup><sup>🪦</sup></sup>, [misaka-13766's](https://github.com/CHNJohnHK/Material-You-App-Repository)<sup><sup>🪦</sup></sup>
 	- **Fluent Design Apps:** [HotarunIchijou's](https://github.com/HotarunIchijou/fluent-design-app-list), [DesignLipsx's](https://github.com/DesignLipsx/WinUI-3-Apps-List)

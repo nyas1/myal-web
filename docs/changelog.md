@@ -10,6 +10,12 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-05-10 | [a5f684e](https://github.com/nyas1/Material-You-app-list/commit/a5f684ef854bb531137600b1ba889d4a862f1f6a) | Merge pull request #493 from Abhinav-Abster/Expensy |
+| 2026-05-10 | [02b89b2](https://github.com/nyas1/Material-You-app-list/commit/02b89b240ace6a578e733ecc2a50201ed378c9c4) | Merge branch 'main' into Expensy |
+| 2026-05-10 | [20e1227](https://github.com/nyas1/Material-You-app-list/commit/20e12271eaf494c5804af633419f666dfd5f0fe9) | Update README.md |
+| 2026-05-10 | [3c94caa](https://github.com/nyas1/Material-You-app-list/commit/3c94caaa2cec7847ff4350462b847b4d044f53f4) | Merge pull request #491 from WaifuPX-DG/patch-1 |
+| 2026-05-08 | [10da770](https://github.com/nyas1/Material-You-app-list/commit/10da770d1679eba20d4ad51cef0a4ccf01aadbea) | Add Expensy |
+| 2026-05-08 | [a7293a6](https://github.com/nyas1/Material-You-app-list/commit/a7293a6cd3966050e51058c9616da8c97f474992) | Fixes |
 | 2026-05-08 | [a6621cd](https://github.com/nyas1/Material-You-app-list/commit/a6621cd0d82b250dfb7818198c808c414cadb233) | README: add Helium to Newly Added; add Facebook to TOC |
 | 2026-05-08 | [e364b3c](https://github.com/nyas1/Material-You-app-list/commit/e364b3cb40e7f617fc7167a753f109b7ea08789d) | Merge pull request #468 from aKqir24/patch-1 |
 | 2026-05-08 | [7a43e1f](https://github.com/nyas1/Material-You-app-list/commit/7a43e1faeeb587b482a7dd406b7499ea4448ae28) | Merge pull request #469 from aKqir24/main |
@@ -104,11 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-02 | [4ee6362](https://github.com/nyas1/Material-You-app-list/commit/4ee6362f53a1e3d8dd327f23ad53c752053e99e8) | Pixelix, KashCal, Material Download Manager, VK X, Payload Dumper, PixelDroid |
 | 2026-03-02 | [d5a4561](https://github.com/nyas1/Material-You-app-list/commit/d5a45612a23593400c2bc5530e8b4645c506f088) | ANX Reader, Muviz Widgets, Video Player - Material Player, EON, Harmonoid, SaTunes |
 | 2026-03-02 | [ed2be56](https://github.com/nyas1/Material-You-app-list/commit/ed2be56070402f8c70385a85cfb2d8690ab48edb) | RivoPhoneApp, Game Hub, Umihi Music, AI Hub, Flux, Mint Calculator, Tomato, VIVI |
-| 2026-03-02 | [a989f6c](https://github.com/nyas1/Material-You-app-list/commit/a989f6c05c08d1c1055a353de26faed658db27a0) | Add LoveAlarm to clocks and newly added apps |
-| 2026-03-02 | [dde8fe1](https://github.com/nyas1/Material-You-app-list/commit/dde8fe17bc2098a3bedad87760b8e1b9d0a93fa1) | Add latest apps to Newly Added Apps section |
-| 2026-03-02 | [0a8e304](https://github.com/nyas1/Material-You-app-list/commit/0a8e304eba7f0d9b33a559efc594e9b7b4e7b193) | Merge pull request #409 from OrdinaryPerson0:main |
-| 2026-03-02 | [6e92b07](https://github.com/nyas1/Material-You-app-list/commit/6e92b0726822bbdb880703582cba9cfedbf1d5e0) | Merge pull request #405 from Super12138/main |
-| 2026-03-02 | [916a44e](https://github.com/nyas1/Material-You-app-list/commit/916a44e3804ad856512ea30d79cb3f96d2cae022) | Merge branch 'main' into main |
-| 2026-03-02 | [b484f4a](https://github.com/nyas1/Material-You-app-list/commit/b484f4a3548a55a81c3d113e78aae77dd729f383) | Merge pull request #402 from ThatOneCalculator/futo |
 
 <!-- END AUTO-GENERATED -->
