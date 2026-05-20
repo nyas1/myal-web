@@ -10,6 +10,10 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-05-19 | [8f1aeb9](https://github.com/nyas1/Material-You-app-list/commit/8f1aeb94d21429198920e974430164de410f3695) | README: fix spacing inconsistencies |
+| 2026-05-19 | [2fb0962](https://github.com/nyas1/Material-You-app-list/commit/2fb09623c5806b5ff936ff83b21dff52ab883d85) | README: add NagramX, Meld, Terminal EX; update Symfonium, Kenko |
+| 2026-05-19 | [a554049](https://github.com/nyas1/Material-You-app-list/commit/a554049fb673574947955ad3240d43a0aa314de9) | README: add Blockit, Music speed changer, Wear audio recorder, Coon gallery, Scanly |
+| 2026-05-19 | [e751e64](https://github.com/nyas1/Material-You-app-list/commit/e751e645e10d664f60e88444c0c77315e275da6a) | README: add Gradient Weather, Conversations, Threema, Equran, Trudido |
 | 2026-05-10 | [a5f684e](https://github.com/nyas1/Material-You-app-list/commit/a5f684ef854bb531137600b1ba889d4a862f1f6a) | Merge pull request #493 from Abhinav-Abster/Expensy |
 | 2026-05-10 | [02b89b2](https://github.com/nyas1/Material-You-app-list/commit/02b89b240ace6a578e733ecc2a50201ed378c9c4) | Merge branch 'main' into Expensy |
 | 2026-05-10 | [20e1227](https://github.com/nyas1/Material-You-app-list/commit/20e12271eaf494c5804af633419f666dfd5f0fe9) | Update README.md |
@@ -106,9 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-02 | [8775d1b](https://github.com/nyas1/Material-You-app-list/commit/8775d1b2f8df0cf0ddfdcafc90b3e84f77a417d1) | Fix issue form schema so template appears |
 | 2026-03-02 | [8d14ec6](https://github.com/nyas1/Material-You-app-list/commit/8d14ec6ce548bb6488354a074237ad9bfec6c328) | Add strict app request issue form |
 | 2026-03-02 | [011d074](https://github.com/nyas1/Material-You-app-list/commit/011d0746f592ca0067fb7cd142b80d21b6c718dd) | Restore newly added apps to recency order |
-| 2026-03-02 | [396b7c8](https://github.com/nyas1/Material-You-app-list/commit/396b7c897f71ca16564dcf20b28f88da0314ac34) | Sort app entries by tag order MD3E, MDY, MD, MY |
-| 2026-03-02 | [4ee6362](https://github.com/nyas1/Material-You-app-list/commit/4ee6362f53a1e3d8dd327f23ad53c752053e99e8) | Pixelix, KashCal, Material Download Manager, VK X, Payload Dumper, PixelDroid |
-| 2026-03-02 | [d5a4561](https://github.com/nyas1/Material-You-app-list/commit/d5a45612a23593400c2bc5530e8b4645c506f088) | ANX Reader, Muviz Widgets, Video Player - Material Player, EON, Harmonoid, SaTunes |
-| 2026-03-02 | [ed2be56](https://github.com/nyas1/Material-You-app-list/commit/ed2be56070402f8c70385a85cfb2d8690ab48edb) | RivoPhoneApp, Game Hub, Umihi Music, AI Hub, Flux, Mint Calculator, Tomato, VIVI |
 
 <!-- END AUTO-GENERATED -->
