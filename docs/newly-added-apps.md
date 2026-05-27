@@ -8,6 +8,7 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MD3E` [Google Health](https://play.google.com/store/apps/details?id=com.fitbit.FitbitMobile) <sup>`🐾`</sup>
 - `MD3E` [NagramX](https://github.com/risin42/NagramX) <sup>`FOSS`</sup> <sup>`FORK`</sup> <sup>`MOD`</sup>
 - `MD3E` [Meld](https://github.com/FrancescoGrazioso/Meld) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Terminal EX](https://github.com/Graywizard888/Terminal_EX) <sup>`FOSS`</sup> <sup>`FORK`</sup>
@@ -33,10 +34,9 @@ outline: false
 - `MD3E` [Materialbook](https://github.com/eepiemi/Materialbook) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MD3E` [Zenith](https://github.com/1372Slash/Zenith) <sup>`FOSS`</sup>
 - `MD3E` [WhatHDR](https://github.com/trlef19/WhatHDR) <sup>`FOSS`</sup>
-- `MD3E` [n0widgets](https://github.com/n0white/n0widgets)
+- `MD3E` [n0widgets](https://play.google.com/store/apps/details?id=com.n0white.n0widgets) <sup>`💰`</sup>
 - `MD3E` [Med](https://github.com/FeDeveloper95/Med) <sup>`FOSS`</sup>
 - `MD` [Telephoto](https://github.com/ASRumon/Telephoto)
 - `MD` [Notebook](https://github.com/SaadhJawwadh/Note-taking) <sup>`FOSS`</sup>
-- `MD` [Echo Equalizer](https://play.google.com/store/apps/details?id=com.hapibits.soundlift) <sup>`💰`</sup>
 
 <!-- END AUTO-GENERATED -->
