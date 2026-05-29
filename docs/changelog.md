@@ -10,6 +10,7 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-05-28 | [ecf4518](https://github.com/nyas1/Material-You-app-list/commit/ecf4518eaf02cf6ee7523c90c1f8be70f9d5321b) | README: add ADNS, Beam, hōtter, WebLibre |
 | 2026-05-26 | [bb9b6a4](https://github.com/nyas1/Material-You-app-list/commit/bb9b6a4478a7d3095b66eb3fbe71d135a867f562) | README: update n0widgets, Summit for Lemmy, Google Health; relocate Caffeine Health; remove Communiq AI |
 | 2026-05-19 | [8f1aeb9](https://github.com/nyas1/Material-You-app-list/commit/8f1aeb94d21429198920e974430164de410f3695) | README: fix spacing inconsistencies |
 | 2026-05-19 | [2fb0962](https://github.com/nyas1/Material-You-app-list/commit/2fb09623c5806b5ff936ff83b21dff52ab883d85) | README: add NagramX, Meld, Terminal EX; update Symfonium, Kenko |
@@ -109,6 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-02 | [44e2696](https://github.com/nyas1/Material-You-app-list/commit/44e269685b065872dbe0a2acdf455f00907dd5c6) | Add tag checklist to app issue form |
 | 2026-03-02 | [d1a82db](https://github.com/nyas1/Material-You-app-list/commit/d1a82db9fc1dcbd7b3e0daf4e449b7ce3ad5f89d) | Use minimal valid app issue form |
 | 2026-03-02 | [8775d1b](https://github.com/nyas1/Material-You-app-list/commit/8775d1b2f8df0cf0ddfdcafc90b3e84f77a417d1) | Fix issue form schema so template appears |
-| 2026-03-02 | [8d14ec6](https://github.com/nyas1/Material-You-app-list/commit/8d14ec6ce548bb6488354a074237ad9bfec6c328) | Add strict app request issue form |
 
 <!-- END AUTO-GENERATED -->
