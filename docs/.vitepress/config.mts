@@ -1,9 +1,31 @@
 import { fileURLToPath } from 'node:url'
 import { withPwa } from '@vite-pwa/vitepress'
+import type MarkdownIt from 'markdown-it'
 import { defineConfig } from 'vitepress'
 import { MYAL_MOBILE_NAV_CHROME } from './chrome'
 import { meta, nav, sidebar, socialLinks } from './shared'
+import { appListTagLegend } from './theme/composables/appListTagLegend'
 import { vitepressSidebarOverridePlugin } from './theme/vitepress-sidebar-plugin'
+
+/** Build-time markdown-it plugin: adds data-tooltip + title to known inline `code` tags. */
+function tagTooltipPlugin(md: MarkdownIt) {
+  const tooltipMap = new Map(
+    appListTagLegend.map(({ tag, description }) => [tag, description])
+  )
+
+  const originalCodeInline = md.renderer.rules.code_inline!
+
+  md.renderer.rules.code_inline = (tokens, idx, options, env, self) => {
+    const token = tokens[idx]
+    const text = token.content
+    const tip = tooltipMap.get(text)
+    if (tip) {
+      token.attrSet('data-tooltip', tip)
+      token.attrSet('title', tip)
+    }
+    return originalCodeInline(tokens, idx, options, env, self)
+  }
+}
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1]
 const pagesBase = process.env.GITHUB_ACTIONS === 'true' && repositoryName
@@ -30,6 +52,9 @@ function injectEarlyChromeMeta(html: string): string {
 
 export default withPwa(
   defineConfig({
+  markdown: {
+    config: (md) => tagTooltipPlugin(md)
+  },
   base: pagesBase,
   title: 'MYAL',
   description: meta.description,
