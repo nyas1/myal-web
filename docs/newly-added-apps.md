@@ -8,6 +8,8 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MDY` [Shizuku](https://github.com/thedjchi/Shizuku) <sup>`FOSS`</sup> <sup>`FORK`</sup> <sup>`🐾`</sup>
+- `MD` [Moon Translator](https://github.com/MoonMonet/Translator) <sup>`FOSS`</sup>
 - `MY` [WebLibre](https://github.com/FaFre/WebLibre) <sup>`FOSS`</sup>
 - `MD3E` [ADNS](https://github.com/eyalm2000/adns) <sup>`FOSS`</sup>
 - `MDY` [Beam](https://github.com/montafra/beam) <sup>`FOSS`</sup> <sup>`FORK`</sup>
@@ -36,7 +38,5 @@ outline: false
 - `MD` [Harmoni](https://github.com/onedev22/harmoni) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MD3E` [mpvRx](https://github.com/Riteshp2001/mpvRx) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MD3E` [Materialbook](https://github.com/eepiemi/Materialbook) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD3E` [Zenith](https://github.com/1372Slash/Zenith) <sup>`FOSS`</sup>
-- `MD3E` [WhatHDR](https://github.com/trlef19/WhatHDR) <sup>`FOSS`</sup>
 
 <!-- END AUTO-GENERATED -->
