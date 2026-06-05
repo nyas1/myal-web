@@ -10,6 +10,13 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-04 | [7c1b5f0](https://github.com/nyas1/Material-You-app-list/commit/7c1b5f00bf11e5c3bfc0000ab6e479b4b1155694) | README: add LastChat and update AI section |
+| 2026-06-04 | [6060d61](https://github.com/nyas1/Material-You-app-list/commit/6060d61bee457ac973b1686f4a5864586ba4bbf1) | Update newly added apps list in README |
+| 2026-06-04 | [b3f06f3](https://github.com/nyas1/Material-You-app-list/commit/b3f06f318350f04d88408c7cc89099e26d676eb2) | README: add LastChat and update AI section |
+| 2026-06-04 | [b6a8c3f](https://github.com/nyas1/Material-You-app-list/commit/b6a8c3f57af7230f690e30996ff9559040ed26f6) | README: add mpvRex |
+| 2026-06-04 | [5329aa6](https://github.com/nyas1/Material-You-app-list/commit/5329aa6bb05f3ec202611eddf0fa675b7d36d327) | Update newly added apps list in README |
+| 2026-06-04 | [e84bee5](https://github.com/nyas1/Material-You-app-list/commit/e84bee5c93711d127c94625fabcc8d29fe329f3a) | Merge pull request #1 from Agarwalkanishk/Agarwalkanishk-patch-1 |
+| 2026-06-04 | [7d31b0a](https://github.com/nyas1/Material-You-app-list/commit/7d31b0ad57e3116449ac77b64a2266678371d5f5) | Add mpvRex to video players list in README |
 | 2026-06-01 | [5a73e92](https://github.com/nyas1/Material-You-app-list/commit/5a73e92a7b8a735d4108d82583b2a3a2c8b4f5e8) | README: add Moon Translator, Shizuku fork; update sing-box, Showly |
 | 2026-05-28 | [ecf4518](https://github.com/nyas1/Material-You-app-list/commit/ecf4518eaf02cf6ee7523c90c1f8be70f9d5321b) | README: add ADNS, Beam, hōtter, WebLibre |
 | 2026-05-26 | [bb9b6a4](https://github.com/nyas1/Material-You-app-list/commit/bb9b6a4478a7d3095b66eb3fbe71d135a867f562) | README: update n0widgets, Summit for Lemmy, Google Health; relocate Caffeine Health; remove Communiq AI |
@@ -103,12 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-06 | [1a8de3c](https://github.com/nyas1/Material-You-app-list/commit/1a8de3cbcdde4f131118595fb7a6a18fe4800652) | Update Quacker, Squawker and add QuaX |
 | 2026-03-06 | [6db17f6](https://github.com/nyas1/Material-You-app-list/commit/6db17f607e8e472605cb106f7e43b23aab843a89) | Remove duplicate entries from app list in README |
 | 2026-03-06 | [522857c](https://github.com/nyas1/Material-You-app-list/commit/522857c5d403eced89ede78669f487bf45ed13df) | Add new website link to README |
-| 2026-03-03 | [5a10dfb](https://github.com/nyas1/Material-You-app-list/commit/5a10dfb8985a58ad93cae518446ebbb6c1bbc471) | Update README to remove introductory paragraph |
-| 2026-03-03 | [f853a39](https://github.com/nyas1/Material-You-app-list/commit/f853a391ba6370f6bcb9907665c217549a97d021) | Remove duplicate Fedilab entry from README |
-| 2026-03-02 | [f4e5e41](https://github.com/nyas1/Material-You-app-list/commit/f4e5e418ccb0a12a16500819d23fe3ef2805b299) | Add general issue template |
-| 2026-03-02 | [4ee4783](https://github.com/nyas1/Material-You-app-list/commit/4ee47836067cf327617862ed6031357f5d9f846d) | Make update template evidence optional |
-| 2026-03-02 | [cff1139](https://github.com/nyas1/Material-You-app-list/commit/cff1139cb15990528ff747f3023b482dfa31f2fb) | Add issue template for app entry updates |
-| 2026-03-02 | [44e2696](https://github.com/nyas1/Material-You-app-list/commit/44e269685b065872dbe0a2acdf455f00907dd5c6) | Add tag checklist to app issue form |
-| 2026-03-02 | [d1a82db](https://github.com/nyas1/Material-You-app-list/commit/d1a82db9fc1dcbd7b3e0daf4e449b7ce3ad5f89d) | Use minimal valid app issue form |
 
 <!-- END AUTO-GENERATED -->

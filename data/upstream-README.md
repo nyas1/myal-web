@@ -250,6 +250,8 @@ This list is solely a compilation of apps that adopt the Material You design gui
 
 ## 🆕 Newly Added Apps!
 *Last **30 apps** that were recently added to list!*
+- `MD3E` [LastChat](https://github.com/Cocolalilal/LastChat) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+- `MD3E` [mpvRex](https://github.com/sfsakhawat999/mpvRex) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Shizuku](https://github.com/thedjchi/Shizuku) <sup>`FOSS`</sup> <sup>`FORK`</sup> <sup>`🐾`</sup>
 - `MD` [Moon Translator](https://github.com/MoonMonet/Translator) <sup>`FOSS`</sup>
 - `MY` [WebLibre](https://github.com/FaFre/WebLibre) <sup>`FOSS`</sup>
@@ -278,9 +280,6 @@ This list is solely a compilation of apps that adopt the Material You design gui
 - `MD3E` [Sound profiles](https://play.google.com/store/apps/details?id=com.a3.soundprofiles)
 - `MDY` [Echo](https://github.com/EchoMusicApp/Echo-Music) <sup>`FOSS`</sup>
 - `MD` [Harmoni](https://github.com/onedev22/harmoni) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD3E` [mpvRx](https://github.com/Riteshp2001/mpvRx) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD3E` [Materialbook](https://github.com/eepiemi/Materialbook) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-
 
 <sub>[📜Table Of Contents](#-table-of-contents)</sub>
 
@@ -693,9 +692,10 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 
 ---
 ### ▶️ Video Players
-- `MD3E` [mpvRx](https://github.com/Riteshp2001/mpvRx) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD3E` [Reefin Video Player](https://play.google.com/store/apps/details?id=com.shady.reefin)
 - `MD3E` [mpvEx](https://github.com/marlboro-advance/mpvEx) <sup>`FOSS`</sup> <sup>`🐾`</sup>
+	- `MD3E` [mpvRx](https://github.com/Riteshp2001/mpvRx) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+	- `MD3E` [mpvRex](https://github.com/sfsakhawat999/mpvRex) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+- `MD3E` [Reefin Video Player](https://play.google.com/store/apps/details?id=com.shady.reefin)
 - `MDY` [Video Player - Material Player](https://play.google.com/store/apps/details?id=com.akira.material)
 - `MDY` [VLC Media Player](https://t.me/waifupx_official/233) <sup>`MOD`</sup>
 - `MDY` [NextPlayer](https://github.com/anilbeesetti/nextplayer) <sup>`FOSS`</sup>
@@ -1481,17 +1481,18 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 
 ---
 ### 🤖 Artificial Intelligence (AI)
+- `MDY` [RikkaHub](https://github.com/rikkahub/rikkahub) <sup>`FOSS`</sup>
+	- `MD3E` [LastChat](https://github.com/Cocolalilal/LastChat) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [AI Hub](https://github.com/SilentCoderHere/aihub) <sup>`FOSS`</sup>
 - `MDY` [Stable Diffusion AI](https://github.com/ShiftHackZ/Stable-Diffusion-Android) <sup>`FOSS`</sup>
 - `MDY` [BotForge](https://github.com/L4TTiCe/BotForge) <sup>`FOSS`</sup> <sup>`🪦`</sup>
-- `MDY` [Sense](https://github.com/F0x1d/Sense) <sup>`FOSS`</sup>
+- `MDY` [Sense](https://github.com/F0x1d/Sense) <sup>`FOSS`</sup> <sup>`🪦`</sup>
 - `MDY` [Lumi AI](https://github.com/iamlooper/Lumi-AI)
-- `MDY` [GPT Assistant](https://github.com/sunshine0523/GPT-Assistant) <sup>`FOSS`</sup>
+- `MDY` [GPT Assistant](https://github.com/sunshine0523/GPT-Assistant) <sup>`FOSS`</sup> <sup>`🪦`</sup>
 - `MDY` [GPTMobile](https://github.com/Taewan-P/gpt_mobile) <sup>`FOSS`</sup>
 - `MDY` [Summary You](https://github.com/talosross/SummaryYou) <sup>`FOSS`</sup>
 	- `MD3E` [Summary Expressive](https://github.com/kid1412621/SummaryExpressive) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Grok](https://play.google.com/store/apps/details?id=ai.x.grok)
-- `MDY` [RikkaHub](https://github.com/rikkahub/rikkahub) <sup>`FOSS`</sup>
 - `MD` [ChatGPT](https://play.google.com/store/apps/details?id=com.openai.chatgpt)
 - `MD` [Colors AI](https://github.com/tsinis/colors_ai) <sup>`FOSS`</sup> <sup>`🪦`</sup>
 - `MD` [ChatBoost](https://play.google.com/store/apps/details?id=studio.muggle.chatboost)
