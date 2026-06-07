@@ -8,6 +8,9 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MD3E` [Kite](https://github.com/zenzer0s/Kite) <sup>`FOSS`</sup>
+- `MD3E` [mpvFlux](https://github.com/Muhammedahmed18/mpvFlux) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+- `MDY` [Flow](https://github.com/A-EDev/Flow) <sup>`FOSS`</sup>
 - `MD3E` [LastChat](https://github.com/Cocolalilal/LastChat) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MD3E` [mpvRex](https://github.com/sfsakhawat999/mpvRex) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Shizuku](https://github.com/thedjchi/Shizuku) <sup>`FOSS`</sup> <sup>`FORK`</sup> <sup>`🐾`</sup>
@@ -35,8 +38,5 @@ outline: false
 - `MDY` [Helium](https://github.com/jqssun/android-helium-browser) <sup>`FOSS`</sup>
 - `MD` [Hear quran](https://play.google.com/store/apps/details?id=com.psh.hear_quran)
 - `MD3E` [Momentum](https://github.com/shub39/Momentum) <sup>`FOSS`</sup>
-- `MD3E` [Sound profiles](https://play.google.com/store/apps/details?id=com.a3.soundprofiles)
-- `MDY` [Echo](https://github.com/EchoMusicApp/Echo-Music) <sup>`FOSS`</sup>
-- `MD` [Harmoni](https://github.com/onedev22/harmoni) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 
 <!-- END AUTO-GENERATED -->

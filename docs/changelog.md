@@ -10,6 +10,8 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-06 | [ec2650b](https://github.com/nyas1/Material-You-app-list/commit/ec2650bbc00d4a2686532b2aec3bfdd58a9bece5) | README: add Kite, mpvFlux, update mpvKt, Flow |
+| 2026-06-06 | [149bda5](https://github.com/nyas1/Material-You-app-list/commit/149bda56209060479eeb7be4fab528589537f24f) | README: add Flow |
 | 2026-06-04 | [7c1b5f0](https://github.com/nyas1/Material-You-app-list/commit/7c1b5f00bf11e5c3bfc0000ab6e479b4b1155694) | README: add LastChat and update AI section |
 | 2026-06-04 | [6060d61](https://github.com/nyas1/Material-You-app-list/commit/6060d61bee457ac973b1686f4a5864586ba4bbf1) | Update newly added apps list in README |
 | 2026-06-04 | [b3f06f3](https://github.com/nyas1/Material-You-app-list/commit/b3f06f318350f04d88408c7cc89099e26d676eb2) | README: add LastChat and update AI section |
@@ -108,7 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-07 | [7f15117](https://github.com/nyas1/Material-You-app-list/commit/7f151173fc682371de051ee619e383ee669d231b) | Add Revenge Manager |
 | 2026-03-06 | [f4b5bf9](https://github.com/nyas1/Material-You-app-list/commit/f4b5bf91b327198ed2405bd7d1f3856d315ef6cf) | Revert Squawker update |
 | 2026-03-06 | [1a8de3c](https://github.com/nyas1/Material-You-app-list/commit/1a8de3cbcdde4f131118595fb7a6a18fe4800652) | Update Quacker, Squawker and add QuaX |
-| 2026-03-06 | [6db17f6](https://github.com/nyas1/Material-You-app-list/commit/6db17f607e8e472605cb106f7e43b23aab843a89) | Remove duplicate entries from app list in README |
-| 2026-03-06 | [522857c](https://github.com/nyas1/Material-You-app-list/commit/522857c5d403eced89ede78669f487bf45ed13df) | Add new website link to README |
 
 <!-- END AUTO-GENERATED -->
