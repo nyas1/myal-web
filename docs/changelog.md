@@ -10,6 +10,7 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-07 | [86b7533](https://github.com/nyas1/Material-You-app-list/commit/86b75339c9cf22d8760932ca08c1b9d8746817ac) | README: mark as dead: Prognoza, Voyage, Rboard Theme Manager, MixTheme Creator, Project Themer, Dashchan Monet |
 | 2026-06-06 | [ec2650b](https://github.com/nyas1/Material-You-app-list/commit/ec2650bbc00d4a2686532b2aec3bfdd58a9bece5) | README: add Kite, mpvFlux, update mpvKt, Flow |
 | 2026-06-06 | [149bda5](https://github.com/nyas1/Material-You-app-list/commit/149bda56209060479eeb7be4fab528589537f24f) | README: add Flow |
 | 2026-06-04 | [7c1b5f0](https://github.com/nyas1/Material-You-app-list/commit/7c1b5f00bf11e5c3bfc0000ab6e479b4b1155694) | README: add LastChat and update AI section |
@@ -109,6 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-07 | [a97ee70](https://github.com/nyas1/Material-You-app-list/commit/a97ee70d85692bdf9d7ea5493df583d735dc38eb) | Merge pull request #412 from UcraNerd/main |
 | 2026-03-07 | [7f15117](https://github.com/nyas1/Material-You-app-list/commit/7f151173fc682371de051ee619e383ee669d231b) | Add Revenge Manager |
 | 2026-03-06 | [f4b5bf9](https://github.com/nyas1/Material-You-app-list/commit/f4b5bf91b327198ed2405bd7d1f3856d315ef6cf) | Revert Squawker update |
-| 2026-03-06 | [1a8de3c](https://github.com/nyas1/Material-You-app-list/commit/1a8de3cbcdde4f131118595fb7a6a18fe4800652) | Update Quacker, Squawker and add QuaX |
 
 <!-- END AUTO-GENERATED -->
