@@ -10,6 +10,10 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-08 | [3238f39](https://github.com/nyas1/Material-You-app-list/commit/3238f3963cc0d7b14cface658afbe3cc6aa71ee9) | README: mark as dead: Dirol Reader, Raven, Chrono, Quaetor, Toadua, dymka, FileManagerSphere, AppListBackup, CameraX Info, Data Monitor, Batt, Clash You, qBittorrent Manager, My Server Status, DroidHole; update Inaho, Material Player |
+| 2026-06-08 | [45b21a8](https://github.com/nyas1/Material-You-app-list/commit/45b21a8d28d8e13fc5ad0e2f7b82ec1d96198385) | README: mark as dead: PiliPala, ImageCraft, JustNotes, Snappr, Notify, Kotatsu, NovelDokusha |
+| 2026-06-08 | [325c527](https://github.com/nyas1/Material-You-app-list/commit/325c527061c8ea39d37cc477557ff6366142061f) | README: mark as dead: Lotus, Hyperion, Jetispot, SubTune, Tempo, Dantotsu, Tokei, Drive Stream, Nekome |
+| 2026-06-08 | [4c8a4f4](https://github.com/nyas1/Material-You-app-list/commit/4c8a4f42445f4ccfdef98ce26a2642ef126b96d6) | README: mark as dead: Wallman, DualWallpaper, Tap, Tap, SoundTap, Oto Music, Symphony, Zen |
 | 2026-06-07 | [86b7533](https://github.com/nyas1/Material-You-app-list/commit/86b75339c9cf22d8760932ca08c1b9d8746817ac) | README: mark as dead: Prognoza, Voyage, Rboard Theme Manager, MixTheme Creator, Project Themer, Dashchan Monet |
 | 2026-06-06 | [ec2650b](https://github.com/nyas1/Material-You-app-list/commit/ec2650bbc00d4a2686532b2aec3bfdd58a9bece5) | README: add Kite, mpvFlux, update mpvKt, Flow |
 | 2026-06-06 | [149bda5](https://github.com/nyas1/Material-You-app-list/commit/149bda56209060479eeb7be4fab528589537f24f) | README: add Flow |
@@ -106,9 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-08 | [3dfb772](https://github.com/nyas1/Material-You-app-list/commit/3dfb772f703f216376726ff6b3d155d61e9c5d9b) | Added AirSync  |
 | 2026-03-07 | [31df65a](https://github.com/nyas1/Material-You-app-list/commit/31df65ad42bf9a418dc5726fe57a39e24aa968ea) | Update mastodon and reddit sections |
 | 2026-03-07 | [d35f129](https://github.com/nyas1/Material-You-app-list/commit/d35f129ffc32ed828fe1d44146409e965a755c84) | Updated new apps from 31 to 30 |
-| 2026-03-07 | [ba44f24](https://github.com/nyas1/Material-You-app-list/commit/ba44f24e4652e6d64b00dff3a414014da7d05d36) | add quax, revenge manager to newly added section |
-| 2026-03-07 | [a97ee70](https://github.com/nyas1/Material-You-app-list/commit/a97ee70d85692bdf9d7ea5493df583d735dc38eb) | Merge pull request #412 from UcraNerd/main |
-| 2026-03-07 | [7f15117](https://github.com/nyas1/Material-You-app-list/commit/7f151173fc682371de051ee619e383ee669d231b) | Add Revenge Manager |
-| 2026-03-06 | [f4b5bf9](https://github.com/nyas1/Material-You-app-list/commit/f4b5bf91b327198ed2405bd7d1f3856d315ef6cf) | Revert Squawker update |
 
 <!-- END AUTO-GENERATED -->
