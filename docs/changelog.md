@@ -10,6 +10,7 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-09 | [308f571](https://github.com/nyas1/Material-You-app-list/commit/308f5718faab42306653a6e30212aba2d7ecf9db) | README: mark as dead: KtxPy, Previewer, Round Sync, Massive, Disconnect, NightScreen, Soberity, Habit Builder, TimePlanner, Routine Tracker |
 | 2026-06-08 | [3238f39](https://github.com/nyas1/Material-You-app-list/commit/3238f3963cc0d7b14cface658afbe3cc6aa71ee9) | README: mark as dead: Dirol Reader, Raven, Chrono, Quaetor, Toadua, dymka, FileManagerSphere, AppListBackup, CameraX Info, Data Monitor, Batt, Clash You, qBittorrent Manager, My Server Status, DroidHole; update Inaho, Material Player |
 | 2026-06-08 | [45b21a8](https://github.com/nyas1/Material-You-app-list/commit/45b21a8d28d8e13fc5ad0e2f7b82ec1d96198385) | README: mark as dead: PiliPala, ImageCraft, JustNotes, Snappr, Notify, Kotatsu, NovelDokusha |
 | 2026-06-08 | [325c527](https://github.com/nyas1/Material-You-app-list/commit/325c527061c8ea39d37cc477557ff6366142061f) | README: mark as dead: Lotus, Hyperion, Jetispot, SubTune, Tempo, Dantotsu, Tokei, Drive Stream, Nekome |
@@ -109,6 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-08 | [885a659](https://github.com/nyas1/Material-You-app-list/commit/885a65967653c022446123f5db697e14bf820fa4) | Added Essentials |
 | 2026-03-08 | [3dfb772](https://github.com/nyas1/Material-You-app-list/commit/3dfb772f703f216376726ff6b3d155d61e9c5d9b) | Added AirSync  |
 | 2026-03-07 | [31df65a](https://github.com/nyas1/Material-You-app-list/commit/31df65ad42bf9a418dc5726fe57a39e24aa968ea) | Update mastodon and reddit sections |
-| 2026-03-07 | [d35f129](https://github.com/nyas1/Material-You-app-list/commit/d35f129ffc32ed828fe1d44146409e965a755c84) | Updated new apps from 31 to 30 |
 
 <!-- END AUTO-GENERATED -->
