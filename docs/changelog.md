@@ -10,6 +10,11 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-10 | [ea34540](https://github.com/nyas1/Material-You-app-list/commit/ea345400efa70e877b1036bc9346017e9c4014aa) | README: mark as dead: HalfDot, Simple WOL, Carrier Vanity Name, ComboSkin for 4PDA, RunePad, Bhagavad Gita, Checker |
+| 2026-06-10 | [886c83b](https://github.com/nyas1/Material-You-app-list/commit/886c83bc994fa6eabefb255b0504cb1056f864d5) | README: mark as dead: TSViewer, Locus, Language Selector, DSU Sideloader, Android Gyroscope MC, Mi FreeForm, GMS Flags, GuessIron, Filester, Android Auto XLauncher |
+| 2026-06-10 | [0393ee5](https://github.com/nyas1/Material-You-app-list/commit/0393ee5bda56483bf5defd3e77e6fac62eb4e778) | README: mark as dead: NewPass, Pazzword, Wassword, Password Generator, Android Faker, MemoryGuardian, Exodus, Gloom - GitHub, Ambient Music Mod, SetEdit |
+| 2026-06-10 | [132e068](https://github.com/nyas1/Material-You-app-list/commit/132e068498a9ca2f2f9a709e4657f32dc88bb83f) | README: mark as dead: zCard (fork), Textual Weather, JustWeather, TriPeaks NEUE, Antimine, New Quiz, Cuberite, Engine, KeyManager, Pincredible |
+| 2026-06-10 | [ef5aa25](https://github.com/nyas1/Material-You-app-list/commit/ef5aa2576dd96f4c871961b4baa32b43af359bc6) | README: mark as dead: Koduko, MotionMate, Noice, Forest, Cashew, Buckwheat, Allowance, PapriCoin, eXch, CryptoTracker |
 | 2026-06-09 | [308f571](https://github.com/nyas1/Material-You-app-list/commit/308f5718faab42306653a6e30212aba2d7ecf9db) | README: mark as dead: KtxPy, Previewer, Round Sync, Massive, Disconnect, NightScreen, Soberity, Habit Builder, TimePlanner, Routine Tracker |
 | 2026-06-08 | [3238f39](https://github.com/nyas1/Material-You-app-list/commit/3238f3963cc0d7b14cface658afbe3cc6aa71ee9) | README: mark as dead: Dirol Reader, Raven, Chrono, Quaetor, Toadua, dymka, FileManagerSphere, AppListBackup, CameraX Info, Data Monitor, Batt, Clash You, qBittorrent Manager, My Server Status, DroidHole; update Inaho, Material Player |
 | 2026-06-08 | [45b21a8](https://github.com/nyas1/Material-You-app-list/commit/45b21a8d28d8e13fc5ad0e2f7b82ec1d96198385) | README: mark as dead: PiliPala, ImageCraft, JustNotes, Snappr, Notify, Kotatsu, NovelDokusha |
@@ -105,10 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-08 | [01ce68d](https://github.com/nyas1/Material-You-app-list/commit/01ce68d4d0b20aa8eef634907d087b7a18e7d2f3) | Update Telegram and Instagram app listings in README |
 | 2026-03-08 | [7d6c6a7](https://github.com/nyas1/Material-You-app-list/commit/7d6c6a79a51c430423c422de425c63317467c15e) | update mastodoon and discord categories |
 | 2026-03-08 | [e91fed6](https://github.com/nyas1/Material-You-app-list/commit/e91fed6bf19159764a77a27d545d8bd5c5fd46c8) | Reorder reddit and twitter categories |
-| 2026-03-08 | [cc9c20e](https://github.com/nyas1/Material-You-app-list/commit/cc9c20edc6456b17ad8fb84252ae339c7cf8a334) | Added Gumroad Stats |
-| 2026-03-08 | [72b8f10](https://github.com/nyas1/Material-You-app-list/commit/72b8f1095a9057c9a319fc5025b9279007967530) | Added Canvas |
-| 2026-03-08 | [885a659](https://github.com/nyas1/Material-You-app-list/commit/885a65967653c022446123f5db697e14bf820fa4) | Added Essentials |
-| 2026-03-08 | [3dfb772](https://github.com/nyas1/Material-You-app-list/commit/3dfb772f703f216376726ff6b3d155d61e9c5d9b) | Added AirSync  |
-| 2026-03-07 | [31df65a](https://github.com/nyas1/Material-You-app-list/commit/31df65ad42bf9a418dc5726fe57a39e24aa968ea) | Update mastodon and reddit sections |
 
 <!-- END AUTO-GENERATED -->
