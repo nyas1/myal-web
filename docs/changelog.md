@@ -10,6 +10,10 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-11 | [2129fcf](https://github.com/nyas1/Material-You-app-list/commit/2129fcf2ac8792ba0d680782bb91fbaf44362794) | README: fix indentation for Kalam, Notebook, Quillpad |
+| 2026-06-11 | [a68c6f2](https://github.com/nyas1/Material-You-app-list/commit/a68c6f289ac2239aff610baf4e4b64848a7dc39d) | README: update Baby on Board, Cashiro, Paisa, Weather, LoL Catalyst, AirGuard, LabNex, DioHub, Odin, Randomix |
+| 2026-06-11 | [6b983ef](https://github.com/nyas1/Material-You-app-list/commit/6b983ef95fb06b9463ccf2334fb556d25a571655) | README: update Hide My Ass OSS, Rays, Memerize, ViTune, Orgzly, Markdown Editor, Clock You, VerveDo, Vitals, Atomic - Periodic Table, FitBook, CoffeeGram |
+| 2026-06-11 | [52eea10](https://github.com/nyas1/Material-You-app-list/commit/52eea1041c4f650ff33df8e4d710c1eeb5c3a3c3) | README: removed misfit, abandoned and low quality apps |
 | 2026-06-10 | [ea34540](https://github.com/nyas1/Material-You-app-list/commit/ea345400efa70e877b1036bc9346017e9c4014aa) | README: mark as dead: HalfDot, Simple WOL, Carrier Vanity Name, ComboSkin for 4PDA, RunePad, Bhagavad Gita, Checker |
 | 2026-06-10 | [886c83b](https://github.com/nyas1/Material-You-app-list/commit/886c83bc994fa6eabefb255b0504cb1056f864d5) | README: mark as dead: TSViewer, Locus, Language Selector, DSU Sideloader, Android Gyroscope MC, Mi FreeForm, GMS Flags, GuessIron, Filester, Android Auto XLauncher |
 | 2026-06-10 | [0393ee5](https://github.com/nyas1/Material-You-app-list/commit/0393ee5bda56483bf5defd3e77e6fac62eb4e778) | README: mark as dead: NewPass, Pazzword, Wassword, Password Generator, Android Faker, MemoryGuardian, Exodus, Gloom - GitHub, Ambient Music Mod, SetEdit |
@@ -106,9 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-10 | [3c5bf9a](https://github.com/nyas1/Material-You-app-list/commit/3c5bf9a6c648c37b21728974edd408c0a693e866) | Update Lemmy category |
 | 2026-03-10 | [36ffc6e](https://github.com/nyas1/Material-You-app-list/commit/36ffc6efe49d1590341a54bf5d1f13a3d35217a7) | Merge pull request #420 from UcraNerd/main |
 | 2026-03-10 | [575bf2d](https://github.com/nyas1/Material-You-app-list/commit/575bf2d952e542ae9720cc7b84b38541a21adcdc) | Merge branch 'main' into main |
-| 2026-03-10 | [8cb2e96](https://github.com/nyas1/Material-You-app-list/commit/8cb2e96cc726f0f32d64afeb9148f2447bffdc1f) | Merge pull request #418 from guguss-31/main |
-| 2026-03-08 | [01ce68d](https://github.com/nyas1/Material-You-app-list/commit/01ce68d4d0b20aa8eef634907d087b7a18e7d2f3) | Update Telegram and Instagram app listings in README |
-| 2026-03-08 | [7d6c6a7](https://github.com/nyas1/Material-You-app-list/commit/7d6c6a79a51c430423c422de425c63317467c15e) | update mastodoon and discord categories |
-| 2026-03-08 | [e91fed6](https://github.com/nyas1/Material-You-app-list/commit/e91fed6bf19159764a77a27d545d8bd5c5fd46c8) | Reorder reddit and twitter categories |
 
 <!-- END AUTO-GENERATED -->
