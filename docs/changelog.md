@@ -10,6 +10,10 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-18 | [bbef254](https://github.com/nyas1/Material-You-app-list/commit/bbef25496b9a180fca3efa44f0c4824054e9da1a) | README: add Voli, Remberball, Seal X, GeoWeather, Lifewatch; merge Digital Well-being & Screen Time subsections; rename GymRun, WGER |
+| 2026-06-18 | [256cf69](https://github.com/nyas1/Material-You-app-list/commit/256cf697ca9919253b106d41b8184d6527b3e8c1) | README: add ueberboese, Network Scanner, Lifewatch; rename GymRun, WGER; merge Digital Well-being & Screen Time subsections |
+| 2026-06-18 | [d51d249](https://github.com/nyas1/Material-You-app-list/commit/d51d249e234d20c106f5cc8cbf853ccd1e9b0ce7) | README: add WiFiAudioStreaming-Android, Network Scanner |
+| 2026-06-18 | [725533e](https://github.com/nyas1/Material-You-app-list/commit/725533ee0d63226206d5577c13bc0fb6023acf1e) | README: add Do it, OpenPillReminder, storii, Taison, MetroFuse |
 | 2026-06-11 | [2129fcf](https://github.com/nyas1/Material-You-app-list/commit/2129fcf2ac8792ba0d680782bb91fbaf44362794) | README: fix indentation for Kalam, Notebook, Quillpad |
 | 2026-06-11 | [a68c6f2](https://github.com/nyas1/Material-You-app-list/commit/a68c6f289ac2239aff610baf4e4b64848a7dc39d) | README: update Baby on Board, Cashiro, Paisa, Weather, LoL Catalyst, AirGuard, LabNex, DioHub, Odin, Randomix |
 | 2026-06-11 | [6b983ef](https://github.com/nyas1/Material-You-app-list/commit/6b983ef95fb06b9463ccf2334fb556d25a571655) | README: update Hide My Ass OSS, Rays, Memerize, ViTune, Orgzly, Markdown Editor, Clock You, VerveDo, Vitals, Atomic - Periodic Table, FitBook, CoffeeGram |
@@ -106,9 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-12 | [a4de7da](https://github.com/nyas1/Material-You-app-list/commit/a4de7daf91cec7f42c675a8e3332f07a18476442) | Update communication category |
 | 2026-03-11 | [ea5c3e3](https://github.com/nyas1/Material-You-app-list/commit/ea5c3e3db9a44fa933d4e2f77ae13014807d0899) | Fix contact link order in README.md |
 | 2026-03-11 | [924a42a](https://github.com/nyas1/Material-You-app-list/commit/924a42af83a5c2beba15f9ace75eba40b9ceb9a9) | Update miscellaneous entries in Social |
-| 2026-03-10 | [9af472b](https://github.com/nyas1/Material-You-app-list/commit/9af472b827ac91d984f0d686916eb204a242a5e6) | Update vk and nostr |
-| 2026-03-10 | [3c5bf9a](https://github.com/nyas1/Material-You-app-list/commit/3c5bf9a6c648c37b21728974edd408c0a693e866) | Update Lemmy category |
-| 2026-03-10 | [36ffc6e](https://github.com/nyas1/Material-You-app-list/commit/36ffc6efe49d1590341a54bf5d1f13a3d35217a7) | Merge pull request #420 from UcraNerd/main |
-| 2026-03-10 | [575bf2d](https://github.com/nyas1/Material-You-app-list/commit/575bf2d952e542ae9720cc7b84b38541a21adcdc) | Merge branch 'main' into main |
 
 <!-- END AUTO-GENERATED -->

@@ -8,6 +8,19 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MDY` [GeoWeather](https://github.com/FreetimeMaker/GeoWeather) <sup>`FOSS`</sup>
+- `MDY` [Seal X](https://play.google.com/store/apps/details?id=com.hkapps.sealdownloader) <sup>`FOSS`</sup>
+- `MDY` [Voli](https://play.google.com/store/apps/details?id=com.urbandroid.voli)
+- `MD3E` [Remberball](https://play.google.com/store/apps/details?id=com.urbandroid.brall)
+- `MDY` [Lifewatch](https://play.google.com/store/apps/details?id=com.urbandroid.lifewatch)
+- `MD3E` [ueberboese](https://github.com/julius-d/ueberboese-app) <sup>`FOSS`</sup>
+- `MD3E` [WiFiAudioStreaming-Android](https://gitlab.com/marcomorosi.dev/wifiaudiostreaming-android) <sup>`FOSS`</sup>
+- `MDY` [Network Scanner](https://github.com/usamaiqb/network-scanner) <sup>`FOSS`</sup>
+- `MDY` [storii](https://github.com/likhithpraveenk/storii) <sup>`FOSS`</sup>
+- `MDY` [Taison](https://github.com/Gent8/Taison) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+- `MDY` [MetroFuse](https://github.com/956tris/MetroFuse) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+- `MD` [Do it](https://github.com/maximilian-schwaerzler/Do-It) <sup>`FOSS`</sup>
+- `MD` [OpenPillReminder](https://github.com/mariinkys/OpenPillReminder) <sup>`FOSS`</sup>
 - `MD3E` [Kite](https://github.com/zenzer0s/Kite) <sup>`FOSS`</sup>
 - `MD3E` [mpvFlux](https://github.com/Muhammedahmed18/mpvFlux) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Flow](https://github.com/A-EDev/Flow) <sup>`FOSS`</sup>
@@ -25,18 +38,5 @@ outline: false
 - `MDY` [Terminal EX](https://github.com/Graywizard888/Terminal_EX) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MD3E` [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) <sup>`💰`</sup>
 - `MD` [Music speed changer](https://play.google.com/store/apps/details?id=com.smp.musicspeed) <sup>`💰`</sup>
-- `MD` [Wear audio recorder](https://play.google.com/store/apps/details?id=com.rimidalv.dictaphone) <sup>`💰`</sup>
-- `MD` [Coon gallery](https://github.com/BOTPanzer/Coon-Gallery/) <sup>`FOSS`</sup>
-- `MD` [Scanly](https://github.com/Azyrn/Scanly) <sup>`FOSS`</sup>
-- `MD3E` [Gradient Weather](https://play.google.com/store/apps/details?id=com.subtlesignals.gradientweather)
-- `MDY` [Conversations](https://codeberg.org/iNPUTmice/Conversations) <sup>`FOSS`</sup>
-- `MDY` [Threema](https://github.com/threema-ch/threema-android) <sup>`FOSS`</sup> <sup>`💰`</sup>
-- `MD` [Equran](https://github.com/ya27hw/equran_app) <sup>`FOSS`</sup>
-- `MD` [Trudido](https://github.com/dominikmuellr/trudido) <sup>`FOSS`</sup>
-- `MD` [Expensy](https://github.com/mina-android/Expensy) <sup>`FOSS`</sup>
-- `MD3E` [FolkPatch](https://github.com/LyraVoid/FolkPatch) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MDY` [Helium](https://github.com/jqssun/android-helium-browser) <sup>`FOSS`</sup>
-- `MD` [Hear quran](https://play.google.com/store/apps/details?id=com.psh.hear_quran)
-- `MD3E` [Momentum](https://github.com/shub39/Momentum) <sup>`FOSS`</sup>
 
 <!-- END AUTO-GENERATED -->
