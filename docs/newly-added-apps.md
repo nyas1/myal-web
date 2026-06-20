@@ -8,8 +8,13 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MDY` [Study4U](https://github.com/MoHamed-B-M/study4u) <sup>`FOSS`</sup>
+- `MDY` [Novery](https://github.com/1Finn2me/Novery) <sup>`FOSS`</sup>
+- `MD3E` [Calendula](https://gitea.jeanlucmakiola.de/makiolaj/calendula) <sup>`FOSS`</sup>
+- `MDY` [Calculator Hide Files](https://github.com/Binondi/Calculator-Hide-Files) <sup>`FOSS`</sup>
+- `MD3E` [Photon Gallery](https://github.com/Bn5prS/Photon_Gallery) <sup>`FOSS`</sup>
 - `MDY` [GeoWeather](https://github.com/FreetimeMaker/GeoWeather) <sup>`FOSS`</sup>
-- `MDY` [Seal X](https://play.google.com/store/apps/details?id=com.hkapps.sealdownloader) <sup>`FOSS`</sup>
+- `MDY` [Seal X](https://play.google.com/store/apps/details?id=com.hkapps.sealdownloader)
 - `MDY` [Voli](https://play.google.com/store/apps/details?id=com.urbandroid.voli)
 - `MD3E` [Remberball](https://play.google.com/store/apps/details?id=com.urbandroid.brall)
 - `MDY` [Lifewatch](https://play.google.com/store/apps/details?id=com.urbandroid.lifewatch)
@@ -32,11 +37,5 @@ outline: false
 - `MD3E` [ADNS](https://github.com/eyalm2000/adns) <sup>`FOSS`</sup>
 - `MDY` [Beam](https://github.com/montafra/beam) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MD3E` [hōtter](https://play.google.com/store/apps/details?id=com.hotter.workout) <sup>`💰`</sup>
-- `MD3E` [Google Health](https://play.google.com/store/apps/details?id=com.fitbit.FitbitMobile) <sup>`🐾`</sup>
-- `MD3E` [NagramX](https://github.com/risin42/NagramX) <sup>`FOSS`</sup> <sup>`FORK`</sup> <sup>`MOD`</sup>
-- `MD3E` [Meld](https://github.com/FrancescoGrazioso/Meld) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MDY` [Terminal EX](https://github.com/Graywizard888/Terminal_EX) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD3E` [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) <sup>`💰`</sup>
-- `MD` [Music speed changer](https://play.google.com/store/apps/details?id=com.smp.musicspeed) <sup>`💰`</sup>
 
 <!-- END AUTO-GENERATED -->

@@ -10,6 +10,7 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-19 | [eeca43f](https://github.com/nyas1/Material-You-app-list/commit/eeca43f5e9eb4a9a12528b51e2a429c17ddeacb2) | README: add Photon Gallery, Calculator Hide Files, Calendula, Novery, Study4U; update Seal X |
 | 2026-06-18 | [bbef254](https://github.com/nyas1/Material-You-app-list/commit/bbef25496b9a180fca3efa44f0c4824054e9da1a) | README: add Voli, Remberball, Seal X, GeoWeather, Lifewatch; merge Digital Well-being & Screen Time subsections; rename GymRun, WGER |
 | 2026-06-18 | [256cf69](https://github.com/nyas1/Material-You-app-list/commit/256cf697ca9919253b106d41b8184d6527b3e8c1) | README: add ueberboese, Network Scanner, Lifewatch; rename GymRun, WGER; merge Digital Well-being & Screen Time subsections |
 | 2026-06-18 | [d51d249](https://github.com/nyas1/Material-You-app-list/commit/d51d249e234d20c106f5cc8cbf853ccd1e9b0ce7) | README: add WiFiAudioStreaming-Android, Network Scanner |
@@ -109,6 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-12 | [6200b05](https://github.com/nyas1/Material-You-app-list/commit/6200b0581de9bf891d25be0356baa80068038c1c) | Reorder mail clients |
 | 2026-03-12 | [a4de7da](https://github.com/nyas1/Material-You-app-list/commit/a4de7daf91cec7f42c675a8e3332f07a18476442) | Update communication category |
 | 2026-03-11 | [ea5c3e3](https://github.com/nyas1/Material-You-app-list/commit/ea5c3e3db9a44fa933d4e2f77ae13014807d0899) | Fix contact link order in README.md |
-| 2026-03-11 | [924a42a](https://github.com/nyas1/Material-You-app-list/commit/924a42af83a5c2beba15f9ace75eba40b9ceb9a9) | Update miscellaneous entries in Social |
 
 <!-- END AUTO-GENERATED -->

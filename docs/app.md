@@ -510,6 +510,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 ---
 ### 🖼️ Gallery & Tools
 - `MD3E` [Google Photos](https://play.google.com/store/apps/details?id=com.google.android.apps.photos)
+- `MD3E` [Photon Gallery](https://github.com/Bn5prS/Photon_Gallery) <sup>`FOSS`</sup>
 - `MDY` [Lavender Photos](https://github.com/kaii-lb/LavenderPhotos) <sup>`FOSS`</sup>
 - `MDY` [QuickPic Gallery Mod](https://github.com/WSTxda/QP-Gallery-Releases) <sup>`FOSS`</sup> <sup>`MOD`</sup>
 - `MDY` [Fossify Gallery](https://github.com/FossifyOrg/Gallery) <sup>`FOSS`</sup>
@@ -645,6 +646,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MDY` [Myne](https://github.com/Pool-Of-Tears/Myne) <sup>`FOSS`</sup>
 	- `MDY` [Book's Story](https://github.com/Acclorite/book-story) <sup>`FOSS`</sup>
 	- `MDY` [LightNovelReader](https://github.com/dmzz-yyhyy/LightNovelReader) <sup>`FOSS`</sup>
+	- `MDY` [Novery](https://github.com/1Finn2me/Novery) <sup>`FOSS`</sup>
 	- `MDY` [Cantook](https://play.google.com/store/apps/details?id=com.aldiko.android)
 	- `MD` [ANX Reader](https://github.com/Anxcye/anx-reader) <sup>`FOSS`</sup>
 	- `MD` [IReader](https://github.com/IReaderorg/IReader) <sup>`FOSS`</sup>
@@ -673,6 +675,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 ---
 ### 🗓️ Calendar
 - `MD3E` [Google Calendar](https://play.google.com/store/apps/details?id=com.google.android.calendar)
+- `MD3E` [Calendula](https://gitea.jeanlucmakiola.de/makiolaj/calendula) <sup>`FOSS`</sup>
 - `MDY` [Fossify Calendar](https://github.com/FossifyOrg/Calendar) <sup>`FOSS`</sup>
 - `MDY` [KashCal](https://github.com/KashCal/KashCal/) <sup>`FOSS`</sup>
 - `MDY` [Persian Calendar](https://github.com/persian-calendar/persian-calendar) <sup>`FOSS`</sup>
@@ -735,6 +738,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MDY` [Lanis Mobile](https://github.com/alessioC42/lanis-mobile) <sup>`FOSS`</sup>
 	- `MDY` [Graded](https://github.com/NightDreamGames/Graded) <sup>`FOSS`</sup>
 	- `MDY` [School Planner](https://play.google.com/store/apps/details?id=daldev.android.gradehelper)
+	- `MDY` [Study4U](https://github.com/MoHamed-B-M/study4u) <sup>`FOSS`</sup>
 - **Quotes**
 	- `MDY` [Literary Clock](https://github.com/AChep/literaryclock) <sup>`FOSS`</sup>
 	- `MDY` [Qwotable](https://github.com/Lijukay/Qwotable) <sup>`FOSS`</sup> <sup>`🪦`</sup>
@@ -958,7 +962,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MD3E` [Kite](https://github.com/zenzer0s/Kite) <sup>`FOSS`</sup>
 	- `MDY` [Seal](https://github.com/JunkFood02/Seal) <sup>`FOSS`</sup>
 	- `MDY` [YTDLnis](https://github.com/deniscerri/ytdlnis) <sup>`FOSS`</sup>
-	- `MDY` [Seal X](https://play.google.com/store/apps/details?id=com.hkapps.sealdownloader) <sup>`FOSS`</sup>
+	- `MDY` [Seal X](https://play.google.com/store/apps/details?id=com.hkapps.sealdownloader)
 - **Music**
 	- `MDY` [SpotiFLAC Mobile](https://github.com/zarzet/SpotiFLAC-Mobile) <sup>`FOSS`</sup>
 	- `MDY` [Spowlo](https://github.com/BobbyESP/Spowlo) <sup>`FOSS`</sup> <sup>`🪦`</sup>
@@ -1299,6 +1303,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 - `MDY` [AstraCrypt](https://github.com/gromif/AstraCrypt) <sup>`FOSS`</sup>
 - `MDY` [Crypto](https://play.google.com/store/apps/details?id=com.kokoschka.michael.crypto)
 - `MDY` [Amarok Hider](https://github.com/deltazefiro/Amarok-Hider) <sup>`FOSS`</sup>
+- `MDY` [Calculator Hide Files](https://github.com/Binondi/Calculator-Hide-Files) <sup>`FOSS`</sup>
 - `MD` [File Vault](https://play.google.com/store/apps/details?id=com.alif.vault.file)
 
 ---
