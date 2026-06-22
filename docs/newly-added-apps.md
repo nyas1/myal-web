@@ -8,6 +8,11 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MDY` [N-Zik](https://github.com/N-Zik-Group/N-Zik) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+- `MD` [Khushu](https://github.com/greykaizen/khushu) <sup>`FOSS`</sup>
+- `MDY` [Inzx](https://github.com/nirmaleeswar30/Inzx) <sup>`FOSS`</sup>
+- `MD3E` [Lockbook](https://github.com/lockbook/lockbook) <sup>`FOSS`</sup>
+- `MD3E` [Snippets](https://github.com/blindman81/Snippets) <sup>`FOSS`</sup>
 - `MDY` [Study4U](https://github.com/MoHamed-B-M/study4u) <sup>`FOSS`</sup>
 - `MDY` [Novery](https://github.com/1Finn2me/Novery) <sup>`FOSS`</sup>
 - `MD3E` [Calendula](https://gitea.jeanlucmakiola.de/makiolaj/calendula) <sup>`FOSS`</sup>
@@ -33,9 +38,5 @@ outline: false
 - `MD3E` [mpvRex](https://github.com/sfsakhawat999/mpvRex) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Shizuku](https://github.com/thedjchi/Shizuku) <sup>`FOSS`</sup> <sup>`FORK`</sup> <sup>`🐾`</sup>
 - `MD` [Moon Translator](https://github.com/MoonMonet/Translator) <sup>`FOSS`</sup>
-- `MY` [WebLibre](https://github.com/FaFre/WebLibre) <sup>`FOSS`</sup>
-- `MD3E` [ADNS](https://github.com/eyalm2000/adns) <sup>`FOSS`</sup>
-- `MDY` [Beam](https://github.com/montafra/beam) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD3E` [hōtter](https://play.google.com/store/apps/details?id=com.hotter.workout) <sup>`💰`</sup>
 
 <!-- END AUTO-GENERATED -->
