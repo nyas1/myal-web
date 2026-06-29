@@ -10,6 +10,10 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-06-28 | [510e774](https://github.com/nyas1/Material-You-app-list/commit/510e77478714416474ffd5f26701450aa5383156) | README: add Clock Master, Lune, Flux, Fast Times, Quitter |
+| 2026-06-28 | [e9b069a](https://github.com/nyas1/Material-You-app-list/commit/e9b069a12704ce40dd28bbd210346889d06504b1) | README: add MonoMail, Weather You, Minus, Be Nice, Watch Master |
+| 2026-06-28 | [b620670](https://github.com/nyas1/Material-You-app-list/commit/b6206704c4b980b017bc7813c7edacacdc455fb6) | README: add Pennywise AI, ObtainX, Transport You, Open Notes, Universal Installer |
+| 2026-06-28 | [93d84f0](https://github.com/nyas1/Material-You-app-list/commit/93d84f0055710c26e0f691a95d32fdd002ca1cfd) | README: add Gym Day; update Groovy, Cashew, ReFra; remove Tool Telegram |
 | 2026-06-21 | [0af71e2](https://github.com/nyas1/Material-You-app-list/commit/0af71e27a7905b5ebf63c3c544abc5515c0f86a2) | README: add Lockbook, Snippets, Inzx, Khushu, N-Zik |
 | 2026-06-19 | [eeca43f](https://github.com/nyas1/Material-You-app-list/commit/eeca43f5e9eb4a9a12528b51e2a429c17ddeacb2) | README: add Photon Gallery, Calculator Hide Files, Calendula, Novery, Study4U; update Seal X |
 | 2026-06-18 | [bbef254](https://github.com/nyas1/Material-You-app-list/commit/bbef25496b9a180fca3efa44f0c4824054e9da1a) | README: add Voli, Remberball, Seal X, GeoWeather, Lifewatch; merge Digital Well-being & Screen Time subsections; rename GymRun, WGER |
@@ -106,9 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-17 | [33e3972](https://github.com/nyas1/Material-You-app-list/commit/33e3972b8c0b69fd09a4276ae52ca9495b0689b9) | remove Jekyll GitHub Pages workflow file |
 | 2026-03-13 | [b84fe9d](https://github.com/nyas1/Material-You-app-list/commit/b84fe9d50358d5120fe301df1faf38e62692e18e) | Merge branch 'nyas1:main' into updated |
 | 2026-03-12 | [48c6d0c](https://github.com/nyas1/Material-You-app-list/commit/48c6d0caaf88494fb3ca222ae8d8a76985225a06) | Change header level for Music Players section |
-| 2026-03-12 | [bfa86d8](https://github.com/nyas1/Material-You-app-list/commit/bfa86d8e4ef50b6bd6cc4a58137e4681bc196aa3) | Update accessibility |
-| 2026-03-12 | [f5b9363](https://github.com/nyas1/Material-You-app-list/commit/f5b9363aa3befc7d57770326f23c9b715a61539e) | Archive old translators |
-| 2026-03-12 | [6200b05](https://github.com/nyas1/Material-You-app-list/commit/6200b0581de9bf891d25be0356baa80068038c1c) | Reorder mail clients |
-| 2026-03-12 | [a4de7da](https://github.com/nyas1/Material-You-app-list/commit/a4de7daf91cec7f42c675a8e3332f07a18476442) | Update communication category |
 
 <!-- END AUTO-GENERATED -->

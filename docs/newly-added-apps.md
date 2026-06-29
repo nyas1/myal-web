@@ -8,6 +8,22 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MDY` [Quitter](https://github.com/brandonp2412/Quitter) <sup>`FOSS`</sup>
+- `MD3E` [Clock Master](https://github.com/PranshulGG/ClockMaster) <sup>`FOSS`</sup> <sup>`🪦`</sup>
+- `MD3E` [Lune](https://github.com/MrDemonc/Lune) <sup>`FOSS`</sup>
+- `MD3E` [Flux](https://github.com/the-mskd-dev/Flux) <sup>`FOSS`</sup>
+- `MD3E` [Fast Times](https://github.com/tom-murphy-development/FastTimes) <sup>`FOSS`</sup>
+- `MD3E` [Watch Master](https://github.com/PranshulGG/WatchMaster) <sup>`FOSS`</sup>
+- `MD3E` [Weather You](https://play.google.com/store/apps/details?id=com.rodrigmatrix.weatheryou)
+- `MD3E` [Minus](https://github.com/isaacsa51/Minus) <sup>`FOSS`</sup>
+- `MD3E` [Be Nice](https://codeberg.org/tkuenneth/benice) <sup>`FOSS`</sup>
+- `MD3E` [MonoMail](https://github.com/shrivatsav-0/monomail) <sup>`FOSS`</sup>
+- `MDY` [Universal Installer](https://github.com/pass-with-high-score/universal-installer) <sup>`FOSS`</sup>
+- `MD3E` [Pennywise AI](https://github.com/sarim2000/pennywiseai-tracker) <sup>`FOSS`</sup>
+- `MD3E` [ObtainX](https://github.com/bikram-agarwal/ObtainX) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+- `MDY` [Transport You](https://github.com/you-apps/TransportYou) <sup>`FOSS`</sup>
+- `MDY` [Open Notes](https://github.com/Fandroid745/Open-notes) <sup>`FOSS`</sup>
+- `MD` [Gym Day](https://play.google.com/store/apps/details?id=com.anthonyng.workoutapp) <sup>`💰`</sup>
 - `MDY` [N-Zik](https://github.com/N-Zik-Group/N-Zik) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MD` [Khushu](https://github.com/greykaizen/khushu) <sup>`FOSS`</sup>
 - `MDY` [Inzx](https://github.com/nirmaleeswar30/Inzx) <sup>`FOSS`</sup>
@@ -22,21 +38,5 @@ outline: false
 - `MDY` [Seal X](https://play.google.com/store/apps/details?id=com.hkapps.sealdownloader)
 - `MDY` [Voli](https://play.google.com/store/apps/details?id=com.urbandroid.voli)
 - `MD3E` [Remberball](https://play.google.com/store/apps/details?id=com.urbandroid.brall)
-- `MDY` [Lifewatch](https://play.google.com/store/apps/details?id=com.urbandroid.lifewatch)
-- `MD3E` [ueberboese](https://github.com/julius-d/ueberboese-app) <sup>`FOSS`</sup>
-- `MD3E` [WiFiAudioStreaming-Android](https://gitlab.com/marcomorosi.dev/wifiaudiostreaming-android) <sup>`FOSS`</sup>
-- `MDY` [Network Scanner](https://github.com/usamaiqb/network-scanner) <sup>`FOSS`</sup>
-- `MDY` [storii](https://github.com/likhithpraveenk/storii) <sup>`FOSS`</sup>
-- `MDY` [Taison](https://github.com/Gent8/Taison) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MDY` [MetroFuse](https://github.com/956tris/MetroFuse) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD` [Do it](https://github.com/maximilian-schwaerzler/Do-It) <sup>`FOSS`</sup>
-- `MD` [OpenPillReminder](https://github.com/mariinkys/OpenPillReminder) <sup>`FOSS`</sup>
-- `MD3E` [Kite](https://github.com/zenzer0s/Kite) <sup>`FOSS`</sup>
-- `MD3E` [mpvFlux](https://github.com/Muhammedahmed18/mpvFlux) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MDY` [Flow](https://github.com/A-EDev/Flow) <sup>`FOSS`</sup>
-- `MD3E` [LastChat](https://github.com/Cocolalilal/LastChat) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD3E` [mpvRex](https://github.com/sfsakhawat999/mpvRex) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MDY` [Shizuku](https://github.com/thedjchi/Shizuku) <sup>`FOSS`</sup> <sup>`FORK`</sup> <sup>`🐾`</sup>
-- `MD` [Moon Translator](https://github.com/MoonMonet/Translator) <sup>`FOSS`</sup>
 
 <!-- END AUTO-GENERATED -->
