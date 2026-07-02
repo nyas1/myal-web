@@ -10,6 +10,8 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-07-01 | [2ce912f](https://github.com/nyas1/Material-You-app-list/commit/2ce912f53ab9e68afbe00d87aca4d18aa725fac3) | README: add Voyager, Grove, Areada, Lyrics Grabbr, Local player |
+| 2026-07-01 | [c037b37](https://github.com/nyas1/Material-You-app-list/commit/c037b376702780463c40f273993cf74ddfd02163) | README: add Gitling, Futon, Kotatsu-Redo, Flare, update Swift Backup, ADNS |
 | 2026-06-28 | [510e774](https://github.com/nyas1/Material-You-app-list/commit/510e77478714416474ffd5f26701450aa5383156) | README: add Clock Master, Lune, Flux, Fast Times, Quitter |
 | 2026-06-28 | [e9b069a](https://github.com/nyas1/Material-You-app-list/commit/e9b069a12704ce40dd28bbd210346889d06504b1) | README: add MonoMail, Weather You, Minus, Be Nice, Watch Master |
 | 2026-06-28 | [b620670](https://github.com/nyas1/Material-You-app-list/commit/b6206704c4b980b017bc7813c7edacacdc455fb6) | README: add Pennywise AI, ObtainX, Transport You, Open Notes, Universal Installer |
@@ -108,7 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-19 | [ae5b731](https://github.com/nyas1/Material-You-app-list/commit/ae5b7311e833126f3b766f478e9a0398d2f6b2c4) | Merge branch 'nyas1:main' into updated |
 | 2026-03-17 | [b1a6424](https://github.com/nyas1/Material-You-app-list/commit/b1a6424ecdfe4c95885fb5307b66c12949830aa7) | Merge branch 'main' of https://github.com/nyas1/Material-You-app-list |
 | 2026-03-17 | [33e3972](https://github.com/nyas1/Material-You-app-list/commit/33e3972b8c0b69fd09a4276ae52ca9495b0689b9) | remove Jekyll GitHub Pages workflow file |
-| 2026-03-13 | [b84fe9d](https://github.com/nyas1/Material-You-app-list/commit/b84fe9d50358d5120fe301df1faf38e62692e18e) | Merge branch 'nyas1:main' into updated |
-| 2026-03-12 | [48c6d0c](https://github.com/nyas1/Material-You-app-list/commit/48c6d0caaf88494fb3ca222ae8d8a76985225a06) | Change header level for Music Players section |
 
 <!-- END AUTO-GENERATED -->
