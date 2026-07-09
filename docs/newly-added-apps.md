@@ -8,6 +8,12 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MD3E` [Weight Tracker](https://github.com/AdityaHebballe/Weight-Tracker) <sup>`FOSS`</sup>
+- `MD3E` [Ilay for Reddit](https://github.com/bennybar/LuliReddit) <sup>`FOSS`</sup>
+- `MD3E` [Tokn](https://github.com/tokn-authenticator/tokn) <sup>`FOSS`</sup>
+- `MD3E` [Record Master](https://github.com/PranshulGG/RecordMaster) <sup>`FOSS`</sup> <sup>`🪦`</sup>
+- `MD3E` [Sorter](https://github.com/isaacsa51/Sorter) <sup>`FOSS`</sup>
+- `MD3E` [Magisk-but-expressive](https://github.com/Anto426/Magisk-but-expressive) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Grove](https://github.com/resurrectdev1/grove) <sup>`FOSS`</sup>
 - `MDY` [Local player](https://github.com/cvc953/localplayer) <sup>`FOSS`</sup>
 - `MDY` [Areada](https://github.com/iTsMe-Zen/Areada) <sup>`FOSS`</sup>
@@ -32,11 +38,5 @@ outline: false
 - `MD3E` [ObtainX](https://github.com/bikram-agarwal/ObtainX) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Transport You](https://github.com/you-apps/TransportYou) <sup>`FOSS`</sup>
 - `MDY` [Open Notes](https://github.com/Fandroid745/Open-notes) <sup>`FOSS`</sup>
-- `MD` [Gym Day](https://play.google.com/store/apps/details?id=com.anthonyng.workoutapp) <sup>`💰`</sup>
-- `MDY` [N-Zik](https://github.com/N-Zik-Group/N-Zik) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD` [Khushu](https://github.com/greykaizen/khushu) <sup>`FOSS`</sup>
-- `MDY` [Inzx](https://github.com/nirmaleeswar30/Inzx) <sup>`FOSS`</sup>
-- `MD3E` [Lockbook](https://github.com/lockbook/lockbook) <sup>`FOSS`</sup>
-- `MD3E` [Snippets](https://github.com/blindman81/Snippets) <sup>`FOSS`</sup>
 
 <!-- END AUTO-GENERATED -->

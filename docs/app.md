@@ -10,6 +10,7 @@ title: Apps
 ### 👥 Social Media
 #### 🧠 **Reddit**
 *How to make Reddit clients work after **API changes?*** Checkout this [Guide](https://github.com/wchill/patcheddit)!
+- `MD3E` [Ilay for Reddit](https://github.com/bennybar/LuliReddit) <sup>`FOSS`</sup>
 - `MDY` [Infinity for Reddit](https://github.com/Docile-Alligator/Infinity-For-Reddit) <sup>`FOSS`</sup>
 	- `MDY` [Continuum](https://github.com/cygnusx-1-org/continuum) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Pineapple](https://github.com/galaxygoldfish/pineapple) <sup>`FOSS`</sup>
@@ -384,7 +385,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MD3E` [mpvFlux](https://github.com/Muhammedahmed18/mpvFlux) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MD3E` [Reefin Video Player](https://play.google.com/store/apps/details?id=com.shady.reefin)
 - `MD3E` [Flux](https://github.com/the-mskd-dev/Flux) <sup>`FOSS`</sup>
-- `MDY` [Material Player](https://play.google.com/store/apps/details?id=com.akira.material)
+- `MD3E` [Material Player](https://play.google.com/store/apps/details?id=com.akira.material)
 - `MDY` [VLC Media Player](https://t.me/waifupx_official/233) <sup>`MOD`</sup>
 - `MDY` [NextPlayer](https://github.com/anilbeesetti/nextplayer) <sup>`FOSS`</sup>
 - `MDY` [mpvKt](https://github.com/abdallahmehiz/mpvKt) <sup>`FOSS`</sup> <sup>`🪦`</sup>
@@ -533,6 +534,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MD3E` [Image Toolbox](https://github.com/T8RIN/ImageToolbox) <sup>`FOSS`</sup> <sup>`🐾`</sup>
 	- `MD3E` [Momentum](https://github.com/shub39/Momentum) <sup>`FOSS`</sup>
 	- `MD3E` [Snippets](https://github.com/blindman81/Snippets) <sup>`FOSS`</sup>
+	- `MD3E` [Sorter](https://github.com/isaacsa51/Sorter) <sup>`FOSS`</sup>
 	- `MDY` [ImageCraft](https://github.com/YangDai2003/ImageCraft-Android) <sup>`FOSS`</sup> <sup>`🪦`</sup>
 	- `MDY` [Graphie](https://play.google.com/store/apps/details?id=com.pavelrekun.graphie) <sup>`💰`</sup>
 	- `MDY` [Image Compressor](https://play.google.com/store/apps/details?id=aculix.bulk.image.compressor)
@@ -554,6 +556,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 
 ---
 ### 🎙️ Audio Recorders
+- `MD3E` [Record Master](https://github.com/PranshulGG/RecordMaster) <sup>`FOSS`</sup> <sup>`🪦`</sup>
 - `MDY` [Recording Studio](https://github.com/Leonidius20/RecordingStudio) <sup>`FOSS`</sup>
 - `MDY` [Fossify Recorder](https://github.com/FossifyOrg/Voice-Recorder) <sup>`FOSS`</sup>
 - `MDY` [Record You](https://github.com/you-apps/recordYou) <sup>`FOSS`</sup>
@@ -886,6 +889,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 ### #️⃣ SuperUser (Root)
 - **SU Manager**
 	- `MD3E` [FolkPatch](https://github.com/LyraVoid/FolkPatch) <sup>`FOSS`</sup> <sup>`FORK`</sup>
+	- `MD3E` [Magisk-but-expressive](https://github.com/Anto426/Magisk-but-expressive) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 	- `MDY` [Magisk Monet](https://github.com/datnerdguy/Magisk-Monet) <sup>`FOSS`</sup> <sup>`🪦`</sup>
 	- `MDY` [KernelSU](https://github.com/tiann/KernelSU/) <sup>`FOSS`</sup>
 	- `MDY` [APatch](https://github.com/bmax121/APatch) <sup>`FOSS`</sup>
@@ -1120,6 +1124,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 	- `MD` [Massive](https://github.com/brandonp2412/Massive) <sup>`FOSS`</sup> <sup>`🪦`</sup>
 	- `MD` [Gym Day](https://play.google.com/store/apps/details?id=com.anthonyng.workoutapp) <sup>`💰`</sup>
 - **Body Weight**
+	- `MD3E` [Weight Tracker](https://github.com/AdityaHebballe/Weight-Tracker) <sup>`FOSS`</sup>
 	- `MDY` [FitBook](https://github.com/brandonp2412/FitBook) <sup>`FOSS`</sup>
 	- `MDY` [trale](https://github.com/QuantumPhysique/trale) <sup>`FOSS`</sup>
 - **Digital Well-being & Screen Time**
@@ -1285,6 +1290,7 @@ https://github.com/twixxty/Aliyoucord) [`#3`](https://github.com/vicefriedrice/M
 
 ## 🔐 Security & Privacy
 ### 🪪 2FA
+- `MD3E` [Tokn](https://github.com/tokn-authenticator/tokn) <sup>`FOSS`</sup>
 - `MDY` [Stratum](https://github.com/stratumauth/app) <sup>`FOSS`</sup>
 - `MDY` [Mauth](https://github.com/X1nto/Mauth) <sup>`FOSS`</sup>
 - `MDY` [Keyring OTP](https://gitlab.com/aorszulak/keyring) <sup>`FOSS`</sup> <sup>`🪦`</sup>

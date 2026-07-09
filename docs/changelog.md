@@ -10,6 +10,9 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-07-08 | [31e9e75](https://github.com/nyas1/Material-You-app-list/commit/31e9e756bdedd556be89b8aa8d5b06af37fab672) | README: add Weight Tracker, Ilay for Reddit, Tokn, Record Master, Sorter |
+| 2026-07-08 | [f59a170](https://github.com/nyas1/Material-You-app-list/commit/f59a170424194b0444b0485e0b6c5d9eaeea523b) | README: add Magisk-but-expressive |
+| 2026-07-08 | [e6015eb](https://github.com/nyas1/Material-You-app-list/commit/e6015ebd4c600c2ec0b1d773898aa124a7ac5791) | README: update Material Player |
 | 2026-07-01 | [2ce912f](https://github.com/nyas1/Material-You-app-list/commit/2ce912f53ab9e68afbe00d87aca4d18aa725fac3) | README: add Voyager, Grove, Areada, Lyrics Grabbr, Local player |
 | 2026-07-01 | [c037b37](https://github.com/nyas1/Material-You-app-list/commit/c037b376702780463c40f273993cf74ddfd02163) | README: add Gitling, Futon, Kotatsu-Redo, Flare, update Swift Backup, ADNS |
 | 2026-06-28 | [510e774](https://github.com/nyas1/Material-You-app-list/commit/510e77478714416474ffd5f26701450aa5383156) | README: add Clock Master, Lune, Flux, Fast Times, Quitter |
@@ -107,8 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-28 | [d3a7ed3](https://github.com/nyas1/Material-You-app-list/commit/d3a7ed311a01f9d9114f372321f5033735cb1f86) | Merge pull request #422 from UcraNerd/updated |
 | 2026-03-26 | [4353da4](https://github.com/nyas1/Material-You-app-list/commit/4353da4f40d516d166bd9f74c7195b59061d134b) | Add DosesPro app entry |
 | 2026-03-22 | [88d7d12](https://github.com/nyas1/Material-You-app-list/commit/88d7d12dbfdedbdf302ad961da05a4af50dc408c) | added outify |
-| 2026-03-19 | [ae5b731](https://github.com/nyas1/Material-You-app-list/commit/ae5b7311e833126f3b766f478e9a0398d2f6b2c4) | Merge branch 'nyas1:main' into updated |
-| 2026-03-17 | [b1a6424](https://github.com/nyas1/Material-You-app-list/commit/b1a6424ecdfe4c95885fb5307b66c12949830aa7) | Merge branch 'main' of https://github.com/nyas1/Material-You-app-list |
-| 2026-03-17 | [33e3972](https://github.com/nyas1/Material-You-app-list/commit/33e3972b8c0b69fd09a4276ae52ca9495b0689b9) | remove Jekyll GitHub Pages workflow file |
 
 <!-- END AUTO-GENERATED -->
