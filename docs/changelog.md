@@ -10,6 +10,9 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-07-12 | [3aedd7e](https://github.com/nyas1/Material-You-app-list/commit/3aedd7e6d12fb7f76737cffdeb465da9ade7a503) | README: add PDF Toolkit, NewPipe Material, Pdf Unlocker, Compose stopwatch, CalculatorM3 |
+| 2026-07-12 | [728e32a](https://github.com/nyas1/Material-You-app-list/commit/728e32a897f02862efd75b0e17095e24fb715872) | README: add Asukaplayer, MKM, Trending AI, NOVA, Hidroly |
+| 2026-07-12 | [154fb41](https://github.com/nyas1/Material-You-app-list/commit/154fb4102bdbf1127ee4f0fb83bb3f3d4d231859) | README: add FaceDown, MpvRxN, Damier, Baca., M3 Play |
 | 2026-07-08 | [31e9e75](https://github.com/nyas1/Material-You-app-list/commit/31e9e756bdedd556be89b8aa8d5b06af37fab672) | README: add Weight Tracker, Ilay for Reddit, Tokn, Record Master, Sorter |
 | 2026-07-08 | [f59a170](https://github.com/nyas1/Material-You-app-list/commit/f59a170424194b0444b0485e0b6c5d9eaeea523b) | README: add Magisk-but-expressive |
 | 2026-07-08 | [e6015eb](https://github.com/nyas1/Material-You-app-list/commit/e6015ebd4c600c2ec0b1d773898aa124a7ac5791) | README: update Material Player |
@@ -107,8 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-28 | [fb03951](https://github.com/nyas1/Material-You-app-list/commit/fb03951d5c7ab95fef73b3ccf99a828366e971f1) | Merge pull request #431 from akshaynexus/add-dosespro |
 | 2026-03-28 | [239b515](https://github.com/nyas1/Material-You-app-list/commit/239b51527969955da88ee39f47d548a219aab270) | Merge branch 'main' into add-dosespro |
 | 2026-03-28 | [935620b](https://github.com/nyas1/Material-You-app-list/commit/935620b76f1964041cc7d36786e4c2ebbc8090e2) | Merge pull request #428 from deadendpl/outify |
-| 2026-03-28 | [d3a7ed3](https://github.com/nyas1/Material-You-app-list/commit/d3a7ed311a01f9d9114f372321f5033735cb1f86) | Merge pull request #422 from UcraNerd/updated |
-| 2026-03-26 | [4353da4](https://github.com/nyas1/Material-You-app-list/commit/4353da4f40d516d166bd9f74c7195b59061d134b) | Add DosesPro app entry |
-| 2026-03-22 | [88d7d12](https://github.com/nyas1/Material-You-app-list/commit/88d7d12dbfdedbdf302ad961da05a4af50dc408c) | added outify |
 
 <!-- END AUTO-GENERATED -->
