@@ -10,6 +10,7 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-07-13 | [0a33ca6](https://github.com/nyas1/Material-You-app-list/commit/0a33ca6347592bc9d9d16689b58acdfd5d35d0a1) | README: add Fulguris, StashFlow, Kanon, update Obtainium, SpMp |
 | 2026-07-12 | [3aedd7e](https://github.com/nyas1/Material-You-app-list/commit/3aedd7e6d12fb7f76737cffdeb465da9ade7a503) | README: add PDF Toolkit, NewPipe Material, Pdf Unlocker, Compose stopwatch, CalculatorM3 |
 | 2026-07-12 | [728e32a](https://github.com/nyas1/Material-You-app-list/commit/728e32a897f02862efd75b0e17095e24fb715872) | README: add Asukaplayer, MKM, Trending AI, NOVA, Hidroly |
 | 2026-07-12 | [154fb41](https://github.com/nyas1/Material-You-app-list/commit/154fb4102bdbf1127ee4f0fb83bb3f3d4d231859) | README: add FaceDown, MpvRxN, Damier, Baca., M3 Play |
@@ -109,6 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-28 | [e1999f7](https://github.com/nyas1/Material-You-app-list/commit/e1999f79a0c523ebde86af1cdae9ddc8c03107d2) | docs: add and update apps from recent issues |
 | 2026-03-28 | [fb03951](https://github.com/nyas1/Material-You-app-list/commit/fb03951d5c7ab95fef73b3ccf99a828366e971f1) | Merge pull request #431 from akshaynexus/add-dosespro |
 | 2026-03-28 | [239b515](https://github.com/nyas1/Material-You-app-list/commit/239b51527969955da88ee39f47d548a219aab270) | Merge branch 'main' into add-dosespro |
-| 2026-03-28 | [935620b](https://github.com/nyas1/Material-You-app-list/commit/935620b76f1964041cc7d36786e4c2ebbc8090e2) | Merge pull request #428 from deadendpl/outify |
 
 <!-- END AUTO-GENERATED -->

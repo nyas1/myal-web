@@ -8,6 +8,9 @@ outline: false
 <!-- AUTO-GENERATED from README.md by scripts/split-readme.mjs -->
 
 *Last **30 apps** that were recently added to list!*
+- `MD` [Fulguris](https://github.com/Slion/Fulguris) <sup>`FOSS`</sup>
+- `MDY` [StashFlow](https://github.com/Alchemist-Aloha/StashFlow) <sup>`FOSS`</sup>
+- `MDY` [Kanon](https://gitlab.com/syk.sh/kanon) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [PDF Toolkit](https://github.com/Karna14314/Pdf_Tools) <sup>`FOSS`</sup>
 - `MDY` [NewPipe Material](https://github.com/wizdom13/NewPipe_Material) <sup>`FOSS`</sup> <sup>`FORK`</sup>
 - `MDY` [Pdf Unlocker](https://github.com/OpenAppex/pdfunlocker) <sup>`FOSS`</sup>
@@ -35,8 +38,5 @@ outline: false
 - `MDY` [Lyrics Grabbr](https://github.com/illusionman1212/lyrics-grabbr) <sup>`FOSS`</sup>
 - `MDY` [Voyager](https://github.com/AlanHuang99/Voyager) <sup>`FOSS`</sup>
 - `MD3E` [Gitling](https://github.com/maneeshacooray/Gitling) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MDY` [Futon](https://github.com/AppFuton/Futon) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MDY` [Kotatsu-Redo](https://github.com/Kotatsu-Redo/Kotatsu-Redo) <sup>`FOSS`</sup> <sup>`FORK`</sup>
-- `MD3E` [Flare](https://github.com/DimensionDev/Flare) <sup>`FOSS`</sup>
 
 <!-- END AUTO-GENERATED -->
