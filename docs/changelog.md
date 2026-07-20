@@ -10,6 +10,9 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-07-19 | [e928fe3](https://github.com/nyas1/Material-You-app-list/commit/e928fe33d8a318b3f11dcd8b663c0e8e63cd4f5d) | README: add SuiDays, Pixel World, Aperture, Punch-hole Download Progress, FinalBenchmark 2, GhostIdes |
+| 2026-07-19 | [62cff49](https://github.com/nyas1/Material-You-app-list/commit/62cff49a350537e4eb451f899489667a4e3e526a) | README: add Chameleon, Algidy, Boxlore, Bubble Notice, update Damier |
+| 2026-07-19 | [9c6634d](https://github.com/nyas1/Material-You-app-list/commit/9c6634d3531a3eb5fde10af0802f06301b937e6b) | README: add Trainable |
 | 2026-07-13 | [0a33ca6](https://github.com/nyas1/Material-You-app-list/commit/0a33ca6347592bc9d9d16689b58acdfd5d35d0a1) | README: add Fulguris, StashFlow, Kanon, update Obtainium, SpMp |
 | 2026-07-12 | [3aedd7e](https://github.com/nyas1/Material-You-app-list/commit/3aedd7e6d12fb7f76737cffdeb465da9ade7a503) | README: add PDF Toolkit, NewPipe Material, Pdf Unlocker, Compose stopwatch, CalculatorM3 |
 | 2026-07-12 | [728e32a](https://github.com/nyas1/Material-You-app-list/commit/728e32a897f02862efd75b0e17095e24fb715872) | README: add Asukaplayer, MKM, Trending AI, NOVA, Hidroly |
@@ -107,8 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-29 | [5de92f7](https://github.com/nyas1/Material-You-app-list/commit/5de92f7d3a29d4f9ce480dc5a7c0e42258c961df) | Replace CuteCalc with Vanilla in README |
 | 2026-03-29 | [90d2ee4](https://github.com/nyas1/Material-You-app-list/commit/90d2ee4bccf070ebd227397a1b0e0fa3aac2182b) | Remove CuteMusic and add Chocola to music players list |
 | 2026-03-28 | [28d0406](https://github.com/nyas1/Material-You-app-list/commit/28d0406d758ca49423c856983eeae9bc0f528def) | docs: shorten DosesPro app name in README list |
-| 2026-03-28 | [e1999f7](https://github.com/nyas1/Material-You-app-list/commit/e1999f79a0c523ebde86af1cdae9ddc8c03107d2) | docs: add and update apps from recent issues |
-| 2026-03-28 | [fb03951](https://github.com/nyas1/Material-You-app-list/commit/fb03951d5c7ab95fef73b3ccf99a828366e971f1) | Merge pull request #431 from akshaynexus/add-dosespro |
-| 2026-03-28 | [239b515](https://github.com/nyas1/Material-You-app-list/commit/239b51527969955da88ee39f47d548a219aab270) | Merge branch 'main' into add-dosespro |
 
 <!-- END AUTO-GENERATED -->
