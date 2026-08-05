@@ -10,6 +10,7 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-08-04 | [3c4ba85](https://github.com/nyas1/Material-You-app-list/commit/3c4ba85b5ba758bf4419375c1c2912467096e27e) | README: update Materialbook, FUTO Keyboard, n0widgets, Photon Gallery |
 | 2026-07-19 | [e928fe3](https://github.com/nyas1/Material-You-app-list/commit/e928fe33d8a318b3f11dcd8b663c0e8e63cd4f5d) | README: add SuiDays, Pixel World, Aperture, Punch-hole Download Progress, FinalBenchmark 2, GhostIdes |
 | 2026-07-19 | [62cff49](https://github.com/nyas1/Material-You-app-list/commit/62cff49a350537e4eb451f899489667a4e3e526a) | README: add Chameleon, Algidy, Boxlore, Bubble Notice, update Damier |
 | 2026-07-19 | [9c6634d](https://github.com/nyas1/Material-You-app-list/commit/9c6634d3531a3eb5fde10af0802f06301b937e6b) | README: add Trainable |
@@ -109,6 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-03-29 | [9f7f1fa](https://github.com/nyas1/Material-You-app-list/commit/9f7f1fa95e15067a2c28809f54425b6b3948747d) | docs: tag apps based on personal usage |
 | 2026-03-29 | [5de92f7](https://github.com/nyas1/Material-You-app-list/commit/5de92f7d3a29d4f9ce480dc5a7c0e42258c961df) | Replace CuteCalc with Vanilla in README |
 | 2026-03-29 | [90d2ee4](https://github.com/nyas1/Material-You-app-list/commit/90d2ee4bccf070ebd227397a1b0e0fa3aac2182b) | Remove CuteMusic and add Chocola to music players list |
-| 2026-03-28 | [28d0406](https://github.com/nyas1/Material-You-app-list/commit/28d0406d758ca49423c856983eeae9bc0f528def) | docs: shorten DosesPro app name in README list |
 
 <!-- END AUTO-GENERATED -->
