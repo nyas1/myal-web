@@ -24,5 +24,8 @@
     "twemoji": "^14.0.2",
     "typescript": "^5.9.3",
     "vitepress": "^1.6.4"
+  },
+  "overrides": {
+    "nanoid": "5.1.16"
   }
 }
