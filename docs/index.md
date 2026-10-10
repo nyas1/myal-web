@@ -1,7 +1,7 @@
 ---
 title: MYAL
 layout: home
-syncLastEpoch: 1791449619
+syncLastEpoch: 1791536264
 hero:
   name: Material You App List
   tagline: Curated apps that follow Material Design 3 ✨
