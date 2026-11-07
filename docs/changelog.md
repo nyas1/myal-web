@@ -10,6 +10,17 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 
 | Date | Commit | Message |
 | --- | --- | --- |
+| 2026-11-07 | [7da530c](https://github.com/nyas1/Material-You-app-list/commit/7da530c1992fe5295645dd35b2e1316dcc4bf0b5) | README: add Material Quran, Material Prayer Times (#662) |
+| 2026-11-07 | [43eadf9](https://github.com/nyas1/Material-You-app-list/commit/43eadf91b02ae2fec0c7e9d4224422b6203dbe59) | README: add Ultimatum, WizeFiles, Deliveries, update WizeStream, Syncara |
+| 2026-11-07 | [e0ecd7f](https://github.com/nyas1/Material-You-app-list/commit/e0ecd7ffa33d48460fdcf618fb82551dc630d96d) | README: add Smoovie, update Titanium |
+| 2026-11-07 | [f9a996c](https://github.com/nyas1/Material-You-app-list/commit/f9a996cd75c980bbc516119c9a5e404ac3da59fa) | README: add SuvMusic (#658) |
+| 2026-11-07 | [71a63f0](https://github.com/nyas1/Material-You-app-list/commit/71a63f07fb7ce37146850bd15cca8e1ab7a2807c) | README: add Fern |
+| 2026-11-07 | [87964a1](https://github.com/nyas1/Material-You-app-list/commit/87964a11fb9d15af4f246d70652cc44fdabf8d7b) | README: Add Easemic |
+| 2026-11-07 | [9790659](https://github.com/nyas1/Material-You-app-list/commit/9790659ce8df2296c273b43b061bb503a4cd8835) | README: add Aster Mail (#721) |
+| 2026-11-07 | [9555573](https://github.com/nyas1/Material-You-app-list/commit/9555573c0972067fbfec3db115333e7b955516f4) | README: add Tellyscope |
+| 2026-11-07 | [59a8bab](https://github.com/nyas1/Material-You-app-list/commit/59a8babedb7b9b33fed15adc95303886fa82c5be) | README: add Adaptive Theme |
+| 2026-11-07 | [9e896eb](https://github.com/nyas1/Material-You-app-list/commit/9e896eb807934ce515f48be2c82fd015e8c4afd5) | README: update multiple apps, mark unmaintained, and remove delisted entries |
+| 2026-11-07 | [07653ff](https://github.com/nyas1/Material-You-app-list/commit/07653ff3825897297fc82e2df26baef51c8a75be) | README: update Diary, VerveDo, June |
 | 2026-08-04 | [3c4ba85](https://github.com/nyas1/Material-You-app-list/commit/3c4ba85b5ba758bf4419375c1c2912467096e27e) | README: update Materialbook, FUTO Keyboard, n0widgets, Photon Gallery |
 | 2026-07-19 | [e928fe3](https://github.com/nyas1/Material-You-app-list/commit/e928fe33d8a318b3f11dcd8b663c0e8e63cd4f5d) | README: add SuiDays, Pixel World, Aperture, Punch-hole Download Progress, FinalBenchmark 2, GhostIdes |
 | 2026-07-19 | [62cff49](https://github.com/nyas1/Material-You-app-list/commit/62cff49a350537e4eb451f899489667a4e3e526a) | README: add Chameleon, Algidy, Boxlore, Bubble Notice, update Damier |
@@ -99,16 +110,5 @@ Latest commits with date from [nyas1/Material-You-app-list](https://github.com/n
 | 2026-04-08 | [074b9c6](https://github.com/nyas1/Material-You-app-list/commit/074b9c668784891bf540c9994ef47ab1f2985495) | Merge pull request #440 from Giuig/main |
 | 2026-04-08 | [f580e73](https://github.com/nyas1/Material-You-app-list/commit/f580e73e42b3d77bb8f2910e04e16313e7934e5a) | Merge pull request #444 from Pankaj-Meharchandani/main |
 | 2026-04-08 | [ce421fe](https://github.com/nyas1/Material-You-app-list/commit/ce421fe9612a61dda6a7a7308d2e9d57dad78f6b) | Merge upstream/main - resolve conflicts, add auraninja, decisioninja, tvninja FOSS entries |
-| 2026-04-05 | [5181326](https://github.com/nyas1/Material-You-app-list/commit/51813268d35d35291788c0682db9f15b0f0165d2) | Remove Nekogram from the list of projects |
-| 2026-04-04 | [c8b09b7](https://github.com/nyas1/Material-You-app-list/commit/c8b09b7ff159de7a018b8c9d78f625ecbb5abb78) | README: formatting fixes, list cleanup, and tags |
-| 2026-04-04 | [1ca19f3](https://github.com/nyas1/Material-You-app-list/commit/1ca19f35aa1c9511c3200a3c7cbc971ef9baf544) | docs: add Fcitx5 for Android and Torrent Search |
-| 2026-04-04 | [ca54d36](https://github.com/nyas1/Material-You-app-list/commit/ca54d36a47292f9285ef07cd438fc1359fe5dab1) | docs: add RebootNya, GPTMobile, FoodYou, AniSync |
-| 2026-04-04 | [57e234c](https://github.com/nyas1/Material-You-app-list/commit/57e234c77591a1a426da4b7fa0164aad66cc1196) | Update Better xCloud and Smart Cleaner entries |
-| 2026-04-03 | [ab195b7](https://github.com/nyas1/Material-You-app-list/commit/ab195b7deff12a0c1c22a2b5ddd73ee6b01d5d81) | Remove obsolete Play Store entries and add FOSS versions for ninja apps |
-| 2026-03-30 | [1f6a431](https://github.com/nyas1/Material-You-app-list/commit/1f6a431d2ac815f5017b7b2e9dc7827c02ab507a) | Merge pull request #432 from sosauce/main |
-| 2026-03-30 | [0d4b9c9](https://github.com/nyas1/Material-You-app-list/commit/0d4b9c9eb4fa2a42e7a4cd4a495b0581375b2f1f) | docs: add LeanType & DisCorkie; cleanup Play Store links |
-| 2026-03-29 | [9f7f1fa](https://github.com/nyas1/Material-You-app-list/commit/9f7f1fa95e15067a2c28809f54425b6b3948747d) | docs: tag apps based on personal usage |
-| 2026-03-29 | [5de92f7](https://github.com/nyas1/Material-You-app-list/commit/5de92f7d3a29d4f9ce480dc5a7c0e42258c961df) | Replace CuteCalc with Vanilla in README |
-| 2026-03-29 | [90d2ee4](https://github.com/nyas1/Material-You-app-list/commit/90d2ee4bccf070ebd227397a1b0e0fa3aac2182b) | Remove CuteMusic and add Chocola to music players list |
 
 <!-- END AUTO-GENERATED -->
